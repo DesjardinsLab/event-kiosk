@@ -29,8 +29,9 @@ export class PresentationView extends React.Component {
       <div className='kiosk-presentation'>
         <LinearProgress />
         <AppBar
-          title='Événements'
+          title='Événement'
           onLeftIconButtonTouchTap={() => this.toggleNav()}
+          zDepth={0}
         />
         <LeftNav
           open={this.state.navOpen}
