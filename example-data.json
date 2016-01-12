@@ -1,0 +1,39 @@
+{
+  "defaultPresentation": {
+    "transitionTime": 5000,
+    "slides": [
+      {
+        "title": "Événements",
+        "type": "eventList",
+        "events": [
+          {
+            "title": "Event1",
+            "startTime": "2016-01-12T15:34:38.440526",
+            "endTime": "2016-01-12T15:34:38.440526",
+            "desc": "Premier event.",
+            "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg"
+          },
+          {
+            "title": "Event2",
+            "startTime": "2016-01-12T15:34:38.440526",
+            "endTime": "2016-01-12T15:34:38.440526",
+            "desc": "Deuxieme event.",
+            "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg"
+          },
+          {
+            "title": "Event3",
+            "startTime": "2016-01-12T15:34:38.440526",
+            "endTime": "2016-01-12T15:34:38.440526",
+            "desc": "Troisieme event.",
+            "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Belle photo.",
+        "type": "image",
+        "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg"
+      }
+    ]
+  }
+}
