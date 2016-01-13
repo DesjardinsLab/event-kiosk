@@ -1,13 +1,22 @@
-export class EventListView extends React.Component {
-  static propTypes = {
-    months: React.PropTypes.array.isRequired,
-    events: React.PropTypes.array.isRequired
-  };
+import EventListItem from './EventListItem'
 
+export class EventListView extends React.Component {
   render () {
     return (
-      <ol className='eventList text-center'>
-
+      <ol className='eventList'>
+        {this.props.events.map(function (item, index) {
+          return (
+            <EventListItem
+              key={index}
+              title={item.title}
+              startTime={item.startTime}
+              endTime={item.endTime}
+              desc={item.desc}
+              location={item.location}
+              img={item.img}
+            />
+          )
+        })}
       </ol>
     )
   }

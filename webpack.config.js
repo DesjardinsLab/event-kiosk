@@ -3,7 +3,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: 'dist/',
-        publicPath: 'http://localhost:3030/dist'
+        publicPath: 'http://192.168.1.86:3030/dist'
     },
     module: {
         loaders: [
