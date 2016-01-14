@@ -119,7 +119,11 @@ export class PresentationView extends React.Component {
           callback={(index, element) => this.onSlideChange(index, element)}>
           {this.state.slides.map(function (item, index) {
             if (item.type === EVENT_LIST_SLIDE_TYPE) {
-              return <EventListView key={index} events={item.events}/>
+              return (
+                <div key={index}>
+                  <EventListView events={item.events}/>
+                </div>
+              )
             } else if (item.type === IMAGE_SLIDE_TYPE) {
               return (
                 <div key={index}>
