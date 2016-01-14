@@ -14,15 +14,16 @@
             "startTime": "2016-01-12T15:34:38.440526",
             "endTime": "2016-01-12T15:34:38.440526",
             "desc": "Premier event.",
-            "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg",
-            "location": "Espace Desjardins"
+            "img": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0014/7108/brand.gif",
+            "location": "Espace Desjardins",
+            "speaker": "Gaben"
           },
           {
             "title": "Event2",
             "startTime": "2016-02-12T15:34:38.440526",
             "endTime": "2016-02-12T15:34:38.440526",
             "desc": "Deuxieme event.",
-            "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg",
+            "img": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0014/7108/brand.gif",
             "location": "Espace Desjardins"
           },
           {
@@ -30,8 +31,8 @@
             "startTime": "2016-03-12T15:34:38.440526",
             "endTime": "2016-03-12T15:34:38.440526",
             "desc": "Troisieme event.",
-            "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg",
-            "location": "Espace Desjardins" 
+            "img": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0014/7108/brand.gif",
+            "location": "Espace Desjardins"
           }
         ]
       },

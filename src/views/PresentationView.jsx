@@ -47,6 +47,10 @@ export class PresentationView extends React.Component {
     }.bind(this))
   }
 
+  componentWillUnmount () {
+    clearTimeout(this.state.activityTimer)
+  }
+
   handleClick (event) {
     if (this.state.allowInput) {
       if (this.state.activityTime) {
@@ -57,10 +61,6 @@ export class PresentationView extends React.Component {
         activityTimer: setTimeout(this.handleInactivityTimer.bind(this), this.state.pauseTimeOnTouch)
       })
     }
-  }
-
-  componentWillUnmount () {
-    clearTimeout(this.state.activityTimer)
   }
 
   handleTransitionTimer (timestamp) {
@@ -110,29 +110,33 @@ export class PresentationView extends React.Component {
       progressBarClasses += ' empty'
     }
 
-    var reactSwipeContent = <div />
+    var reactSwipeComponent = <div />
 
     if (this.state.slides) {
-      reactSwipeContent = (
-        <ReactSwipe
-          shouldUpdate={() => true}
-          callback={(index, element) => this.onSlideChange(index, element)}>
-          {this.state.slides.map(function (item, index) {
-            if (item.type === EVENT_LIST_SLIDE_TYPE) {
-              return (
-                <div key={index}>
-                  <EventListView events={item.events}/>
-                </div>
-              )
-            } else if (item.type === IMAGE_SLIDE_TYPE) {
-              return (
-                <div key={index}>
-                  <img src={item.img} key={index} />
-                </div>
-              )
-            }
-          })}
-        </ReactSwipe>
+      reactSwipeComponent = (
+        <div className='kiosk-swiper'>
+          <ReactSwipe
+            onTouchStart={(event) => this.handleClick(event)}
+            slideToIndex={this.state.currentSlideIndex}
+            key='react-swipe'
+            callback={(index, element) => this.onSlideChange(index, element)}>
+            {this.state.slides.map(function (item, index) {
+              if (item.type === EVENT_LIST_SLIDE_TYPE) {
+                return (
+                  <div key={'eventListWrapper' + index}>
+                    <EventListView key={'eventList' + index} events={item.events}/>
+                  </div>
+                )
+              } else if (item.type === IMAGE_SLIDE_TYPE) {
+                return (
+                  <div key={'imgWrapper' + index}>
+                    <img className='imageSlide' src={item.img} key={'img' + index}/>
+                  </div>
+                )
+              }
+            })}
+          </ReactSwipe>
+        </div>
       )
     }
 
@@ -149,20 +153,24 @@ export class PresentationView extends React.Component {
           zDepth={0}
           style={{
             opacity: (this.state.interactiveMode ? 1 : 0),
-            transition: 'opacity'
+            transition: 'opacity .75s ease-in-out'
           }}
         />
         <LeftNav
           open={this.state.navOpen}
           onRequestChange={navOpen => this.setState({navOpen})}
           docked={false}>
-          <MenuItem>À propos du lab</MenuItem>
-          <Divider />
           {slides.map(function (item, index) {
-            return (<MenuItem key={index}>{item.title}</MenuItem>)
+            return (
+              <MenuItem key={index} onClick={() => function() {
+                this.setState({currentSlideIndex: index})
+              }}>
+                {item.title}
+              </MenuItem>
+            )
           })}
         </LeftNav>
-        {reactSwipeContent}
+        {reactSwipeComponent}
       </div>
     )
   }

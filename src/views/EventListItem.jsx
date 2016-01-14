@@ -1,13 +1,21 @@
 export class EventListItem extends React.Component {
   render () {
+    var event = this.props.event
+
     return (
       <div className='eventListItem'>
-        <img src={this.props.img} />
-        <div className='title'>{this.props.title}</div>
-        <div className='startTime'>{this.props.startTime}</div>
-        <div className='endTime'>{this.props.endTime}</div>
-        <div className='desc'>{this.props.desc}</div>
-        <div className='location'>{this.props.location}</div>
+        <img className='thumbnail' src={event.img} />
+        <div className='details'>
+          <h2 className='title'>{event.title}</h2>
+          <div className='startTime'>{event.startTime}</div>
+          <div className='endTime'>{event.endTime}</div>
+          <div className='desc'>{event.desc}</div>
+          <div className='location'>{event.location}</div>
+          {event.speaker ?
+            <div className='speaker'>{event.speaker}</div> :
+            ''
+          }
+        </div>
       </div>
     )
   }
