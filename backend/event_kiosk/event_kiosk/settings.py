@@ -16,16 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG') == 'True'
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@3xyi51%_=p^1&roq!l&(jx8p7qw&ti&0107z-5*s(@(ztj9^^'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), ]
 
 
 # Application definition
@@ -76,8 +70,12 @@ WSGI_APPLICATION = 'event_kiosk.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': os.environ.get('DB_ENGINE'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DOKKU_POSTGRES_EVENT_KIOSK_ENV_POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('DOKKU_POSTGRES_EVENT_KIOSK_PORT_5432_TCP_ADDR'),
+        'PORT': os.environ.get('DOKKU_POSTGRES_EVENT_KIOSK_PORT_5432_TCP_PORT'),
     }
 }
 
@@ -104,9 +102,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-ca'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Montreal'
 
 USE_I18N = True
 
