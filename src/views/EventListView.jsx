@@ -35,7 +35,6 @@ export class EventListView extends React.Component {
   getEvents (month) {
     return (
       this.state.eventsByMonth[month].map(function (event, index) {
-        console.log(event)
         return (
           <EventListItem
             key={event.key}
@@ -55,7 +54,7 @@ export class EventListView extends React.Component {
         <div>
           {Object.keys(this.state.eventsByMonth).map(function (month, index) {
             return (
-              <div className='eventsByMonth'>
+              <div className='eventsByMonth' key={'events' + month}>
                 <h1 className='month'>{month}</h1>
                 {this.getEvents(month)}
               </div>

@@ -1,6 +1,23 @@
 body {
   height: 100%;
   margin: 0;
+  background-color: #EEEEEE !important;
+  font-family: Calibri, Arial;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h1, h2 {
+  font-weight: bold;
+  padding: 15px 5px;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .kiosk-swiper {
@@ -18,7 +35,6 @@ div.eventList {
     padding-left: 15px;
     text-align: left;
     font-size: 48px;
-    text-transform: uppercase;
   }
 }
 
@@ -26,7 +42,6 @@ div.eventListItem {
   text-align: left;
   text-overflow: ellipsis;
   position: relative;
-  background-color: #80DEEA !important;
   margin: 15px;
   padding: 30px;
   overflow: auto;
@@ -36,7 +51,7 @@ div.eventListItem {
     padding-left: 10px;
 
     h2.title {
-      text-transform: uppercase;
+
     }
 
     div.date {
@@ -51,6 +66,11 @@ div.eventListItem {
   .thumbnailWrapper {
     width: 25%;
     float:left;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
