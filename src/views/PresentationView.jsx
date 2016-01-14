@@ -98,6 +98,7 @@ export class PresentationView extends React.Component {
       currentSlide: this.state.presentation.slides[index],
       currentSlideIndex: index
     })
+    scroll(0,0)
   }
 
   render () {
@@ -153,7 +154,8 @@ export class PresentationView extends React.Component {
           zDepth={0}
           style={{
             opacity: (this.state.interactiveMode ? 1 : 0),
-            transition: 'opacity .75s ease-in-out'
+            transition: 'opacity .75s ease-in-out',
+            display: 'none'
           }}
         />
         <LeftNav
