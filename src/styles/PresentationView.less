@@ -1,5 +1,6 @@
 body {
-  margin: 0em;
+  height: 100%;
+  margin: 0;
 }
 
 .kiosk-swiper {
@@ -10,18 +11,26 @@ body {
   transition: none !important;
 }
 
-.eventListItem {
-  background-color: #80DEEA;
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+div.eventListItem {
+  width: 100%;
+  text-align: left;
+  text-overflow: ellipsis;
+  position: relative;
+  background-color: #80DEEA !important;
   margin: 15px;
   padding: 30px;
   overflow: auto;
-  clear: both;
 
   .details {
+    width: 75%;
+    padding-left: 10px;
+
     h2.title {
-      top:5px;
-      left: 5px;
+      text-transform: uppercase;
+    }
+
+    div.date {
+      text-transform: capitalize;
     }
 
     div.speaker {
@@ -29,13 +38,21 @@ body {
     }
   }
 
-  img.thumbnail {
+  .thumbnailWrapper {
+    width: 25%;
     float:left;
-    max-height: 200px;
-    max-width: 200px;
   }
 }
 
-.imageSlide {
+.imageSlide img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  overflow: auto;
+  position: fixed;
 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
 }
