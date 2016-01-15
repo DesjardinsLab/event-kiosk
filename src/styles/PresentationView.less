@@ -3,21 +3,7 @@ body {
   margin: 0;
   background-color: #EEEEEE !important;
   font-family: Calibri, Arial;
-}
-
-h1 {
-  font-size: 48px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h1, h2 {
-  font-weight: bold;
-  padding: 15px 5px;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
 }
 
 .kiosk-swiper {
@@ -28,13 +14,31 @@ h1, h2 {
   transition: none !important;
 }
 
+div.date {
+  text-transform: capitalize;
+}
+
 div.eventList {
   width: 100%;
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h1, h2 {
+    font-weight: bold;
+    padding: 15px 5px;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', sans-serif;
+  }
 
   h1.month {
     padding-left: 15px;
     text-align: left;
-    font-size: 48px;
   }
 }
 
@@ -49,17 +53,10 @@ div.eventListItem {
   .details {
     width: 75%;
     padding-left: 10px;
+    text-align: left;
 
-    h2.title {
-
-    }
-
-    div.date {
-      text-transform: capitalize;
-    }
-
-    div.speaker {
-
+    .eventInfo {
+      padding-top: 30px;
     }
   }
 
@@ -71,6 +68,37 @@ div.eventListItem {
       width: 100%;
       height: auto;
     }
+  }
+}
+
+div.eventDetail {
+  .headerImage {
+    width: 100%;
+    max-height: 500px;
+  }
+
+  .dateInfo {
+    float: left;
+    text-align: left;
+
+    div {
+      padding: 5px;
+    }
+  }
+
+  .locationInfo {
+    float: right;
+    text-align: right;
+
+    div {
+      padding: 5px
+    }
+  }
+
+  .desc {
+    padding-top: 30px;
+    text-align: center;
+    clear: both;
   }
 }
 
