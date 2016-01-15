@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from event_kiosk.kiosks.views import KioskView
+
+
 urlpatterns = [
+    url(r'^$', KioskView.as_view(), name='kiosk'),
     url(r'^admin/', admin.site.urls),
 ]

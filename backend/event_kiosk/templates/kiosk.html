@@ -1,0 +1,15 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Desjardins Lab</title>
+  </head>
+  <body>
+      <div id="root">
+          <!-- components render here -->
+      </div>
+
+      <script src="{% static "kiosks/react-with-addons.js" %}"></script>
+      <script type="text/javascript" src="{% static "kiosks/bundle.js" %}"></script>
+  </body>
+</html>

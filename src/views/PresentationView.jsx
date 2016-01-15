@@ -31,7 +31,7 @@ export class PresentationView extends React.Component {
   }
 
   componentDidMount () {
-    var presentation = fetch('./example-data.json').then(function (response) {
+    var presentation = fetch('/static/kiosks/example-data.json').then(function (response) {
       return response.json()
     }).then(function (content) {
       content.currentSlide = content.presentation.slides[0]
