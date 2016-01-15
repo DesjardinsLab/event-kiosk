@@ -33,6 +33,22 @@
             "desc": "Troisieme event.",
             "img": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0014/7108/brand.gif",
             "location": "Espace Desjardins"
+          },
+          {
+            "title": "Event3",
+            "startTime": "2016-03-12T15:34:38.440526",
+            "endTime": "2016-03-12T15:34:38.440526",
+            "desc": "Troisieme event.",
+            "img": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0014/7108/brand.gif",
+            "location": "Espace Desjardins"
+          },
+          {
+            "title": "Event3",
+            "startTime": "2016-06-12T15:34:38.440526",
+            "endTime": "2016-06-12T15:34:38.440526",
+            "desc": "Troisieme event.",
+            "img": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0014/7108/brand.gif",
+            "location": "Espace Desjardins"
           }
         ]
       },
