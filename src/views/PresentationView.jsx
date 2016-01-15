@@ -6,7 +6,7 @@ import Divider from 'material-ui/lib/divider'
 import LinearProgress from 'material-ui/lib/linear-progress'
 
 import ReactSwipe from 'react-swipe'
-import EventListView from './EventListView'
+import EventView from './EventView'
 
 const EVENT_LIST_SLIDE_TYPE = 'eventList'
 const IMAGE_SLIDE_TYPE = 'image'
@@ -22,10 +22,10 @@ export class PresentationView extends React.Component {
       navOpen: false,
       presentation: {
         transitionTime: 0,
+        pauseTimeOnTouch: 60000,
         slides: []
       },
       transitionProgress: 0,
-      pauseTimeOnTouch: 5000,
       allowInput: true
     }
   }
@@ -53,12 +53,12 @@ export class PresentationView extends React.Component {
 
   handleClick (event) {
     if (this.state.allowInput) {
-      if (this.state.activityTime) {
+      if (this.state.activityTimer) {
         clearTimeout(this.state.activityTimer)
       }
       this.setState({
         interactiveMode: true, transitionProgress: 0, start: null,
-        activityTimer: setTimeout(this.handleInactivityTimer.bind(this), this.state.pauseTimeOnTouch)
+        activityTimer: setTimeout(this.handleInactivityTimer.bind(this), this.state.presentation.pauseTimeOnTouch)
       })
     }
   }
@@ -74,18 +74,30 @@ export class PresentationView extends React.Component {
 
     if (!this.state.interactiveMode) {
       var transitionTime = this.state.presentation.transitionTime
+
       if (timeElapsed < this.state.presentation.transitionTime) {
         this.setState({transitionProgress: timeElapsed*100/this.state.presentation.transitionTime})
         requestAnimationFrame(this.handleTransitionTimer.bind(this))
-      } else {
-        this.setState({transitionProgress: 0, start: timestamp})
+      } else { // Reset progress bar to 0 and go to next slide
+        // Figure out which slide is "next"
+        var nextSlideIndex = this.state.currentSlideIndex + 1
+        if (nextSlideIndex > this.state.slides.length) { nextSlideIndex = 0 }
+
+        this.setState({
+          transitionProgress: 0,
+          start: timestamp,
+          currentSlideIndex: nextSlideIndex,
+          currentSlide: this.state.presentation.slides[nextSlideIndex]
+        })
         requestAnimationFrame(this.handleTransitionTimer.bind(this))
       }
     }
   }
 
   handleInactivityTimer () {
-    this.setState({interactiveMode: false})
+    this.setState({
+      interactiveMode: false
+    })
     requestAnimationFrame(this.handleTransitionTimer.bind(this))
   }
 
@@ -94,7 +106,6 @@ export class PresentationView extends React.Component {
   }
 
   onSlideChange (index, element) {
-    console.log(index)
     this.setState({
       currentSlide: this.state.presentation.slides[index],
       currentSlideIndex: index
@@ -118,6 +129,7 @@ export class PresentationView extends React.Component {
       reactSwipeComponent = (
         <div className='kiosk-swiper'>
           <ReactSwipe
+            continuous={this.state.slides > 2}
             onTouchStart={(event) => this.handleClick(event)}
             slideToIndex={this.state.currentSlideIndex}
             key='react-swipe'
@@ -126,17 +138,23 @@ export class PresentationView extends React.Component {
               if (item.type === EVENT_LIST_SLIDE_TYPE) {
                 return (
                   <div key={'eventListWrapper' + index}>
-                    <EventListView key={'eventList' + index} events={item.events}/>
+                    <EventView
+                      events={item.events}
+                      monthFormat={this.props.monthFormat}
+                      dateFormat={this.props.dateFormat}
+                      timeIntervalFormat={this.props.timeIntervalFormat}
+                      pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}
+                    />
                   </div>
                 )
               } else if (item.type === IMAGE_SLIDE_TYPE) {
                 return (
-                  <div >
-                    <img key={'imgWrapper' + index} className='imageSlide' src={item.img} key={'img' + index}/>
+                  <div key={'imgWrapper' + index}>
+                    <img className='imageSlide' src={item.img} />
                   </div>
                 )
               }
-            })}
+            }.bind(this))}
           </ReactSwipe>
         </div>
       )
@@ -145,7 +163,7 @@ export class PresentationView extends React.Component {
     return (
       <div className='kiosk-presentation' style={this.state.allowInput ? {} : {pointerEvents: 'none'}} onClick={(event) => this.handleClick(event)}>
         <LinearProgress
-        className={progressBarClasses}
+          className={progressBarClasses}
           mode='determinate'
           value={this.state.transitionProgress}
         />

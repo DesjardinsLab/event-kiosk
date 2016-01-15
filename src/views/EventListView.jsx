@@ -1,9 +1,6 @@
 import EventListItem from './EventListItem'
 
-const LOCALE = 'fr-CA'
-
 export class EventListView extends React.Component {
-
   constructor (props) {
     super()
 
@@ -14,7 +11,7 @@ export class EventListView extends React.Component {
 
   componentDidMount () {
     var eventsByMonth = {}
-    var monthFormat = new Intl.DateTimeFormat(LOCALE, { month: 'long', year: 'numeric' })
+    var monthFormat = this.props.monthFormat
 
     for(var i = 0; i < this.props.events.length; i++) {
       var event = this.props.events[i]
@@ -32,17 +29,34 @@ export class EventListView extends React.Component {
     this.setState({eventsByMonth})
   }
 
+  onEventClick (event) {
+    this.props.onEventSelect(event)
+  }
+
+  addFormattedDatesToEvent(event) {
+    var startDateTime = new Date(event.startTime)
+    var endDateTime = new Date(event.endTime)
+
+    event.date = this.props.dateFormat.format(startDateTime)
+
+    var startTime = this.props.timeIntervalFormat.format(startDateTime)
+    var endTime = this.props.timeIntervalFormat.format(endDateTime)
+
+    event.timeInterval = startTime + ' - ' + endTime
+  }
+
   getEvents (month) {
     return (
       this.state.eventsByMonth[month].map(function (event, index) {
+        this.addFormattedDatesToEvent(event)
         return (
           <EventListItem
             key={event.key}
             event={event}
-            LOCALE={LOCALE}
+            onEventClick={(event) => this.onEventClick(event)}
           />
         )
-      })
+      }.bind(this))
     )
   }
 

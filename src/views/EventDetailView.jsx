@@ -1,21 +1,14 @@
 import Paper from 'material-ui/lib/paper';
 
-export class EventListItem extends React.Component {
-
-  handleEventClick (event) {
-    this.props.onEventClick(event)
-  }
-
+export class EventDetailView extends React.Component {
   render () {
     var event = this.props.event
-
+    
     return (
-      <Paper
-        className='eventListItem'
-        onClick={() => this.handleEventClick(event)}
-        zDepth={3}>
-        <div className='thumbnailWrapper'>
-          <img className='thumbnail' src={event.img} />
+      <div
+        className='eventListDetail'>
+        <div className='headerImageWrapper'>
+          <img className='headerImage' src={event.img} />
         </div>
         <div className='details'>
           <h2 className='title'>{event.title}</h2>
@@ -28,9 +21,9 @@ export class EventListItem extends React.Component {
             ''
           }
         </div>
-      </Paper>
+      </div>
     )
   }
 }
 
-export default EventListItem
+export default EventDetailView
