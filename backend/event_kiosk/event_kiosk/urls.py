@@ -20,6 +20,6 @@ from event_kiosk.kiosks.views import KioskView
 
 
 urlpatterns = [
-    url(r'^$', KioskView.as_view(), name='kiosk'),
     url(r'^admin/', admin.site.urls),
+    url(r'^(?P<name>[-\w\d]+)/$', KioskView.as_view(), name='kiosk'),
 ]
