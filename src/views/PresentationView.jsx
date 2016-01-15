@@ -94,6 +94,7 @@ export class PresentationView extends React.Component {
   }
 
   onSlideChange (index, element) {
+    console.log(index)
     this.setState({
       currentSlide: this.state.presentation.slides[index],
       currentSlideIndex: index
@@ -130,8 +131,8 @@ export class PresentationView extends React.Component {
                 )
               } else if (item.type === IMAGE_SLIDE_TYPE) {
                 return (
-                  <div key={'imgWrapper' + index}>
-                    <img className='imageSlide' src={item.img} key={'img' + index}/>
+                  <div >
+                    <img key={'imgWrapper' + index} className='imageSlide' src={item.img} key={'img' + index}/>
                   </div>
                 )
               }
