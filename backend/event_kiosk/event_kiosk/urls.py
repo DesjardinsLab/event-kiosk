@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from django.conf import settings
 from event_kiosk.kiosks.views import KioskView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^(?P<name>[-\w\d]+)/$', KioskView.as_view(), name='kiosk'),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.MEDIA_ROOT,
+    }),
 ]

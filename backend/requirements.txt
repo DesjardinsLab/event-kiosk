@@ -1,3 +1,4 @@
 Django==1.9.1
 djangocms-admin-style==1.0.8
 psycopg2==2.6.1
+Pillow==3.1.0
