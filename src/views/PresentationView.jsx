@@ -1,3 +1,5 @@
+import React from 'react'
+
 import AppBar from 'material-ui/lib/app-bar'
 import LeftNav from 'material-ui/lib/left-nav'
 import MenuItem from 'material-ui/lib/menus/menu-item'
@@ -174,6 +176,9 @@ export class PresentationView extends React.Component {
                     <EventView
                       {...this.props}
                       events={item.events}
+                      monthFormat={this.props.monthFormat}
+                      dateFormat={this.props.dateFormat}
+                      timeIntervalFormat={this.props.timeIntervalFormat}
                       pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}
                     />
                   </div>
