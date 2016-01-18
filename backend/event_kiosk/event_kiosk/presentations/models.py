@@ -14,6 +14,7 @@ class Presentation(models.Model):
 class Slide(models.Model):
 
     SLIDE_TYPE_CHOICES = (\
+        ('', ''),
         ('image', _('Image')),
         ('event', _('Event')),
         ('eventList', _('Event list')),

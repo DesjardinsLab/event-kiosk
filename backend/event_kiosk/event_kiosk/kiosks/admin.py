@@ -5,9 +5,9 @@ from django.core.urlresolvers import reverse
 
 @admin.register(Kiosk)
 class KioskAdmin(admin.ModelAdmin):
-    list_display = [ 'name',  ]
+    list_display = [ 'name', 'presentation', ]
     fieldsets = (
-        (_('Information'), { 'fields' : [ 'name', ] }),
+        (_('Information'), { 'fields' : [ 'name', 'presentation' ] }),
     )
 
     def view_on_site(self, obj):

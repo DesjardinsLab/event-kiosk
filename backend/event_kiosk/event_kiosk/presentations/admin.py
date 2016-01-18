@@ -17,3 +17,8 @@ class PresentationAdmin(admin.ModelAdmin):
         (_('Information'), { 'fields' : [ 'name', 'transitionTime', 'pauseTimeOnTouch', ] }),
     )
     inlines = [SlideInlineAdmin,]
+
+    class Media:
+        js = (
+            'presentations/admin-helper.js',
+        )
