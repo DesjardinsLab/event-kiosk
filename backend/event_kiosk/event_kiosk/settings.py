@@ -25,7 +25,7 @@ ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), ]
 # Application definition
 
 INSTALLED_APPS = [
-    'djangocms_admin_style',
+    #'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'event_kiosk.kiosks',
-    'event_kiosk.events'
+    'event_kiosk.events',
+    'event_kiosk.presentations'
 ]
 
 MIDDLEWARE_CLASSES = [
