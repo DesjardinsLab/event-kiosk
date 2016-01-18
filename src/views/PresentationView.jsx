@@ -110,7 +110,14 @@ export class PresentationView extends React.Component {
       currentSlide: this.state.presentation.slides[index],
       currentSlideIndex: index
     })
+
     scroll(0,0)
+  }
+
+  handleImageScroll(event) {
+    if (this.state.currentSlide.type === IMAGE_SLIDE_TYPE) {
+      scroll(0,0)
+    }
   }
 
   render () {
@@ -131,6 +138,7 @@ export class PresentationView extends React.Component {
           <ReactSwipe
             continuous={this.state.slides > 2}
             onTouchStart={(event) => this.handleClick(event)}
+            onTouchEnd={(event) => this.handleImageScroll(event)}
             slideToIndex={this.state.currentSlideIndex}
             key='react-swipe'
             callback={(index, element) => this.onSlideChange(index, element)}>
@@ -149,9 +157,9 @@ export class PresentationView extends React.Component {
                 )
               } else if (item.type === IMAGE_SLIDE_TYPE) {
                 return (
-                  <div key={'imgWrapper' + index}>
-                    <img className='imageSlide' src={item.img} />
-                  </div>
+                  <div
+                    key={'imgWrapper' + index}
+                    style={{backgroundImage: 'url('+item.img+')', backgroundSize: 'cover', height: '100vh'}}/>
                 )
               }
             }.bind(this))}
