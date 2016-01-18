@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import PresentationView from './views/PresentationView'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
-import PresentationViewStyle from './styles/PresentationView.less'
+import PresentationViewStyle from './styles/main.less'
 
 injectTapEventPlugin()
 
