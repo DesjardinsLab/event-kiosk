@@ -54,9 +54,14 @@
         ]
       },
       {
-        "title": "Belle photo.",
+        "title": "Belle photo1.",
         "type": "image",
-        "img": "http://media.nzherald.co.nz/webcontent/image/jpg/20163/503773702_620x310.jpg"
+        "img": "http://localhost:3030/img/1.png"
+      },
+      {
+        "title": "Belle photo2.",
+        "type": "image",
+        "img": "http://localhost:3030/img/3.png"
       }
     ]
   }
