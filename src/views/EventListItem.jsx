@@ -1,4 +1,5 @@
 import Paper from 'material-ui/lib/paper';
+import React from 'react'
 
 import MapsPlace from 'material-ui/lib/svg-icons/maps/place'
 import Person from 'material-ui/lib/svg-icons/social/person'
