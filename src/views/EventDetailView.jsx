@@ -1,12 +1,10 @@
 import Paper from 'material-ui/lib/paper';
 
 export class EventDetailView extends React.Component {
-  componentDidMount () {
-    this.props.addFormattedDatesToEvent(this.props.event)
-  }
-
+  
   render () {
     var event = this.props.event
+    this.props.addFormattedDatesToEvent(event)
 
     return (
       <div className='eventDetail'>

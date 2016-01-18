@@ -133,6 +133,9 @@ export class PresentationView extends React.Component {
       currentSlideIndex: index
     })
 
+    console.log(element)
+    console.log(index)
+
     scroll(0,0)
   }
 
@@ -158,7 +161,7 @@ export class PresentationView extends React.Component {
       reactSwipeComponent = (
         <div className='kiosk-swiper'>
           <ReactSwipe
-            continuous={this.state.slides > 2}
+            continuous={this.state.slides.length > 2}
             onTouchStart={(event) => this.handleClick(event)}
             onTouchEnd={(event) => this.handleImageScroll(event)}
             slideToIndex={this.state.currentSlideIndex}
