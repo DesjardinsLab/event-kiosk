@@ -33,24 +33,13 @@ export class EventListView extends React.Component {
     this.props.onEventSelect(event)
   }
 
-  addFormattedDatesToEvent(event) {
-    var startDateTime = new Date(event.startTime)
-    var endDateTime = new Date(event.endTime)
-
-    event.date = this.props.dateFormat.format(startDateTime)
-
-    var startTime = this.props.timeIntervalFormat.format(startDateTime)
-    var endTime = this.props.timeIntervalFormat.format(endDateTime)
-
-    event.timeInterval = startTime + ' - ' + endTime
-  }
-
   getEvents (month) {
     return (
       this.state.eventsByMonth[month].map(function (event, index) {
-        this.addFormattedDatesToEvent(event)
+        this.props.addFormattedDatesToEvent(event)
         return (
           <EventListItem
+            {...this.props}
             key={event.key}
             event={event}
             onEventClick={(event) => this.onEventClick(event)}

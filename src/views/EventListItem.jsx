@@ -3,7 +3,6 @@ import Paper from 'material-ui/lib/paper';
 import MapsPlace from 'material-ui/lib/svg-icons/maps/place'
 import Person from 'material-ui/lib/svg-icons/social/person'
 
-
 export class EventListItem extends React.Component {
 
   handleEventClick (event) {
@@ -23,15 +22,15 @@ export class EventListItem extends React.Component {
         </div>
         <div className='details'>
           <h2 className='title'>{event.title}</h2>
-          {event.speaker ?
-            <div className='speaker'><Person />{event.speaker}</div> :
-            ''
-          }
           <div className='dateInfo'>
             <div className='date'>{event.date}</div>
             <div className='time'>{event.timeInterval}</div>
           </div>
           <div className='eventInfo'>
+            {event.speaker ?
+              <div className='speaker'><Person />{event.speaker}</div> :
+              ''
+            }
             <div className='locationInfo'>
               <div className='location'><MapsPlace />{event.location}</div>
             </div>

@@ -1,12 +1,15 @@
 import Paper from 'material-ui/lib/paper';
 
 export class EventDetailView extends React.Component {
+  componentDidMount () {
+    this.props.addFormattedDatesToEvent(this.props.event)
+  }
+
   render () {
     var event = this.props.event
 
     return (
-      <div
-        className='eventDetail'>
+      <div className='eventDetail'>
         <div className='headerImageWrapper'>
           <img className='headerImage' src={event.img} />
         </div>
@@ -22,7 +25,10 @@ export class EventDetailView extends React.Component {
               ''
             }
           </div>
-          <div className='desc'>{event.desc}</div>
+          <div className='desc'>{event.desc.split(/\r?\n/).map(function (item, index) {
+              return <p key={index}>{item}</p>
+            })}
+          </div>
         </div>
       </div>
     )

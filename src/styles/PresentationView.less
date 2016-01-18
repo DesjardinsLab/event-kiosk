@@ -26,7 +26,7 @@ div.eventList {
   }
 
   h2 {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   h1, h2 {
@@ -55,8 +55,16 @@ div.eventListItem {
 
   .details {
     width: 75%;
-    padding-left: 10px;
+    float: left;
     text-align: left;
+
+    h2.title {
+      display: block;
+      line-height: 1em;
+      max-height: 2em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     .eventInfo {
       padding-top: 30px;
@@ -80,28 +88,36 @@ div.eventDetail {
     max-height: 500px;
   }
 
-  .dateInfo {
-    float: left;
-    text-align: left;
+  .details {
+    margin-left: 15px;
 
-    div {
-      padding: 5px;
+    .dateInfo {
+      float: left;
+      text-align: left;
+
+      div {
+        padding: 5px;
+      }
     }
-  }
 
-  .locationInfo {
-    float: right;
-    text-align: right;
+    .locationInfo {
+      float: right;
+      text-align: right;
 
-    div {
-      padding: 5px
+      div {
+        padding: 5px
+      }
     }
-  }
 
-  .desc {
-    padding-top: 30px;
-    text-align: center;
-    clear: both;
+    .desc {
+      padding-top: 30px;
+      clear: both;
+
+      p {
+        text-align: justify;
+        margin-top: 1em;
+      }
+    }
   }
 }
 

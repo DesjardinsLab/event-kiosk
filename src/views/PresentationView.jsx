@@ -7,8 +7,12 @@ import LinearProgress from 'material-ui/lib/linear-progress'
 
 import ReactSwipe from 'react-swipe'
 import EventView from './EventView'
+import EventDetailView from './EventDetailView'
+
+import ObjectHash from 'object-hash'
 
 const EVENT_LIST_SLIDE_TYPE = 'eventList'
+const EVENT_SLIDE_TYPE = 'event'
 const IMAGE_SLIDE_TYPE = 'image'
 
 export class PresentationView extends React.Component {
@@ -31,9 +35,28 @@ export class PresentationView extends React.Component {
   }
 
   componentDidMount () {
-    var presentation = fetch('./example-data.json').then(function (response) {
+    this.getPresentation()
+    this.setState({reloadInterval: setInterval(this.getPresentation.bind(this), 60000)})
+  }
+
+  componentWillUnmount () {
+    clearTimeout(this.state.activityTimer)
+    clearInterval(this.state.reloadInterval)
+  }
+
+  getPresentation () {
+    var url = typeof PRESENTATION_SOURCE !== 'undefined' ? PRESENTATION_SOURCE : 'example-data.json'
+
+    fetch(url).then(function (response) {
       return response.json()
     }).then(function (content) {
+      // If data changed, reload page.
+      var hashedData = ObjectHash(content, {algorithm: 'md5'})
+      if (this.state.dataHash && hashedData !== this.state.dataHash) {
+        location.reload()
+      }
+      this.setState({ dataHash: hashedData })
+
       content.currentSlide = content.presentation.slides[0]
       content.currentSlideIndex = 0
       content.slides = content.presentation.slides
@@ -44,11 +67,10 @@ export class PresentationView extends React.Component {
       if (this.state.presentation.transitionTime > 0) {
         requestAnimationFrame(this.handleTransitionTimer.bind(this))
       }
-    }.bind(this))
-  }
-
-  componentWillUnmount () {
-    clearTimeout(this.state.activityTimer)
+    }.bind(this)).catch(function (error) {
+      console.log(error)
+      console.log('Error while fetching data. Will try again in a minute.')
+    })
   }
 
   handleClick (event) {
@@ -147,19 +169,26 @@ export class PresentationView extends React.Component {
                 return (
                   <div key={'eventListWrapper' + index}>
                     <EventView
+                      {...this.props}
                       events={item.events}
-                      monthFormat={this.props.monthFormat}
-                      dateFormat={this.props.dateFormat}
-                      timeIntervalFormat={this.props.timeIntervalFormat}
                       pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}
                     />
                   </div>
                 )
               } else if (item.type === IMAGE_SLIDE_TYPE) {
                 return (
-                  <div
-                    key={'imgWrapper' + index}
-                    style={{backgroundImage: 'url('+item.img+')', backgroundSize: 'cover', height: '100vh'}}/>
+                  <div key={'imgWrapper' + index} style={{backgroundImage: 'url('+item.img+')', backgroundSize: 'cover', height: '100vh'}}/>
+                )
+              } else if (item.type === EVENT_SLIDE_TYPE) {
+                return (
+                  <div key={'eventWrapper' + index}>
+                    <EventView
+                      {...this.props}
+                      event={item.event}
+                      isStatic={true}
+                      pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}
+                    />
+                  </div>
                 )
               }
             }.bind(this))}

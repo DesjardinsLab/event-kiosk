@@ -11,9 +11,22 @@ export class EventView extends React.Component {
     super()
 
     this.state = {
+      isStatic: false,
       detailMode: false,
       selectedEvent: null
     }
+  }
+
+  addFormattedDatesToEvent (event) {
+    var startDateTime = new Date(event.startTime)
+    var endDateTime = new Date(event.endTime)
+
+    event.date = this.props.dateFormat.format(startDateTime)
+
+    var startTime = this.props.timeIntervalFormat.format(startDateTime)
+    var endTime = this.props.timeIntervalFormat.format(endDateTime)
+
+    event.timeInterval = startTime + ' - ' + endTime
   }
 
   onEventSelect (event) {
@@ -35,27 +48,26 @@ export class EventView extends React.Component {
     // returns the list component or the detail component
     var elementToRender = <div />
 
-    if (this.state.detailMode) {
+    if (this.state.detailMode || this.props.isStatic) {
       elementToRender = (
         <div>
-          <AppBar
+          {!this.props.isStatic ? <AppBar
             title={this.state.selectedEvent.title}
             iconElementLeft={<IconButton onClick={() => this.returnToListView()}><NavigationBack/></IconButton>}
             zDepth={0}
-          />
+          /> : ''}
           <EventDetailView
-            event={this.state.selectedEvent}
+            event={this.props.isStatic ? this.props.event : this.state.selectedEvent}
+            addFormattedDatesToEvent={(event) => this.addFormattedDatesToEvent(event)}
           />
         </div>
       )
     } else {
       elementToRender = (
         <EventListView
-          events={this.props.events}
-          monthFormat={this.props.monthFormat}
-          dateFormat={this.props.dateFormat}
-          timeIntervalFormat={this.props.timeIntervalFormat}
+          {...this.props}
           onEventSelect={(event) => this.onEventSelect(event)}
+          addFormattedDatesToEvent={(event) => this.addFormattedDatesToEvent(event)}
         />
       )
     }
