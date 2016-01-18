@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "material-ui": "^0.14.2",
+    "object-hash": "^1.1.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-intl": "^1.2.2",
