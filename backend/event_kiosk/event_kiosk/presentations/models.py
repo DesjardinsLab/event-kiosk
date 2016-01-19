@@ -35,7 +35,10 @@ class Slide(models.Model):
             }
 
         elif (self.type == 'event'):
-            return self.event.to_json()
+            return {
+                'type': 'event',
+                'event': self.event.to_json()
+            }
 
         elif (self.type == 'eventList'):
             events = Event.objects.filter(date__gte=datetime.today())
