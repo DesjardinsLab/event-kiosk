@@ -17,8 +17,9 @@ const EVENT_LIST_SLIDE_TYPE = 'eventList'
 const EVENT_SLIDE_TYPE = 'event'
 const IMAGE_SLIDE_TYPE = 'image'
 
-export class PresentationView extends React.Component {
+const LINEAR_PROGRESS_REFRESH_RATE = 300;
 
+export class PresentationView extends React.Component {
   constructor (props) {
     super()
 
@@ -44,6 +45,7 @@ export class PresentationView extends React.Component {
   componentWillUnmount () {
     clearTimeout(this.state.activityTimer)
     clearInterval(this.state.reloadInterval)
+    clearInterval(this.state.progressRefreshInterval)
   }
 
   getPresentation () {
@@ -67,7 +69,7 @@ export class PresentationView extends React.Component {
 
       // Start slideshow timer when view is mounted
       if (this.state.presentation.transitionTime > 0) {
-        requestAnimationFrame(this.handleTransitionTimer.bind(this))
+        this.setState({ progressRefreshInterval: setInterval(this.handleTransitionTimer.bind(this), LINEAR_PROGRESS_REFRESH_RATE) })
       }
     }.bind(this)).catch(function (error) {
       console.log(error)
@@ -77,9 +79,8 @@ export class PresentationView extends React.Component {
 
   handleClick (event) {
     if (this.state.allowInput) {
-      if (this.state.activityTimer) {
-        clearTimeout(this.state.activityTimer)
-      }
+      if (this.state.activityTimer) { clearTimeout(this.state.activityTimer) }
+      if (this.state.progressRefreshInterval) { clearInterval(this.state.progressRefreshInterval) }
       this.setState({
         interactiveMode: true, transitionProgress: 0, start: null,
         activityTimer: setTimeout(this.handleInactivityTimer.bind(this), this.state.presentation.pauseTimeOnTouch)
@@ -87,21 +88,10 @@ export class PresentationView extends React.Component {
     }
   }
 
-  handleTransitionTimer (timestamp) {
-    var timeElapsed = 0
-
-    if (!this.state.start) {
-      this.setState({start: timestamp})
-    } else {
-      timeElapsed = timestamp - this.state.start
-    }
-
+  handleTransitionTimer () {
     if (!this.state.interactiveMode) {
-      var transitionTime = this.state.presentation.transitionTime
-
-      if (timeElapsed < this.state.presentation.transitionTime) {
-        this.setState({transitionProgress: timeElapsed*100/this.state.presentation.transitionTime})
-        requestAnimationFrame(this.handleTransitionTimer.bind(this))
+      if (this.state.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE < this.state.presentation.transitionTime) {
+        this.setState({transitionProgress: this.state.transitionProgress ? this.state.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE : LINEAR_PROGRESS_REFRESH_RATE})
       } else { // Reset progress bar to 0 and go to next slide
         // Figure out which slide is "next"
         var nextSlideIndex = this.state.currentSlideIndex + 1
@@ -109,11 +99,9 @@ export class PresentationView extends React.Component {
 
         this.setState({
           transitionProgress: 0,
-          start: timestamp,
           currentSlideIndex: nextSlideIndex,
           currentSlide: this.state.presentation.slides[nextSlideIndex]
         })
-        requestAnimationFrame(this.handleTransitionTimer.bind(this))
       }
     }
   }
@@ -122,7 +110,7 @@ export class PresentationView extends React.Component {
     this.setState({
       interactiveMode: false
     })
-    requestAnimationFrame(this.handleTransitionTimer.bind(this))
+    this.setState({ progressRefreshInterval: setInterval(this.handleTransitionTimer.bind(this), LINEAR_PROGRESS_REFRESH_RATE) })
   }
 
   toggleNav (event) {
@@ -135,10 +123,11 @@ export class PresentationView extends React.Component {
       currentSlideIndex: index
     })
 
-    console.log(element)
-    console.log(index)
-
     scroll(0,0)
+  }
+
+  hideAppBar (hide) {
+    this.setState({ hideAppBar: hide })
   }
 
   handleImageScroll(event) {
@@ -178,6 +167,7 @@ export class PresentationView extends React.Component {
                       events={item.events}
                       monthFormat={this.props.monthFormat}
                       dateFormat={this.props.dateFormat}
+                      hideAppBar={(hide) => this.hideAppBar(hide)}
                       timeIntervalFormat={this.props.timeIntervalFormat}
                       pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}
                     />
@@ -194,6 +184,7 @@ export class PresentationView extends React.Component {
                       {...this.props}
                       event={item.event}
                       isStatic={true}
+                      hideAppBar={(hide) => this.hideAppBar(hide)}
                       pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}
                     />
                   </div>
@@ -210,17 +201,17 @@ export class PresentationView extends React.Component {
         <LinearProgress
           className={progressBarClasses}
           mode='determinate'
+          max={this.state.presentation.transitionTime}
           value={this.state.transitionProgress}
         />
         <AppBar
+          className='appBar'
           title='Événement'
           onLeftIconButtonTouchTap={(event) => this.toggleNav(event)}
           zDepth={0}
-          style={{
-            opacity: (this.state.interactiveMode ? 1 : 0),
-            transition: 'opacity .75s ease-in-out',
+          style={this.state.hideAppBar ? {
             display: 'none'
-          }}
+          } : {}}
         />
         <LeftNav
           open={this.state.navOpen}

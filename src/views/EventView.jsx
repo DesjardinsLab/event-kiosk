@@ -36,6 +36,8 @@ export class EventView extends React.Component {
   }
 
   onEventSelect (event) {
+    this.props.hideAppBar(true)
+
     this.setState({
       detailMode: true,
       selectedEvent: event,
@@ -44,6 +46,8 @@ export class EventView extends React.Component {
   }
 
   returnToListView () {
+    this.props.hideAppBar(false)
+
     this.setState({
       detailMode: false,
       selectedEvent: null
@@ -58,6 +62,7 @@ export class EventView extends React.Component {
       elementToRender = (
         <div>
           {!this.props.isStatic ? <AppBar
+            className='appBar'
             title={this.state.selectedEvent.title}
             iconElementLeft={<IconButton onClick={() => this.returnToListView()}><NavigationBack/></IconButton>}
             zDepth={0}

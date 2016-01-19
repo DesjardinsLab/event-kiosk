@@ -10,8 +10,29 @@ body {
   text-align: center;
 }
 
-.progressBar .empty {
-  transition: none !important;
+.progressBar {
+  position: absolute !important;
+  top: 0;
+  height: 2px !important;
+  z-index: 100000 !important;
+  background-color: @desj-green !important;
+
+  div {
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(255, 0, 0, 0.9)) !important;
+  }
+
+  .empty {
+    transition: none !important;
+  }
+}
+
+.appBar {
+  text-align: left;
+  background-color: @desj-green !important;
+
+  h1 {
+    font-size: 32px !important;
+  }
 }
 
 div.date {
@@ -42,8 +63,8 @@ div.eventList {
   }
 
   div {
-    &:nth-child(5n+1) { h1.month { background-color: @desj-green; } }
-    &:nth-child(5n+2) { h1.month { background-color: #b71c1c; } }
+    &:nth-child(5n+1) { h1.month { background-color: #26A69A; } }
+    &:nth-child(5n+2) { h1.month { background-color: @desj-green; } }
     &:nth-child(5n+3) { h1.month { background-color: #FF6F00; } }
     &:nth-child(5n+4) { h1.month { background-color: #01579B; } }
     &:nth-child(5n+5) { h1.month { background-color: #263238; } }
@@ -104,41 +125,44 @@ div.eventCard {
 }
 
 div.eventDetail {
+
   .headerImage {
     width: 100%;
     max-height: 500px;
   }
 
   .details {
-    margin: 10px;
+    margin: 10px auto;
+    padding: 30px 0px;
+    display: flex;
 
-    .detailsHeader {
-      width: 100%;
-      padding: 30px 0px;
-      display: flex;
-      justify-content: space-between;
+    .timeLocationInfo {
+      width: 50%;
+      font-size: 42px;
 
-      .timeLocationInfo {
-        width: 50%;
-        font-size: 42px;
-
-        div {
-          padding: 5px
-        }
+      div {
+        padding: 5px
       }
+    }
 
-      .QRCodeWrapper {
-        width: 25%;
-      }
+    .dateInfo {
+      align-self: flex-end;
+    }
+
+    .QRCodeWrapper {
+      width: 25%;
+      align-self: flex-end;
     }
   }
 
   .desc {
+    width: 85%;
+    margin: auto;
     padding: 0px 50px;
+    text-align: justify;
 
     p {
       font-size: 30px;
-      text-align: justify;
       margin-top: 1em;
     }
   }
@@ -146,7 +170,6 @@ div.eventDetail {
 
 .dateInfo {
   width: 25%;
-  float: left;
 
   .dateDisplay {
 

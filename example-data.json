@@ -1,7 +1,7 @@
 {
   "presentation": {
-    "transitionTime": 100000,
-    "pauseTimeOnTouch": 5000,
+    "transitionTime": 10000,
+    "pauseTimeOnTouch": 30000,
     "slides": [
       {
         "title": "Événements",
