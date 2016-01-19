@@ -1,7 +1,7 @@
 {
   "presentation": {
-    "transitionTime": 2000,
-    "pauseTimeOnTouch": 10000,
+    "transitionTime": 100000,
+    "pauseTimeOnTouch": 5000,
     "slides": [
       {
         "title": "Événements",
@@ -14,8 +14,9 @@
             "startTime": "2016-01-21T16:45:00",
             "endTime": "2016-01-21T18:15:00",
             "desc": "15 nouvelles équipes se sont jointes au programme i3@DESJARDINS le printemps dernier. Au terme d’un processus rigoureux et créatif de six mois, ces équipes viennent d’accoucher de prototypes novateurs centrés sur les besoins de nos membres et clients ainsi que nos priorités stratégiques.\nVenez en grand nombre écouter nos i3nnovateurs parler de leur idée, de la démarche i3@DESJARDINS et de l’importance de l’innovation pour mieux faire vivre la Promesse Desjardins.\nL'équipe du Desjardins Lab profitera de cette occasion pour lancer officiellement la programmation des conférences et des ateliers de l'hiver 2016.\nINSCRIVEZ-VOUS ICI",
-            "img": "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0014/7108/brand.gif",
-            "location": "Espace Desjardins"
+            "img": "http://www.hdwallpapersnew.net/wp-content/uploads/2015/11/stunning-sunset-above-the-ocean-hd-widescreen-new-wallpaper-desktop-background-images-free.jpg",
+            "location": "Espace Desjardins",
+            "url": "https://www.desjardins.com/"
           },
           {
             "title": "Event2",
@@ -51,6 +52,26 @@
             "location": "Espace Desjardins"
           }
         ]
+      },
+      {
+        "event": {
+          "title": "Présentation des idées i3@DESJARDINS (mai 2015)",
+          "startTime": "2016-01-21T16:45:00",
+          "endTime": "2016-01-21T18:15:00",
+          "desc": "15 nouvelles équipes se sont jointes au programme i3@DESJARDINS le printemps dernier. Au terme d’un processus rigoureux et créatif de six mois, ces équipes viennent d’accoucher de prototypes novateurs centrés sur les besoins de nos membres et clients ainsi que nos priorités stratégiques.\nVenez en grand nombre écouter nos i3nnovateurs parler de leur idée, de la démarche i3@DESJARDINS et de l’importance de l’innovation pour mieux faire vivre la Promesse Desjardins.\nL'équipe du Desjardins Lab profitera de cette occasion pour lancer officiellement la programmation des conférences et des ateliers de l'hiver 2016.\nINSCRIVEZ-VOUS ICI",
+          "img": "http://www.hdwallpapersnew.net/wp-content/uploads/2015/11/stunning-sunset-above-the-ocean-hd-widescreen-new-wallpaper-desktop-background-images-free.jpg",
+          "location": "Espace Desjardins",
+          "url": "https://www.desjardins.com/"
+        },
+        "type": "event"
+      },
+      {
+        "type": "image",
+        "img": "./img/1.png"
+      },
+      {
+        "type": "image",
+        "img": "./img/3.png"
       }
     ]
   }

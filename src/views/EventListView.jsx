@@ -35,19 +35,28 @@ export class EventListView extends React.Component {
   }
 
   getEvents (month) {
-    return (
-      this.state.eventsByMonth[month].map(function (event, index) {
-        this.props.addFormattedDatesToEvent(event)
-        return (
-          <EventListItem
-            {...this.props}
-            key={event.key}
-            event={event}
-            onEventClick={(event) => this.onEventClick(event)}
-          />
-        )
-      }.bind(this))
-    )
+    var events = []
+    var currentDay = null;
+
+    for (var i = 0; i < this.state.eventsByMonth[month].length; i++) {
+      var event = this.state.eventsByMonth[month][i]
+      this.props.addFormattedDatesToEvent(event)
+
+      var eventElement = (
+        <EventListItem
+          {...this.props}
+          key={event.key}
+          event={event}
+          hideDate={currentDay === event.date}
+          onEventClick={(event) => this.onEventClick(event)}
+        />
+      )
+
+      currentDay = event.date
+      events.push(eventElement)
+    }
+
+    return events
   }
 
   render () {
