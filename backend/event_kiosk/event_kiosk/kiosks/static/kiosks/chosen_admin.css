@@ -1,0 +1,33 @@
+.form-row, .related-widget-wrapper {
+  overflow: visible;
+}
+
+a.chosen-single {
+  box-shadow: none;
+  border-radius: 0px;
+  background: white;
+  background-image: none;
+
+}
+a.chosen-single span{
+  line-height: 18px !important;
+}
+
+.vTextField{
+  width: 24em;
+}
+
+a.chosen-single, .chosen-container.chosen-container-single, .chosen-container-single.chosen-single{
+  position: absolute;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+  background: white !important;
+  background-image: none !important;
+  font-size: 11px !important;
+  height: 18px !important;
+  padding-left: 2px !important;
+}
+
+.chosen-container-single .chosen-single div b {
+  background-position: 0px 0px;
+}
