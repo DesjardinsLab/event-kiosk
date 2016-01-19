@@ -35,11 +35,18 @@ div.eventList {
   }
 
   h1.month {
-    background: url("http://enduranceworks.net/wordpress/wp-content/uploads/2015/02/boulder-winter-lake.jpg?32b21a");
-    padding: 2em;
+    font-size: 60px;
+    padding: 0.5em 0.5em 1.5em;
     text-align: left;
     color: #FFFFFF;
-    text-shadow: 1px 1px #000000;
+  }
+
+  div {
+    &:nth-child(5n+1) { & h1.month { background-color: @desj-green; } }
+    &:nth-child(5n+2) { & h1.month { background-color: #b71c1c; } }
+    &:nth-child(5n+3) { & h1.month { background-color: #FF6F00; } }
+    &:nth-child(5n+4) { & h1.month { background-color: #01579B; } }
+    &:nth-child(5n+5) { & h1.month { background-color: #263238; } }
   }
 }
 
@@ -90,7 +97,7 @@ div.eventCard {
       }
 
       .speaker, .location {
-        font-size: 24px;
+        font-size: 24px !important;
       }
     }
   }
