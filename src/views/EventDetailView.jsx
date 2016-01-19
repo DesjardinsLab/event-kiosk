@@ -1,5 +1,7 @@
-import Paper from 'material-ui/lib/paper';
+import Paper from 'material-ui/lib/paper'
 import React from 'react'
+
+import QRCode from 'qrcode.react'
 
 export class EventDetailView extends React.Component {
 
@@ -13,16 +15,24 @@ export class EventDetailView extends React.Component {
           <img className='headerImage' src={event.img} />
         </div>
         <div className='details'>
-          <div className='dateInfo'>
-            <div className='date'>{event.date}</div>
-            <div className='time'>{event.timeInterval}</div>
-          </div>
-          <div className='locationInfo'>
-            <div className='location'>{event.location}</div>
-            {event.speaker ?
-              <div className='speaker'>{event.speaker}</div> :
-              ''
-            }
+          <div className='detailsHeader'>
+            <div className='dateInfo'>
+              <div className='dateDisplay'>
+                <div className='month'>{event.shortMonth}</div>
+                <div className='date'>{event.shortDate}</div>
+              </div>
+            </div>
+            <div className='timeLocationInfo'>
+              <div className='time'>{event.timeInterval}</div>
+              <div className='location'>{event.location}</div>
+              {event.speaker ?
+                <div className='speaker'>{event.speaker}</div> :
+                ''
+              }
+            </div>
+            <div className='QRCodeWrapper'>
+              {event.url ? <QRCode className='QRCode' value={event.url} /> : <div className='QRCode' />}
+            </div>
           </div>
           <div className='desc'>{event.desc.split(/\r?\n/).map(function (item, index) {
               return <p key={index}>{item}</p>

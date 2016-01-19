@@ -29,6 +29,10 @@ export class EventView extends React.Component {
     var endTime = this.props.timeIntervalFormat.format(endDateTime)
 
     event.timeInterval = startTime + ' - ' + endTime
+
+    event.shortMonth = this.props.shortMonthFormat.format(startDateTime)
+    event.shortDate = startDateTime.getDate()
+    event.day = this.props.dayFormat.format(startDateTime)
   }
 
   onEventSelect (event) {
@@ -59,6 +63,7 @@ export class EventView extends React.Component {
             zDepth={0}
           /> : ''}
           <EventDetailView
+            {...this.props}
             event={this.props.isStatic ? this.props.event : this.state.selectedEvent}
             addFormattedDatesToEvent={(event) => this.addFormattedDatesToEvent(event)}
           />

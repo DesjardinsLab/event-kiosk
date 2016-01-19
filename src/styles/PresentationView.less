@@ -1,7 +1,7 @@
 body {
   height: 100%;
   margin: 0;
-  background-color: #EEEEEE !important;
+  background-color: #FFFFFF !important;
   font-family: Calibri, Arial;
   font-size: 20px;
 }
@@ -31,53 +31,74 @@ div.eventList {
 
   h1, h2 {
     font-weight: bold;
-    padding: 15px 5px;
     text-transform: uppercase;
   }
 
   h1.month {
-    padding-left: 15px;
+    font-size: 60px;
+    padding: 0.5em 0.5em 1.5em;
     text-align: left;
+    color: #FFFFFF;
+  }
+
+  div {
+    &:nth-child(5n+1) { h1.month { background-color: @desj-green; } }
+    &:nth-child(5n+2) { h1.month { background-color: #b71c1c; } }
+    &:nth-child(5n+3) { h1.month { background-color: #FF6F00; } }
+    &:nth-child(5n+4) { h1.month { background-color: #01579B; } }
+    &:nth-child(5n+5) { h1.month { background-color: #263238; } }
   }
 }
 
-div.eventsByMonth {
-  margin-bottom: 50px;
-}
 
-div.eventListItem {
-  text-align: left;
-  text-overflow: ellipsis;
-  position: relative;
-  margin: 15px;
-  padding: 30px;
-  overflow: auto;
+div.eventCard {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
-  .details {
-    width: 75%;
-    float: left;
-    text-align: left;
-
-    h2.title {
-      display: block;
-      line-height: 1em;
-      max-height: 2em;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .eventInfo {
-      padding-top: 30px;
-    }
-  }
-
-  .thumbnailWrapper {
+  div.dateInfo {
     width: 25%;
-    float:left;
+    padding: 30px;
+  }
 
-    img {
-      width: 100%;
-      height: auto;
+  div.eventListItem {
+    width: 75%;
+    text-align: left;
+    text-overflow: ellipsis;
+    position: relative;
+    padding: 30px;
+    margin-right: 10px;
+    overflow: hidden;
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px black;
+      float: left;
+      text-align: left;
+
+      h2.title {
+        display: block;
+        line-height: 1em;
+        max-height: 2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .time {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .eventInfo {
+        padding-top: 30px;
+      }
+
+      .speaker, .location {
+        font-size: 24px !important;
+      }
     }
   }
 }
@@ -89,34 +110,63 @@ div.eventDetail {
   }
 
   .details {
-    margin-left: 15px;
+    margin: 10px;
 
-    .dateInfo {
-      float: left;
-      text-align: left;
+    .detailsHeader {
+      width: 100%;
+      padding: 30px 0px;
+      display: flex;
+      justify-content: space-between;
 
-      div {
-        padding: 5px;
+      .timeLocationInfo {
+        width: 50%;
+        font-size: 42px;
+
+        div {
+          padding: 5px
+        }
+      }
+
+      .QRCodeWrapper {
+        width: 25%;
       }
     }
+  }
 
-    .locationInfo {
-      float: right;
-      text-align: right;
+  .desc {
+    padding: 0px 50px;
 
-      div {
-        padding: 5px
-      }
+    p {
+      font-size: 30px;
+      text-align: justify;
+      margin-top: 1em;
+    }
+  }
+}
+
+.dateInfo {
+  width: 25%;
+  float: left;
+
+  .dateDisplay {
+
+    .month {
+      font-size: 38px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      text-transform: capitalize;
     }
 
-    .desc {
-      padding-top: 30px;
-      clear: both;
+    .date {
+      font-weight: bold;
+      font-size: 90px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
 
-      p {
-        text-align: justify;
-        margin-top: 1em;
-      }
+    .day {
+      font-size: 32px;
+      text-transform: capitalize;
     }
   }
 }
