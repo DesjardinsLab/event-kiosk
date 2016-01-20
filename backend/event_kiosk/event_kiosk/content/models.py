@@ -10,6 +10,16 @@ class Section(models.Model):
     title = models.CharField(_('title'), max_length=60, help_text=_('Name for this section. Will be shown in menu.'))
     kiosk = models.ForeignKey(to=Kiosk, related_name='sections', null=True)
 
+    def to_json(self):
+        pages = []
+        for page in self.pages.all():
+            pages.append(page.to_json())
+
+        return {
+            'title': self.title,
+            'pages': pages
+        }
+
     def __str__(self):
         if (self.kiosk):
             return "%s / %s" % (self.kiosk.name.capitalize(), self.title)
@@ -25,6 +35,13 @@ class Page(models.Model):
 
     def kiosk(self):
         return self.section.kiosk
+
+    def to_json(self):
+        return {
+            'title': self.title,
+            'icon': self.icon.url if self.icon else False,
+            'html': self.html
+        }
 
     def __str__(self):
         return self.title

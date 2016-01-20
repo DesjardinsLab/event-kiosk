@@ -25,6 +25,10 @@ def kiosk_data(request, **kwargs):
 
     # construct the JSON representation of the kiosk
 
+    sections = []
+    for section in kiosk.sections.all():
+        sections.append(section.to_json())
+
     slides = []
     for slide in kiosk.presentation.slides.all():
         slides.append(slide.to_json())
@@ -37,7 +41,9 @@ def kiosk_data(request, **kwargs):
 
     kiosk = {
         'appVersion': os.environ.get('APP_VERSION'),
-        'presentation': presentation
+        'presentation': presentation,
+        'sections': sections
+
     }
 
     return JsonResponse(kiosk)
