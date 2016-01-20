@@ -21,6 +21,8 @@ from event_kiosk.kiosks.views import kiosk_data
 
 from django.views import static
 
+admin.site.site_header = 'Kiosk administration'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^(?P<name>[-\w\d]+)/data/$', kiosk_data, name='kiosk_data'),
