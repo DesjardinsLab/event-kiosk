@@ -30,7 +30,7 @@ class Page(models.Model):
         return self.title
 
     class Meta:
-        ordering = ["weight"]
+        ordering = ["section__kiosk", "section", "weight"]
 
 
 class WebAsset(models.Model):
