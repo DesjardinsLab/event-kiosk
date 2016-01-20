@@ -68,7 +68,7 @@ export class PresentationView extends React.Component {
       this.setState(content)
 
       // Start slideshow timer when view is mounted
-      if (this.state.presentation.transitionTime > 0) {
+      if (this.state.presentation.transitionTime > 0 && !this.state.progressRefreshInterval) {
         this.setState({ progressRefreshInterval: setInterval(this.handleTransitionTimer.bind(this), LINEAR_PROGRESS_REFRESH_RATE) })
       }
     }.bind(this)).catch(function (error) {
@@ -80,7 +80,9 @@ export class PresentationView extends React.Component {
   handleClick (event) {
     if (this.state.allowInput) {
       if (this.state.activityTimer) { clearTimeout(this.state.activityTimer) }
-      if (this.state.progressRefreshInterval) { clearInterval(this.state.progressRefreshInterval) }
+      if (this.state.progressRefreshInterval) {
+        clearInterval(this.state.progressRefreshInterval)
+      }
       this.setState({
         interactiveMode: true, transitionProgress: 0, start: null,
         activityTimer: setTimeout(this.handleInactivityTimer.bind(this), this.state.presentation.pauseTimeOnTouch)
@@ -206,12 +208,19 @@ export class PresentationView extends React.Component {
         />
         <AppBar
           className='appBar'
-          title='Événement'
+          title={this.state.currentSlide ? this.state.currentSlide.title : ''}
           onLeftIconButtonTouchTap={(event) => this.toggleNav(event)}
           zDepth={0}
-          style={this.state.hideAppBar ? {
+          style={this.state.hideAppBar ?
+          {
             display: 'none'
-          } : {}}
+          } : (this.state.currentSlide && !this.state.interactiveMode ? this.state.currentSlide.type === IMAGE_SLIDE_TYPE : false) ? {
+           opacity: 0,
+           pointerEvents: 'none'
+          } : {
+            opacity: 1,
+            pointerEvents: 'auto'
+          }}
         />
         <LeftNav
           open={this.state.navOpen}

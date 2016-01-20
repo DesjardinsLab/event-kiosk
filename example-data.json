@@ -1,7 +1,7 @@
 {
   "presentation": {
     "transitionTime": 10000,
-    "pauseTimeOnTouch": 30000,
+    "pauseTimeOnTouch": 5000,
     "slides": [
       {
         "title": "Événements",
@@ -54,6 +54,7 @@
         ]
       },
       {
+        "title": "Présentation des idées i3@DESJARDINS (mai 2015)",
         "event": {
           "title": "Présentation des idées i3@DESJARDINS (mai 2015)",
           "startTime": "2016-01-21T16:45:00",
@@ -66,10 +67,12 @@
         "type": "event"
       },
       {
+        "title": "belle image",
         "type": "image",
         "img": "./img/1.png"
       },
       {
+        "title": "belle image",
         "type": "image",
         "img": "./img/3.png"
       }
