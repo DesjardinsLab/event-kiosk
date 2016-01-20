@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import PresentationView from './views/PresentationView'
+import KioskView from './views/KioskView'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import PresentationViewStyle from './styles/main.less'
@@ -12,7 +12,7 @@ const LOCALE = 'fr-CA'
 
 // Render the React application to the DOM
 ReactDOM.render(
-  <PresentationView
+  <KioskView
     shortMonthFormat={new Intl.DateTimeFormat(LOCALE, { month: 'short' })}
     monthFormat={new Intl.DateTimeFormat(LOCALE, { month: 'long', year: 'numeric' })}
     dateFormat={new Intl.DateTimeFormat(LOCALE, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}

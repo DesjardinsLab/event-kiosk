@@ -5,7 +5,7 @@ import LeftNav from 'material-ui/lib/left-nav'
 import MenuItem from 'material-ui/lib/menus/menu-item'
 import Divider from 'material-ui/lib/divider'
 
-import Home from 'material-ui/lib/svg-icons/actions/home'
+import Home from 'material-ui/lib/svg-icons/action/home'
 
 import LinearProgress from 'material-ui/lib/linear-progress'
 
@@ -15,7 +15,7 @@ import Isvg from 'react-inlinesvg'
 
 const RELOAD_INTERVAL = 60000
 
-export class PresentationView extends React.Component {
+export class KioskView extends React.Component {
   constructor (props) {
     super()
 
@@ -74,9 +74,14 @@ export class PresentationView extends React.Component {
     this.setState({ hideAppBar: hide })
   }
 
-  handleInteraction (event) {
+  onInteraction (event) {
+    if (this.state.pauseTimer) {
+      clearTimer(this.state.pauseTimer)
+    }
+
     this.setState({
-      interactiveMode: true
+      interactiveMode: true,
+      pauseTimer: setTimer(this.handleInactivityTimer.bind(this), this.state.presentation.pausetimeOnTouch)
     })
   }
 
@@ -88,36 +93,40 @@ export class PresentationView extends React.Component {
   }
 
   createLeftNav () {
-    <LeftNav
-      open={this.state.navOpen}
-      onRequestChange={navOpen => this.setState({navOpen})}
-      docked={false}
-    >
-      <MenuItem value='home' primaryText="Accueil">
-        <Home />
-      </MenuItem>
-      <Divider />
-      {sections.map(function (section, sectionIndex) {
-        return (
-          <MenuItem
-            key={sectionIndex}
-            disabled={true}
-            primaryText={section.title}/>
-          section.pages.map(function (page, pageIndex) {
-            <MenuItem
-              key={pageIndex}
-              value={sectionIndex +  '-' + pageIndex}>
-              <Isvg src={page.icon} />{page.title}
-            </MenuItem>
-          })
-          <Divider />
-        )
-      })}
-    </LeftNav>
+    return (
+      <LeftNav
+        open={this.state.navOpen}
+        onRequestChange={navOpen => this.setState({navOpen})}
+        docked={false}>
+        <MenuItem value='home' primaryText="Accueil">
+          <Home />
+        </MenuItem>
+        <Divider />
+        {sections.map(function (section, sectionIndex) {
+          return (
+            <div className='menuSection'>
+              <MenuItem
+                key={sectionIndex}
+                disabled={true}
+                primaryText={section.title}/>
+                {section.pages.map(function (page, pageIndex) {
+                  return (
+                    <MenuItem
+                      key={pageIndex}
+                      value={sectionIndex + '-' + pageIndex}>
+                      <Isvg src={page.icon} />{page.title}
+                    </MenuItem>
+                  )
+                })}
+              <Divider />
+            </div>
+          )
+        })}
+      </LeftNav>
+    )
   }
 
-  // these functions should be passed to children to access components from the kiosk.
-
+  // these functions should be passed to children to influence components from the kiosk.
   setProgressBarValue (value) {
     this.setState({ transitionProgress: value })
   }
@@ -140,13 +149,12 @@ export class PresentationView extends React.Component {
     }
 
     return (
-      <div className='kiosk' style={this.state.allowInput ? {} : {pointerEvents: 'none'}} onClick={(event) => this.handleInteraction(event)}>
+      <div className='kiosk' style={this.state.allowInput ? {} : {pointerEvents: 'none'}} onClick={(event) => this.onInteraction(event)}>
         <LinearProgress
           className={progressBarClasses}
           mode='determinate'
           max={this.state.presentation.transitionTime}
-          value={this.state.transitionProgress}
-        />
+          value={this.state.transitionProgress}/>
         <AppBar
           className='appBar'
           title={this.state.appTitle}
@@ -159,16 +167,16 @@ export class PresentationView extends React.Component {
           } : {
             opacity: 1,
             pointerEvents: 'auto'
-          }}
-        />
-        {this.createLeftNav()}
+          }}/>
+        {/*this.createLeftNav()*/}
         <PresentationView {...this.props}
           presentation={this.state.presentation}
           setProgressBarValue={(value) => this.setProgressBarValue(value)}
-        />
+          setAppTitle={title => this.setAppTitle(title)}
+          onInteraction={event => this.onInteraction(event)}/>
       </div>
     )
   }
 }
 
-export default PresentationView
+export default KioskView
