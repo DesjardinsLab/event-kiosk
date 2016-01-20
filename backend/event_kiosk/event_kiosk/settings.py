@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'event_kiosk.kiosks',
     'event_kiosk.events',
-    'event_kiosk.presentations'
+    'event_kiosk.presentations',
+    'event_kiosk.content'
 ]
 
 MIDDLEWARE_CLASSES = [
