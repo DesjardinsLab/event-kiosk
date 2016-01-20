@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from .models import Kiosk
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+import os
 
 class KioskView(TemplateView):
 
@@ -34,6 +35,9 @@ def kiosk_data(request, **kwargs):
         'slides': slides
     }
 
-    kiosk = {'presentation': presentation}
+    kiosk = {
+        'appVersion': os.environ.get('APP_VERSION'),
+        'presentation': presentation
+    }
 
     return JsonResponse(kiosk)
