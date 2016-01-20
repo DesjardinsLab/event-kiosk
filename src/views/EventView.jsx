@@ -44,6 +44,8 @@ export class EventView extends React.Component {
       selectedEvent: event,
       eventDetailTimer: setTimeout(this.returnToListView.bind(this), this.props.presentation.pauseTimeOnTouch)
     })
+    
+    scroll(0,0)
   }
 
   returnToListView () {

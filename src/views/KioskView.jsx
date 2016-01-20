@@ -14,6 +14,7 @@ import ObjectHash from 'object-hash'
 import Isvg from 'react-inlinesvg'
 
 import PresentationView from './PresentationView'
+import StaticHtmlPageView from './StaticHtmlPageView'
 
 const RELOAD_INTERVAL = 60000
 const HOME_PAGE = 'presentation'
@@ -82,6 +83,9 @@ export class KioskView extends React.Component {
   handleInactivityTimer () {
     this.setState({
       interactiveMode: false,
+      navOpen: false,
+      currentPage: 0,
+      currentSection: 'home',
       transitionProgress: 0
     })
   }
@@ -108,9 +112,12 @@ export class KioskView extends React.Component {
   }
 
   setCurrentPage (section, page) {
+    var currentPage = this.state.sections[section].pages[page]
+
     this.setState({
       currentSection: section,
       currentPage: page,
+      appTitle: currentPage.title,
       navOpen: false
     })
   }
@@ -169,9 +176,8 @@ export class KioskView extends React.Component {
         <Divider />
         {this.state.sections.map(function (section, sectionIndex) {
           return (
-            <div className='menuSection'>
+            <div className='menuSection' key={sectionIndex}>
               <MenuItem
-                key={sectionIndex}
                 disabled={true}
                 primaryText={section.title}/>
                 {section.pages.map(function (page, pageIndex) {
@@ -179,15 +185,15 @@ export class KioskView extends React.Component {
                     <MenuItem
                       key={pageIndex}
                       value={sectionIndex + '-' + pageIndex}
-                      onTouchTap={(sectionIndex, pageIndex) => this.setCurrentPage(sectionIndex, pageIndex)}>
-                      <Isvg src={page.icon} />{page.title}
+                      onTouchTap={() => this.setCurrentPage(sectionIndex, pageIndex)}>
+                      {page.icon ? <Isvg src={page.icon} /> : ''}{page.title}
                     </MenuItem>
                   )
-                })}
+                }.bind(this))}
               <Divider />
             </div>
           )
-        })}
+        }.bind(this))}
       </LeftNav>
     )
   }
@@ -209,8 +215,7 @@ export class KioskView extends React.Component {
           : ''
         )
       default:
-        this.setAppTitle(this.state.currentSection.title)
-        return (<StaticHtmlPageView html={this.state.currentSection.pages[this.state.currentPage]}/>)
+        return (<StaticHtmlPageView html={this.state.sections[this.state.currentSection].pages[this.state.currentPage].html}/>)
     }
   }
 }
