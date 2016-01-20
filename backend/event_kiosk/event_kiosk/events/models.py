@@ -27,6 +27,7 @@ class Event(models.Model):
     image = models.ImageField(_('image'), upload_to='events/%Y/%m/%d/', null=False)
     location = models.CharField(_('location'), max_length=100)
     speakers = models.ManyToManyField(Speaker)
+    registrationUrl = models.URLField(_('registration url'), help_text=_('URL for registrations to this event. Will be embedded in the QR code.'), null=True, blank=True)
 
     def to_json(self):
         speakers = []
@@ -40,7 +41,8 @@ class Event(models.Model):
             'desc': self.description,
             'img': self.image.url,
             'location': self.location,
-            'speakers': speakers
+            'speakers': speakers,
+            'registrationUrl': self.registrationUrl
         }
 
     def __str__(self):

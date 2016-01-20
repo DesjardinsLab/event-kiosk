@@ -30,7 +30,7 @@ export class EventDetailView extends React.Component {
             }
           </div>
           <div className='QRCodeWrapper'>
-            {event.url ? <QRCode className='QRCode' value={event.url} /> : <div className='QRCode' />}
+            {event.registrationUrl ? <QRCode className='QRCode' value={event.registrationUrl} /> : <div className='QRCode' />}
           </div>
         </div>
         <div className='desc'>{event.desc.split(/\r?\n/).map(function (item, index) {
