@@ -34,7 +34,7 @@
     "start": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server --progress --colors --port 3030",
-    "deploy": "webpack -p && cp ./dist/bundle.js backend/event_kiosk/event_kiosk/kiosks/static/kiosks && cp ./node_modules/react/dist/react-with-addons.js backend/event_kiosk/event_kiosk/kiosks/static/kiosks && cp ./example-data.json backend/event_kiosk/event_kiosk/kiosks/static/kiosks"
+    "deploy": "webpack -p && cp ./dist/bundle.js backend/event_kiosk/event_kiosk/kiosks/static/kiosks"
   },
   "repository": {
     "type": "git",
