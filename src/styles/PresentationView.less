@@ -1,9 +1,12 @@
 body {
   height: 100%;
-  margin: 0;
   background-color: #FFFFFF !important;
   font-family: Calibri, Arial;
   font-size: 20px;
+}
+
+.kiosk-content {
+  padding-top: 50px;
 }
 
 .kiosk-swiper {
@@ -11,7 +14,7 @@ body {
 }
 
 .progressBar {
-  position: absolute !important;
+  position: fixed !important;
   top: 0;
   height: 3px !important;
   z-index: 100000 !important;
@@ -27,6 +30,7 @@ body {
 }
 
 .appBar {
+  position: fixed !important;
   text-align: left;
   background-color: @desj-green !important;
   transition: opacity .15s ease-in-out;

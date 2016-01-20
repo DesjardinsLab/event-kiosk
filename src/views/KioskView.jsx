@@ -13,7 +13,10 @@ import ObjectHash from 'object-hash'
 
 import Isvg from 'react-inlinesvg'
 
+import PresentationView from './PresentationView'
+
 const RELOAD_INTERVAL = 60000
+const HOME_PAGE = 'presentation'
 
 export class KioskView extends React.Component {
   constructor (props) {
@@ -28,8 +31,10 @@ export class KioskView extends React.Component {
         pauseTimeOnTouch: 60000,
         slides: []
       },
+      sections: [],
       transitionProgress: 0,
-      allowInput: true
+      currentSection: 'home',
+      currentPage: 0
     }
   }
 
@@ -55,10 +60,6 @@ export class KioskView extends React.Component {
       }
       this.setState({ dataHash: hashedData })
 
-      content.presentation.currentSlide = content.presentation.slides[0]
-      content.presentation.currentSlideIndex = 0
-      content.presentation.slides = content.presentation.slides
-
       this.setState(content)
     }.bind(this)).catch(function (error) {
       console.log(error)
@@ -66,6 +67,26 @@ export class KioskView extends React.Component {
     })
   }
 
+  onInteraction (event) {
+    if (this.state.pauseTimer) {
+      clearTimeout(this.state.pauseTimer)
+    }
+
+    this.setState({
+      interactiveMode: true,
+      transitionProgress: 0,
+      pauseTimer: setTimeout(this.handleInactivityTimer.bind(this), this.state.presentation.pauseTimeOnTouch)
+    })
+  }
+
+  handleInactivityTimer () {
+    this.setState({
+      interactiveMode: false,
+      transitionProgress: 0
+    })
+  }
+
+  // these functions should be passed to children to influence components from the kiosk.
   toggleNav (event) {
     this.setState({ navOpen: !this.state.navOpen })
   }
@@ -74,61 +95,8 @@ export class KioskView extends React.Component {
     this.setState({ hideAppBar: hide })
   }
 
-  onInteraction (event) {
-    if (this.state.pauseTimer) {
-      clearTimer(this.state.pauseTimer)
-    }
-
-    this.setState({
-      interactiveMode: true,
-      pauseTimer: setTimer(this.handleInactivityTimer.bind(this), this.state.presentation.pausetimeOnTouch)
-    })
-  }
-
-  handleInactivityTimer () {
-    this.setState({
-      interactiveMode: false
-    })
-    this.setState({ progressRefreshInterval: setInterval(this.handleTransitionTimer.bind(this), LINEAR_PROGRESS_REFRESH_RATE) })
-  }
-
-  createLeftNav () {
-    return (
-      <LeftNav
-        open={this.state.navOpen}
-        onRequestChange={navOpen => this.setState({navOpen})}
-        docked={false}>
-        <MenuItem value='home' primaryText="Accueil">
-          <Home />
-        </MenuItem>
-        <Divider />
-        {sections.map(function (section, sectionIndex) {
-          return (
-            <div className='menuSection'>
-              <MenuItem
-                key={sectionIndex}
-                disabled={true}
-                primaryText={section.title}/>
-                {section.pages.map(function (page, pageIndex) {
-                  return (
-                    <MenuItem
-                      key={pageIndex}
-                      value={sectionIndex + '-' + pageIndex}>
-                      <Isvg src={page.icon} />{page.title}
-                    </MenuItem>
-                  )
-                })}
-              <Divider />
-            </div>
-          )
-        })}
-      </LeftNav>
-    )
-  }
-
-  // these functions should be passed to children to influence components from the kiosk.
   setProgressBarValue (value) {
-    this.setState({ transitionProgress: value })
+    this.setState({ transitionProgress: this.props.interactiveMode ? 0 : value })
   }
 
   toggleInteractiveMode () {
@@ -136,7 +104,19 @@ export class KioskView extends React.Component {
   }
 
   setAppTitle (title) {
-    this.setState({ apptitle: title })
+    this.setState({ appTitle: title })
+  }
+
+  setCurrentPage (section, page) {
+    this.setState({
+      currentSection: section,
+      currentPage: page,
+      navOpen: false
+    })
+  }
+
+  setAppBarIconElementLeft (element) {
+    this.setState({ appBarIconElementLeft: element })
   }
 
   render () {
@@ -149,7 +129,7 @@ export class KioskView extends React.Component {
     }
 
     return (
-      <div className='kiosk' style={this.state.allowInput ? {} : {pointerEvents: 'none'}} onClick={(event) => this.onInteraction(event)}>
+      <div className='kiosk' onClick={(event) => this.onInteraction(event)}>
         <LinearProgress
           className={progressBarClasses}
           mode='determinate'
@@ -158,6 +138,7 @@ export class KioskView extends React.Component {
         <AppBar
           className='appBar'
           title={this.state.appTitle}
+          iconElementLeft={this.state.appBarIconElementLeft}
           onLeftIconButtonTouchTap={(event) => this.toggleNav(event)}
           zDepth={0}
           style={this.state.hideAppBar ? {
@@ -168,14 +149,69 @@ export class KioskView extends React.Component {
             opacity: 1,
             pointerEvents: 'auto'
           }}/>
-        {/*this.createLeftNav()*/}
-        <PresentationView {...this.props}
-          presentation={this.state.presentation}
-          setProgressBarValue={(value) => this.setProgressBarValue(value)}
-          setAppTitle={title => this.setAppTitle(title)}
-          onInteraction={event => this.onInteraction(event)}/>
+        {this.createLeftNav()}
+        <div className='kiosk-content'>
+          {this.renderCurrentPage()}
+        </div>
       </div>
     )
+  }
+
+  createLeftNav () {
+    return (
+      <LeftNav
+        open={this.state.navOpen}
+        onRequestChange={navOpen => this.setState({navOpen})}
+        docked={false}>
+        <MenuItem value='home' onTouchTap={() => this.setCurrentPage('home', 0)}>
+          <Home />{"Accueil"}
+        </MenuItem>
+        <Divider />
+        {this.state.sections.map(function (section, sectionIndex) {
+          return (
+            <div className='menuSection'>
+              <MenuItem
+                key={sectionIndex}
+                disabled={true}
+                primaryText={section.title}/>
+                {section.pages.map(function (page, pageIndex) {
+                  return (
+                    <MenuItem
+                      key={pageIndex}
+                      value={sectionIndex + '-' + pageIndex}
+                      onTouchTap={(sectionIndex, pageIndex) => this.setCurrentPage(sectionIndex, pageIndex)}>
+                      <Isvg src={page.icon} />{page.title}
+                    </MenuItem>
+                  )
+                })}
+              <Divider />
+            </div>
+          )
+        })}
+      </LeftNav>
+    )
+  }
+
+  renderCurrentPage () {
+    switch (this.state.currentSection) {
+      case 'home':
+        return (this.state.presentation.slides.length ?
+          <PresentationView
+            {...this.props}
+            interactiveMode={this.state.interactiveMode}
+            presentation={this.state.presentation}
+            transitionProgress={this.state.transitionProgress}
+            setProgressBarValue={(value) => this.setProgressBarValue(value)}
+            setAppTitle={title => this.setAppTitle(title)}
+            hideAppBar={hide => this.hideAppBar(hide)}
+            setAppBarIconElementLeft={iconElementLeft => this.setAppBarIconElementLeft(iconElementLeft)}
+            onInteraction={event => this.onInteraction(event)}/> : ''
+          : ''
+        )
+      default:
+        this.setAppTitle(this.state.currentSection.title)
+        return (<StaticHtmlPageView html={this.state.currentSection.pages[this.state.currentPage]}/>)
+    }
   }
 }
 

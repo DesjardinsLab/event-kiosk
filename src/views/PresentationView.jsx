@@ -20,36 +20,72 @@ const IMAGE_SLIDE_TYPE = 'image'
 const LINEAR_PROGRESS_REFRESH_RATE = 300;
 
 export class PresentationView extends React.Component {
+  constructor () {
+    super()
+
+    this.state = {
+      transitionProgress: 0
+    }
+  }
+
   componentDidMount () {
+    var currentSlide = this.props.presentation.slides[0]
+    this.setState({
+      currentSlideIndex: 0,
+      currentSlide: currentSlide
+    })
+    this.props.setAppTitle(currentSlide.title)
+
     // Start slideshow timer when view is mounted
-    if (this.props.transitionTime > 0 && !this.state.progressRefreshInterval) {
+    if (this.props.presentation.transitionTime > 0 && !this.state.progressRefreshInterval) {
       this.setState({ progressRefreshInterval: setInterval(this.handleTransitionTimer.bind(this), LINEAR_PROGRESS_REFRESH_RATE) })
     }
   }
 
+  componentWillUnmount () {
+    clearInterval(this.state.progressRefreshInterval)
+  }
+
   handleTransitionTimer () {
     if (!this.props.interactiveMode) {
-      if (this.state.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE < this.state.presentation.transitionTime) {
-        this.setState({transitionProgress: this.state.transitionProgress ? this.state.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE : LINEAR_PROGRESS_REFRESH_RATE})
-      } else { // Reset progress bar to 0 and go to next slide
-        // Figure out which slide is "next"
-        var nextSlideIndex = this.state.currentSlideIndex + 1
-        if (nextSlideIndex > this.state.slides.length) { nextSlideIndex = 0 }
-
-        this.setState({
-          transitionProgress: 0,
-          currentSlideIndex: nextSlideIndex,
-          currentSlide: this.state.presentation.slides[nextSlideIndex]
-        })
+      if (this.props.transitionProgress < this.props.presentation.transitionTime) {
+        console.log('setting progress to ' + (this.props.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE))
+        this.props.setProgressBarValue(this.props.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE)
+      } else {
+        this.doTransition()
       }
     }
   }
 
+  doTransition () {
+    // Reset progress bar to 0 and go to next slide
+    // Figure out which slide is "next"
+    if (!this.state.transitioning) {
+      this.setState({ transitioning: true })
+      var nextSlideIndex = this.state.currentSlideIndex + 1
+      if (nextSlideIndex > this.props.presentation.slides.length) { nextSlideIndex = 0 }
+
+      console.log('moving to slide: ' + nextSlideIndex)
+      this.props.setProgressBarValue(0)
+      this.setState({
+        currentSlideIndex: nextSlideIndex,
+        currentSlide: this.props.presentation.slides[nextSlideIndex]
+      })
+      this.setState({ transitioning: false })
+    }
+  }
+
   onSlideChange (index, element) {
+    var currentSlide = this.props.presentation.slides[index]
     this.setState({
-      currentSlide: this.state.presentation.slides[index],
+      currentSlide: currentSlide,
       currentSlideIndex: index
     })
+
+    // set title
+    this.props.setAppTitle(currentSlide.title)
+    // hide app bar on image slides
+    this.props.hideAppBar(currentSlide.type === IMAGE_SLIDE_TYPE)
 
     scroll(0,0)
   }
@@ -58,7 +94,7 @@ export class PresentationView extends React.Component {
     this.setState({ hideAppBar: hide })
   }
 
-  handleImageScroll(event) {
+  handleImageScroll (event) {
     if (this.state.currentSlide.type === IMAGE_SLIDE_TYPE) {
       scroll(0,0)
     }
@@ -68,20 +104,20 @@ export class PresentationView extends React.Component {
     return (
       <div className='kiosk-swiper'>
         <ReactSwipe
-          continuous={this.props.slides.length > 2}
-          onTouchStart={(event) => this.handleClick(event)}
+          continuous={this.props.presentation.slides.length > 2}
+          onTouchStart={(event) => this.props.onInteraction(event)}
           onTouchEnd={(event) => this.handleImageScroll(event)}
           slideToIndex={this.state.currentSlideIndex}
           key='react-swipe'
           callback={(index, element) => this.onSlideChange(index, element)}>
-          {this.props.slides.map(function (item, index) {
+          {this.props.presentation.slides.map(function (item, index) {
             if (item.type === EVENT_LIST_SLIDE_TYPE) {
               return (
                 <div key={'eventListWrapper' + index}>
                   <EventView
                     {...this.props}
                     events={item.events}
-                    hideAppBar={(hide) => this.hideAppBar(hide)}
+                    title={this.state.currentSlide ? this.state.currentSlide.title : ''}
                   />
                 </div>
               )
@@ -96,7 +132,6 @@ export class PresentationView extends React.Component {
                     {...this.props}
                     event={item.event}
                     isStatic={true}
-                    hideAppBar={(hide) => this.hideAppBar(hide)}
                   />
                 </div>
               )
@@ -110,20 +145,15 @@ export class PresentationView extends React.Component {
   render () {
     var progressBarClasses = 'progressBar'
 
-    if (this.state.transitionProgress === 0) {
-      // Allows the removal of the transition from full to empty
-      progressBarClasses += ' empty'
-    }
-
     // if slides have not yet been added to state, render nothing.
     var reactSwipeComponent = <div />
 
-    if (this.props.slides) {
+    if (this.props.presentation.slides) {
       reactSwipeComponent = this.buildSwipeComponent()
     }
 
     return (
-      <div className='kiosk-presentation' style={this.props.allowInput ? {} : {pointerEvents: 'none'}} onClick={(event) => this.handleClick(event)}>
+      <div className='kiosk-presentation' onClick={(event) => this.props.onInteraction(event)}>
         {reactSwipeComponent}
       </div>
     )
