@@ -13,7 +13,7 @@ class SpeakerAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
     list_display = [ 'title', 'location', 'date', 'startTime', 'endTime',   ]
     fieldsets = (
-        (_('Information'), { 'fields' : [ 'title', 'location', 'description', 'image' ] }),
+        (_('Information'), { 'fields' : [ 'title', 'location', 'description', 'image', 'registrationUrl' ] }),
         (_('Speakers'), { 'fields' : [ 'speakers' ] }),
         (_('Schedule'), { 'fields' : [ 'date', 'startTime', 'endTime' ] }),
     )
