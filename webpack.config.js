@@ -1,3 +1,5 @@
+var autoprefixer = require('autoprefixer')
+
 module.exports = {
     entry: './src/index.jsx',
     output: {
@@ -17,14 +19,15 @@ module.exports = {
             },
             {
               test: /\.css$/,
-              loader: "style-loader!css-loader"
+              loader: "style-loader!css-loader!postcss-loader"
             },
             {
               test: /\.less$/,
-              loader: "style!css!less"
+              loader: "style-loader!css-loader!postcss-loader!less-loader"
             }
         ]
     },
+    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     resolve: {
         extensions: ['', '.js', '.jsx']
     }

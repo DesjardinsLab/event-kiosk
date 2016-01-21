@@ -1,6 +1,8 @@
 import Paper from 'material-ui/lib/paper'
 import React from 'react'
 
+import SpeakerListView from './SpeakerListView'
+
 import QRCode from 'qrcode.react'
 
 export class EventDetailView extends React.Component {
@@ -10,7 +12,7 @@ export class EventDetailView extends React.Component {
     this.props.addFormattedDatesToEvent(event)
 
     return (
-      <div className='eventDetail'>
+      <div className={'eventDetails month' + event.month}>
         <div className='headerImageWrapper'>
           <img className='headerImage' src={event.img} />
         </div>
@@ -37,6 +39,7 @@ export class EventDetailView extends React.Component {
             return <p key={index}>{item}</p>
           })}
         </div>
+        {event.speakers ? <SpeakerListView speakers={event.speakers} /> : ''}
       </div>
     )
   }

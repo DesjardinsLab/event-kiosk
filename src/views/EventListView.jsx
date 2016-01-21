@@ -66,10 +66,13 @@ export class EventListView extends React.Component {
       listContent = (
         <div>
           {Object.keys(this.state.eventsByMonth).map(function (month, index) {
+            var startTime = new Date(this.state.eventsByMonth[month][0].startTime)
             return (
-              <div className='eventsByMonth' key={'events' + month}>
+              <div className={'eventsByMonth month' + startTime.getMonth()} key={'events' + month}>
                 <h1 className='month'>{month}</h1>
-                {this.getEvents(month)}
+                <div className='eventsList'>
+                  {this.getEvents(month)}
+                </div>
               </div>
             )
           }.bind(this))}
@@ -78,8 +81,10 @@ export class EventListView extends React.Component {
     }
 
     return (
-      <div className='eventList'>
-          {listContent}
+      <div className='eventListView'>
+        {this.props.headerImage ? <img src={this.props.headerImage}/> : ''}
+        {listContent}
+        {this.props.footerImage ? <img src={this.props.footerImage}/> : ''}
       </div>
     )
   }

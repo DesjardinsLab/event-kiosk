@@ -19,6 +19,12 @@ export class EventView extends React.Component {
     }
   }
 
+  componentWillUnmount () {
+    if (this.state.eventDetailTimer) {
+      clearTimeout(this.state.eventDetailTimer)
+    }
+  }
+
   addFormattedDatesToEvent (event) {
     var startDateTime = new Date(event.startTime)
     var endDateTime = new Date(event.endTime)
@@ -29,6 +35,7 @@ export class EventView extends React.Component {
     var endTime = this.props.timeIntervalFormat.format(endDateTime)
 
     event.timeInterval = startTime + ' - ' + endTime
+    event.month = startDateTime.getMonth()
 
     event.shortMonth = this.props.shortMonthFormat.format(startDateTime)
     event.shortDate = startDateTime.getDate()
@@ -36,8 +43,6 @@ export class EventView extends React.Component {
   }
 
   onEventSelect (event) {
-    //remove when appbar functional
-    this.props.hideAppBar(false)
     this.props.setAppTitle(event.title)
     this.props.setAppBarIconElementLeft(<IconButton onClick={() => this.returnToListView()}><NavigationBack/></IconButton>)
 
@@ -51,10 +56,12 @@ export class EventView extends React.Component {
   }
 
   returnToListView () {
-    //remove when appbar functional
-    this.props.hideAppBar(true)
     this.props.setAppTitle(this.props.title)
     this.props.setAppBarIconElementLeft(null)
+
+    if (this.state.eventDetailTimer) {
+      clearTimeout(this.state.eventDetailTimer)
+    }
 
     this.setState({
       detailMode: false,
@@ -66,7 +73,7 @@ export class EventView extends React.Component {
     // returns the list component or the detail component
     var elementToRender = <div />
 
-    if ((this.state.detailMode && this.props.interactiveMode) || this.props.isStatic) {
+    if (this.state.detailMode || this.props.isStatic) {
       elementToRender = (
         <div>
           <EventDetailView

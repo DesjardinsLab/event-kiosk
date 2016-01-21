@@ -74,6 +74,10 @@ export class PresentationView extends React.Component {
     }
   }
 
+  handleTouch (event) {
+    this.props.hideAppBar(false)
+  }
+
   onSlideChange (index, element) {
     var currentSlide = this.props.presentation.slides[index]
     this.setState({
@@ -83,6 +87,8 @@ export class PresentationView extends React.Component {
 
     // set title
     this.props.setAppTitle(currentSlide.title)
+    this.props.onInteraction(event)
+    this.props.hideAppBar(currentSlide.type === IMAGE_SLIDE_TYPE && !this.props.interactiveMode)
 
     scroll(0,0)
   }
@@ -95,10 +101,9 @@ export class PresentationView extends React.Component {
 
   buildSwipeComponent () {
     return (
-      <div className='kiosk-swiper'>
+      <div className='kiosk-swiper' onTouchStart={((event) => this.handleTouch(event))}>
         <ReactSwipe
           continuous={this.props.presentation.slides.length > 2}
-          onTouchStart={(event) => this.props.onInteraction(event)}
           onTouchEnd={(event) => this.handleImageScroll(event)}
           slideToIndex={this.state.currentSlideIndex}
           key='react-swipe'
@@ -109,7 +114,7 @@ export class PresentationView extends React.Component {
                 <div key={'eventListWrapper' + index}>
                   <EventView
                     {...this.props}
-                    events={item.events}
+                    {...item}
                     title={this.state.currentSlide ? this.state.currentSlide.title : ''}
                   />
                 </div>
@@ -136,8 +141,6 @@ export class PresentationView extends React.Component {
   }
 
   render () {
-    var progressBarClasses = 'progressBar'
-
     // if slides have not yet been added to state, render nothing.
     var reactSwipeComponent = <div />
 
@@ -146,7 +149,7 @@ export class PresentationView extends React.Component {
     }
 
     return (
-      <div className='kiosk-presentation' onClick={(event) => this.props.onInteraction(event)}>
+      <div className='kiosk-presentation'>
         {reactSwipeComponent}
       </div>
     )

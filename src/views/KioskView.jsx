@@ -17,7 +17,7 @@ import PresentationView from './PresentationView'
 import StaticHtmlPageView from './StaticHtmlPageView'
 
 const RELOAD_INTERVAL = 60000
-const HOME_PAGE = 'presentation'
+const HOME_PAGE = 'home'
 
 export class KioskView extends React.Component {
   constructor (props) {
@@ -34,7 +34,7 @@ export class KioskView extends React.Component {
       },
       sections: [],
       transitionProgress: 0,
-      currentSection: 'home',
+      currentSection: HOME_PAGE,
       currentPage: 0
     }
   }
@@ -46,6 +46,7 @@ export class KioskView extends React.Component {
 
   componentWillUnmount () {
     clearInterval(this.state.reloadInterval)
+    clearTimeout(this.state.pauseTimer)
   }
 
   getKiosk () {
@@ -85,7 +86,7 @@ export class KioskView extends React.Component {
       interactiveMode: false,
       navOpen: false,
       currentPage: 0,
-      currentSection: 'home',
+      currentSection: HOME_PAGE,
       transitionProgress: 0
     })
   }
@@ -103,23 +104,20 @@ export class KioskView extends React.Component {
     this.setState({ transitionProgress: this.props.interactiveMode ? 0 : value })
   }
 
-  toggleInteractiveMode () {
-    this.setState({ interactiveMode: !this.state.interactiveMode })
-  }
-
   setAppTitle (title) {
     this.setState({ appTitle: title })
   }
 
   setCurrentPage (section, page) {
-    var currentPage = this.state.sections[section].pages[page]
-
     this.setState({
       currentSection: section,
       currentPage: page,
-      appTitle: currentPage.title,
       navOpen: false
     })
+    if (section !== HOME_PAGE) {
+      var currentPage = this.state.sections[section].pages[page]
+      this.setState({ appTitle: currentPage.title })
+    }
   }
 
   setAppBarIconElementLeft (element) {
@@ -170,7 +168,7 @@ export class KioskView extends React.Component {
         open={this.state.navOpen}
         onRequestChange={navOpen => this.setState({navOpen})}
         docked={false}>
-        <MenuItem value='home' onTouchTap={() => this.setCurrentPage('home', 0)}>
+        <MenuItem value={HOME_PAGE} onTouchTap={() => this.setCurrentPage(HOME_PAGE, 0)}>
           <Home />{"Accueil"}
         </MenuItem>
         <Divider />
@@ -200,7 +198,7 @@ export class KioskView extends React.Component {
 
   renderCurrentPage () {
     switch (this.state.currentSection) {
-      case 'home':
+      case HOME_PAGE:
         return (this.state.presentation.slides.length ?
           <PresentationView
             {...this.props}

@@ -1,12 +1,9 @@
 body {
   height: 100%;
-  background-color: #FFFFFF !important;
   font-family: Calibri, Arial;
   font-size: 20px;
-}
-
-.kiosk-swiper {
-  text-align: center;
+  padding-bottom: 50px;
+  user-select: none;
 }
 
 .progressBar {
@@ -29,8 +26,8 @@ body {
   position: fixed !important;
   text-align: left;
   background-color: @desj-green !important;
-  // uncomment when appbar functional
-  //transition: opacity .15s ease-in-out;
+
+  transition: opacity .15s ease-in-out;
 
   h1 {
     font-size: 32px !important;
@@ -41,9 +38,8 @@ div.date {
   text-transform: capitalize;
 }
 
-div.eventList {
-  // uncomment when appbar is shown
-  //padding-top: 64px;
+div.eventListView {
+  padding-top: 64px;
   width: 100%;
 
   h1 {
@@ -61,34 +57,34 @@ div.eventList {
 
   h1.month {
     font-size: 60px;
-    padding: 1em 1.75em;
+    padding: 0.5em 1.75em;
     text-align: left;
     color: #FFFFFF;
   }
 
-  div {
-    &:nth-child(5n+1) { h1.month { background-color: #26A69A; } }
-    &:nth-child(5n+2) { h1.month { background-color: @desj-green; } }
-    &:nth-child(5n+3) { h1.month { background-color: #FF6F00; } }
-    &:nth-child(5n+4) { h1.month { background-color: #01579B; } }
-    &:nth-child(5n+5) { h1.month { background-color: #263238; } }
+  div.eventsByMonth {
+    margin-bottom: 3em;
+
+    .eventsList {
+      margin: 1em 0em;
+    }
   }
 }
 
 
 div.eventCard {
-  padding: 15px 0px;
+  padding: 0.5em 0px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 
   div.dateInfo {
-    width: 25%;
+    display: flex;
+    justify-content: center;
+    width: 15%;
     padding: 30px;
   }
 
   div.eventListItem {
-    width: 75%;
+    width: 80%;
     text-align: left;
     text-overflow: ellipsis;
     position: relative;
@@ -97,6 +93,8 @@ div.eventCard {
     overflow: hidden;
 
     .details {
+      display: flex;
+      padding-top: 0.25em;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -113,22 +111,23 @@ div.eventCard {
       }
 
       .time {
+        color: #808285;
+        padding-top: 0.5em;
         font-size: 32px;
         font-weight: bold;
       }
 
-      .eventInfo {
-        padding-top: 30px;
-      }
-
-      .speaker, .location {
-        font-size: 24px !important;
+      .subtitle {
+        color: #808285;
+        padding-top: 0.5em;
+        font-size: 24px;
+        min-height: 1em;
       }
     }
   }
 }
 
-div.eventDetail {
+div.eventDetails {
   padding-top: 64px;
 
   .headerImage {
@@ -140,8 +139,13 @@ div.eventDetail {
     margin: 10px auto;
     padding: 30px 0px;
     display: flex;
+    justify-content: space-between;
 
     .timeLocationInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
       width: 50%;
       font-size: 42px;
 
@@ -151,12 +155,15 @@ div.eventDetail {
     }
 
     .dateInfo {
-      align-self: flex-end;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .QRCodeWrapper {
       width: 25%;
-      align-self: flex-end;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -171,12 +178,64 @@ div.eventDetail {
       margin-top: 1em;
     }
   }
+
+  .speakersList {
+    margin-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+
+    .speaker {
+      width: 85%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+
+      div.avatar {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 25%;
+          align-self: center;
+
+          border-radius: 50%;
+          min-width: 150px;
+          min-height: 150px;
+        }
+      }
+
+      .details {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 30px;
+
+        div {
+          padding: 0.5em 0.25em;
+        }
+
+        .name {
+          font-weight: bold;
+        }
+
+        .bio {
+          font-weight: ligther;
+        }
+      }
+    }
+  }
 }
 
 .dateInfo {
   width: 25%;
 
+
   .dateDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 
     .month {
       font-size: 38px;
@@ -210,4 +269,161 @@ div.eventDetail {
 
 .staticHtmlPage {
   padding-top: 79px;
+}
+
+// Alternating colors for months.
+//jan
+.month0 {
+
+  h1.month {
+    background-color: @jan-color;
+  }
+
+  div.dateInfo {
+    color: @jan-color;
+    border-right: 5px solid @jan-color;
+  }
+}
+
+//feb
+.month1 {
+
+  h1.month {
+    background-color: @feb-color;
+  }
+
+  div.dateInfo {
+    color: @feb-color;
+    border-right: 5px solid @feb-color;
+  }
+}
+
+//mar
+.month2 {
+
+  h1.month {
+    background-color: @mar-color;
+  }
+
+  div.dateInfo {
+    color: @mar-color;
+    border-right: 5px solid @mar-color;
+  }
+}
+
+//apr
+.month3 {
+
+  h1.month {
+    background-color: @apr-color;
+  }
+
+  div.dateInfo {
+    color: @apr-color;
+    border-right: 5px solid @apr-color;
+  }
+}
+
+//may
+.month4 {
+
+  h1.month {
+    background-color: @may-color;
+  }
+
+  div.dateInfo {
+    color: @may-color;
+    border-right: 5px solid @may-color;
+  }
+}
+
+//june
+.month5 {
+
+  h1.month {
+    background-color: @jun-color;
+  }
+
+  div.dateInfo {
+    color: @jun-color;
+    border-right: 5px solid @jun-color;
+  }
+}
+
+//july
+.month6 {
+
+  h1.month {
+    background-color: @jul-color;
+  }
+
+  div.dateInfo {
+    color: @jul-color;
+    border-right: 5px solid @jul-color;
+  }
+}
+
+//aug
+.month7 {
+
+  h1.month {
+    background-color: @aug-color;
+  }
+
+  div.dateInfo {
+    color: @aug-color;
+    border-right: 5px solid @aug-color;
+  }
+}
+
+//sept
+.month8 {
+
+  h1.month {
+    background-color: @sep-color;
+  }
+
+  div.dateInfo {
+    color: @sep-color;
+    border-right: 5px solid @sep-color;
+  }
+}
+
+//oct
+.month9 {
+
+  h1.month {
+    background-color: @oct-color;
+  }
+
+  div.dateInfo {
+    color: @oct-color;
+    border-right: 5px solid @oct-color;
+  }
+}
+
+//nov
+.month10 {
+
+  h1.month {
+    background-color: @nov-color;
+  }
+
+  div.dateInfo {
+    color: @nov-color;
+    border-right: 5px solid @nov-color;
+  }
+}
+
+//dec
+.month11 {
+
+  h1.month {
+    background-color: @dec-color;
+  }
+
+  div.dateInfo {
+    color: @dec-color;
+    border-right: 5px solid @dec-color;
+  }
 }
