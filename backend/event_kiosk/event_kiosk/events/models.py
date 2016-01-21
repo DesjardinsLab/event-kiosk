@@ -20,6 +20,8 @@ class Speaker(models.Model):
 
 class Event(models.Model):
     title = models.CharField(_('title'), max_length=255)
+    shortTitle = models.CharField(_('short title'), help_text=_('you can provide a shorter title for the event list.'), max_length=50, null=True, blank=True)
+    subTitle = models.CharField(_('subtitle'), help_text=_('optional subtitle for the event list.'), max_length=50, null=True, blank=True)
     date = models.DateField(_('date'), null=False)
     startTime = models.TimeField(_('start time'), null=False)
     endTime = models.TimeField(_('end time'), null=False)
@@ -36,6 +38,8 @@ class Event(models.Model):
 
         return {
             'title': self.title,
+            'shortTitle': self.shortTitle,
+            'subTitle': self.subTitle,
             'startTime': datetime.combine(self.date, self.startTime),
             'endTime': datetime.combine(self.date, self.endTime),
             'desc': self.description,

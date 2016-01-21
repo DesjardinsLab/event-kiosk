@@ -24,13 +24,12 @@ export class EventListItem extends React.Component {
           zDepth={1}>
           <div className='details'>
             <h2 className='title'>{event.shortTitle ? event.shortTitle : event.title}</h2>
+            {event.subTitle ? <h3 className='subTitle'>{event.subTitle}</h3> : '' }
             <div className='timeInfo'>
               <div className='time'>{event.timeInterval}</div>
             </div>
           </div>
-          <div className='subTitle'>
-            {event.subTitle}
-          </div>
+
         </Paper>
       </div>
     )
