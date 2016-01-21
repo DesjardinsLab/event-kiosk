@@ -36,6 +36,8 @@ export class EventView extends React.Component {
   }
 
   onEventSelect (event) {
+    //remove when appbar functional
+    this.props.hideAppBar(false)
     this.props.setAppTitle(event.title)
     this.props.setAppBarIconElementLeft(<IconButton onClick={() => this.returnToListView()}><NavigationBack/></IconButton>)
 
@@ -44,11 +46,13 @@ export class EventView extends React.Component {
       selectedEvent: event,
       eventDetailTimer: setTimeout(this.returnToListView.bind(this), this.props.presentation.pauseTimeOnTouch)
     })
-    
+
     scroll(0,0)
   }
 
   returnToListView () {
+    //remove when appbar functional
+    this.props.hideAppBar(true)
     this.props.setAppTitle(this.props.title)
     this.props.setAppBarIconElementLeft(null)
 
@@ -62,7 +66,7 @@ export class EventView extends React.Component {
     // returns the list component or the detail component
     var elementToRender = <div />
 
-    if (this.state.detailMode || this.props.isStatic) {
+    if ((this.state.detailMode && this.props.interactiveMode) || this.props.isStatic) {
       elementToRender = (
         <div>
           <EventDetailView

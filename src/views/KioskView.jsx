@@ -211,7 +211,8 @@ export class KioskView extends React.Component {
             setAppTitle={title => this.setAppTitle(title)}
             hideAppBar={hide => this.hideAppBar(hide)}
             setAppBarIconElementLeft={iconElementLeft => this.setAppBarIconElementLeft(iconElementLeft)}
-            onInteraction={event => this.onInteraction(event)}/> : ''
+            onInteraction={event => this.onInteraction(event)}
+            pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}/> : ''
           : ''
         )
       default:

@@ -17,7 +17,7 @@ const EVENT_LIST_SLIDE_TYPE = 'eventList'
 const EVENT_SLIDE_TYPE = 'event'
 const IMAGE_SLIDE_TYPE = 'image'
 
-const LINEAR_PROGRESS_REFRESH_RATE = 300;
+const LINEAR_PROGRESS_REFRESH_RATE = 250;
 
 export class PresentationView extends React.Component {
   constructor () {
@@ -35,6 +35,7 @@ export class PresentationView extends React.Component {
       currentSlide: currentSlide
     })
     this.props.setAppTitle(currentSlide.title)
+    this.props.hideAppBar(currentSlide.type === IMAGE_SLIDE_TYPE && !this.props.interactiveMode)
 
     // Start slideshow timer when view is mounted
     if (this.props.presentation.transitionTime > 0 && !this.state.progressRefreshInterval) {
@@ -49,7 +50,6 @@ export class PresentationView extends React.Component {
   handleTransitionTimer () {
     if (!this.props.interactiveMode) {
       if (this.props.transitionProgress < this.props.presentation.transitionTime) {
-        console.log('setting progress to ' + (this.props.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE))
         this.props.setProgressBarValue(this.props.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE)
       } else {
         this.doTransition()
@@ -65,7 +65,6 @@ export class PresentationView extends React.Component {
       var nextSlideIndex = this.state.currentSlideIndex + 1
       if (nextSlideIndex > this.props.presentation.slides.length) { nextSlideIndex = 0 }
 
-      console.log('moving to slide: ' + nextSlideIndex)
       this.props.setProgressBarValue(0)
       this.setState({
         currentSlideIndex: nextSlideIndex,
@@ -84,14 +83,8 @@ export class PresentationView extends React.Component {
 
     // set title
     this.props.setAppTitle(currentSlide.title)
-    // hide app bar on image slides
-    this.props.hideAppBar(currentSlide.type === IMAGE_SLIDE_TYPE)
 
     scroll(0,0)
-  }
-
-  hideAppBar (hide) {
-    this.setState({ hideAppBar: hide })
   }
 
   handleImageScroll (event) {
