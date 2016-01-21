@@ -31,6 +31,7 @@ class Page(models.Model):
     title = models.CharField(_('title'), max_length=60, help_text=_('Page title. Will be shown in menu and top application bar.'))
     icon = models.FileField(_('icon (svg)'), upload_to='icons/%Y/%m/%d/', null=True, blank=True, validators=[validate_svg_files])
     html = models.TextField(_('content (html)'))
+    javascript = models.TextField(_('javascript'), help_text=_('Optional javascript that will be executed when the page loads.'), null=True, blank=True)
     weight = models.IntegerField(_('weight'), help_text=_('Pages in the menu will be ordered by weight'), null=False, default=0)
 
     def kiosk(self):
@@ -40,7 +41,8 @@ class Page(models.Model):
         return {
             'title': self.title,
             'icon': self.icon.url if self.icon else False,
-            'html': self.html
+            'html': self.html,
+            'javascript': self.javascript
         }
 
     def __str__(self):

@@ -214,7 +214,8 @@ export class KioskView extends React.Component {
           : ''
         )
       default:
-        return (<StaticHtmlPageView html={this.state.sections[this.state.currentSection].pages[this.state.currentPage].html}/>)
+        var page = this.state.sections[this.state.currentSection].pages[this.state.currentPage];
+        return (<StaticHtmlPageView html={page.html} javascript={page.javascript}/>)
     }
   }
 }

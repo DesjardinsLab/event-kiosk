@@ -16,6 +16,6 @@ class PageAdmin(admin.ModelAdmin):
     list_display = [ 'title', 'weight', 'kiosk', 'section'  ]
     list_filter = ['section__kiosk', 'section']
     fieldsets = (
-        (_('Information'), { 'fields' : [ 'title', 'section', 'icon', 'weight', 'html' ] }),
+        (_('Information'), { 'fields' : [ 'title', 'section', 'icon', 'weight', 'html', 'javascript' ] }),
     )
     inlines = [WebAssetInlineAdmin,]
