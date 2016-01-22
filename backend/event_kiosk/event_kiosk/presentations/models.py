@@ -30,7 +30,7 @@ class Slide(models.Model):
         if (self.type == 'image'):
             return {
                 'type': 'image',
-                'title': 'Image',
+                'title': '',
                 'img': self.image.url
             }
 
@@ -48,7 +48,7 @@ class Slide(models.Model):
 
             return {
                 'type': 'eventList',
-                'title': _('Events'),
+                'title': _('Upcoming events'),
                 'events': events_json
             }
 
