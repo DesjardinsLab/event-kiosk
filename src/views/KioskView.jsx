@@ -40,7 +40,6 @@ export class KioskView extends React.Component {
   }
 
   componentDidMount () {
-    window.timer = 0
     this.getKiosk()
     this.setState({reloadInterval: setInterval(this.getKiosk.bind(this), RELOAD_INTERVAL)})
   }
