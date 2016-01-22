@@ -87,7 +87,6 @@ export class PresentationView extends React.Component {
 
     // set title
     this.props.setAppTitle(currentSlide.title)
-    this.props.onInteraction(event)
     this.props.hideAppBar(currentSlide.type === IMAGE_SLIDE_TYPE && !this.props.interactiveMode)
 
     scroll(0,0)
@@ -101,7 +100,7 @@ export class PresentationView extends React.Component {
 
   buildSwipeComponent () {
     return (
-      <div className='kiosk-swiper' onTouchStart={((event) => this.handleTouch(event))}>
+      <div className='kiosk-swiper' onTouchStart={((event) => this.handleTouch(event))} onTouchEnd={(event) => this.props.onInteraction(event)}>
         <ReactSwipe
           continuous={this.props.presentation.slides.length > 2}
           onTouchEnd={(event) => this.handleImageScroll(event)}

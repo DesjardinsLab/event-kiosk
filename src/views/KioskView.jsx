@@ -40,6 +40,7 @@ export class KioskView extends React.Component {
   }
 
   componentDidMount () {
+    window.timer = 0
     this.getKiosk()
     this.setState({reloadInterval: setInterval(this.getKiosk.bind(this), RELOAD_INTERVAL)})
   }
@@ -165,7 +166,9 @@ export class KioskView extends React.Component {
   createLeftNav () {
     return (
       <LeftNav
+        className='leftNav'
         open={this.state.navOpen}
+        disableSwipeToOpen={true}
         onRequestChange={navOpen => this.setState({navOpen})}
         docked={false}>
         <MenuItem value={HOME_PAGE} onTouchTap={() => this.setCurrentPage(HOME_PAGE, 0)}>
