@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
 from event_kiosk.kiosks.views import KioskView
-from event_kiosk.kiosks.views import kiosk_data
+from event_kiosk.kiosks.views import kiosk_data, appcache_manifest
 
 from django.views import static
 
@@ -25,6 +25,7 @@ admin.site.site_header = 'Kiosk administration'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^manifest.appcache$',  appcache_manifest),
     url(r'^(?P<name>[-\w\d]+)/data/$', kiosk_data, name='kiosk_data'),
     url(r'^(?P<name>[-\w\d]+)/$', KioskView.as_view(), name='kiosk'),
     url(r'^media/(?P<path>.*)$', static.serve, {

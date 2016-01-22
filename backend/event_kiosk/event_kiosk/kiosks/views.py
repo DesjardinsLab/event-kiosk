@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from .models import Kiosk
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -47,3 +47,6 @@ def kiosk_data(request, **kwargs):
     }
 
     return JsonResponse(kiosk)
+
+def appcache_manifest(request, **kwargs):
+    return render(request, 'appcache.html', content_type="text/cache-manifest; charset=utf-8")
