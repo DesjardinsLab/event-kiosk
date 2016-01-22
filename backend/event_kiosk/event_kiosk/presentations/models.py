@@ -37,6 +37,7 @@ class Slide(models.Model):
         elif (self.type == 'event'):
             return {
                 'type': 'event',
+                'title': self.event.title,
                 'event': self.event.to_json()
             }
 
