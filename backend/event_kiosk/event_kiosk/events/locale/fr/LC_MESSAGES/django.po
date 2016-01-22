@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-22 14:23-0500\n"
+"PO-Revision-Date: 2016-01-22 14:25-0500\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: admin.py:9 admin.py:16
+msgid "Information"
+msgstr "Information"
+
+#: admin.py:17
+msgid "Speakers"
+msgstr "Conférenciers"
+
+#: admin.py:18
+msgid "Schedule"
+msgstr "Horaire"
+
+#: models.py:8
+msgid "name"
+msgstr "nom"
+
+#: models.py:9 models.py:36
+msgid "image"
+msgstr "image"
+
+#: models.py:10
+msgid "bio"
+msgstr "bio"
+
+#: models.py:29
+msgid "title"
+msgstr "titre"
+
+#: models.py:30
+msgid "short title"
+msgstr "titre court"
+
+#: models.py:30
+msgid "you can provide a shorter title for the event list."
+msgstr "Vous pouvez fournir un titre plus court pour la liste des événements."
+
+#: models.py:31
+msgid "subtitle"
+msgstr "sous-titre"
+
+#: models.py:31
+msgid "optional subtitle for the event list."
+msgstr "sous-titre optionnel pour la liste des événements."
+
+#: models.py:32
+msgid "date"
+msgstr "date"
+
+#: models.py:33
+msgid "start time"
+msgstr "heure de début"
+
+#: models.py:34
+msgid "end time"
+msgstr "heure de fin"
+
+#: models.py:35
+msgid "description"
+msgstr "description"
+
+#: models.py:37
+msgid "location"
+msgstr "emplacement"
+
+#: models.py:39
+msgid "registration url"
+msgstr "url d'inscription"
+
+#: models.py:39
+msgid "URL for registrations to this event. Will be embedded in the QR code."
+msgstr "URL pour les inscriptions à cet événement. Sera encodé dans le code QR."
