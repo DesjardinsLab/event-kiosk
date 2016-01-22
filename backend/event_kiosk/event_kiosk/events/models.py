@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 from datetime import datetime
+import pytz
+from django.conf import settings
 
 class Speaker(models.Model):
     name = models.CharField(_('name'), max_length=255)
@@ -16,6 +18,11 @@ class Speaker(models.Model):
 
     def __str__(self):
         return self.name
+
+def datetime_to_utc(date):
+    local = pytz.timezone ( settings.TIME_ZONE )
+    local_dt = local.localize(date, is_dst=None)
+    return local_dt.astimezone (pytz.utc)
 
 
 class Event(models.Model):
@@ -40,8 +47,8 @@ class Event(models.Model):
             'title': self.title,
             'shortTitle': self.shortTitle,
             'subTitle': self.subTitle,
-            'startTime': datetime.combine(self.date, self.startTime),
-            'endTime': datetime.combine(self.date, self.endTime),
+            'startTime': datetime_to_utc(datetime.combine(self.date, self.startTime)),
+            'endTime': datetime_to_utc(datetime.combine(self.date, self.endTime)),
             'desc': self.description,
             'img': self.image.url,
             'location': self.location,
