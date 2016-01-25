@@ -113,15 +113,15 @@ div.eventCard {
     padding: 30px;
     margin-right: 10px;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
 
     .details {
       display: flex;
       padding-top: 0.25em;
-      display: flex;
       flex-direction: column;
       justify-content: space-between;
       border-left: 1px black;
-      float: left;
       text-align: left;
 
       h2.title {
@@ -144,6 +144,18 @@ div.eventCard {
         padding-top: 0.5em;
         font-size: 24px;
         min-height: 1em;
+      }
+    }
+
+    .chevronRight {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      svg {
+        padding: 1em;
+        width: 48px !important;
+        height: 48px !important;
       }
     }
   }

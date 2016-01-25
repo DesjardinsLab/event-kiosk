@@ -1,5 +1,7 @@
-import Paper from 'material-ui/lib/paper'
 import React from 'react'
+import Paper from 'material-ui/lib/paper'
+
+import ChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right'
 
 export class EventListItem extends React.Component {
 
@@ -11,7 +13,7 @@ export class EventListItem extends React.Component {
     var event = this.props.event
 
     return (
-      <div className="eventCard">
+      <div className='eventCard'>
         <div className='dateInfo'>
           <div className='dateDisplay' style={{opacity: this.props.hideDate ? 0 : 1}}>
             <h3 className='day'>{event.day}</h3>
@@ -29,7 +31,9 @@ export class EventListItem extends React.Component {
               <div className='time'>{event.timeInterval}</div>
             </div>
           </div>
-
+          <div className='chevronRight'>
+            <ChevronRight />
+          </div>
         </Paper>
       </div>
     )
