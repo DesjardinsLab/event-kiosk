@@ -43,7 +43,7 @@ export class EventView extends React.Component {
   }
 
   onEventSelect (event) {
-    this.props.setAppTitle(event.title)
+    this.props.setAppTitle(event.shortTitle ? event.shortTitle : event.title)
     this.props.setAppBarIconElementLeft(<IconButton onClick={() => this.returnToListView()}><NavigationBack/></IconButton>)
 
     this.setState({

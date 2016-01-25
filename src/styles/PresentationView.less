@@ -6,6 +6,22 @@ body {
   user-select: none;
 }
 
+.kiosk-content {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h1, h2, h3 {
+    font-weight: bold;
+    font-family: "PT Sans Narrow";
+    text-transform: uppercase;
+  }
+}
+
 .progressBar {
   position: fixed !important;
   top: 0;
@@ -57,20 +73,6 @@ div.eventListView {
   padding-top: 64px;
   width: 100%;
 
-  h1 {
-    font-size: 48px;
-  }
-
-  h2 {
-    font-size: 32px;
-  }
-
-  h1, h2, h3 {
-    font-weight: bold;
-    font-family: "PT Sans Narrow";
-    text-transform: uppercase;
-  }
-
   div.eventsByMonth {
     display: flex;
     flex-direction: column;
@@ -93,6 +95,7 @@ div.eventListView {
 
 div.eventCard {
   padding: 0.5em 0px;
+  margin-right: 1em;
   display: flex;
 
   div.dateInfo {
@@ -154,8 +157,15 @@ div.eventDetails {
     max-height: 500px;
   }
 
+  h1.eventTitle {
+    width: 85%;
+    margin: auto;
+    padding: 0px 50px;
+    text-align: center;
+  }
+
   .details {
-    margin: 10px auto;
+    margin: 10px 0px;
     padding: 30px 0px;
     display: flex;
     justify-content: space-between;
