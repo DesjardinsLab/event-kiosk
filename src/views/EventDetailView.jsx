@@ -16,9 +16,6 @@ export class EventDetailView extends React.Component {
         <div className='headerImageWrapper'>
           <img className='headerImage' src={event.img} />
         </div>
-        <h1 className='eventTitle'>
-          {event.title}
-        </h1>
         <div className='details'>
           <div className='dateInfo'>
             <div className='dateDisplay'>

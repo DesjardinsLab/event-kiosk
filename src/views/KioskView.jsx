@@ -177,9 +177,8 @@ export class KioskView extends React.Component {
         <MenuItem
           value={HOME_PAGE}
           onTouchTap={() => this.setCurrentPage(HOME_PAGE, 0)}
-          className='nav-home'
-          leftIcon={<Home />}>
-          <span>{"Accueil"}</span>
+          className='nav-home'>
+          <Home /><span>{"Accueil"}</span>
         </MenuItem>
         <Divider />
         {this.state.sections.map(function (section, sectionIndex) {
@@ -194,9 +193,8 @@ export class KioskView extends React.Component {
                       className="nav-page"
                       key={pageIndex}
                       value={sectionIndex + '-' + pageIndex}
-                      leftIcon={page.icon ? <Isvg src={page.icon} /> : ''}
                       onTouchTap={() => this.setCurrentPage(sectionIndex, pageIndex)}>
-                      <span className="nav-page-label">{page.title}</span>
+                      {page.icon ? <Isvg src={page.icon} /> : ''}<span className="nav-page-label">{page.title}</span>
                     </MenuItem>
                   )
                 }.bind(this))}
