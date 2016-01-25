@@ -24,13 +24,13 @@ export class EventListItem extends React.Component {
           className='eventListItem'
           onClick={() => this.handleEventClick(event)}
           zDepth={1}>
-          <div className='details'>
+          <article className='details'>
             <h2 className='title'>{event.shortTitle ? event.shortTitle : event.title}</h2>
             {event.subTitle ? <h3 className='subTitle'>{event.subTitle}</h3> : '' }
             <div className='timeInfo'>
               <div className='time'>{event.timeInterval}</div>
             </div>
-          </div>
+          </article>
           <div className='chevronRight'>
             <ChevronRight />
           </div>

@@ -12,7 +12,7 @@ export class EventDetailView extends React.Component {
     this.props.addFormattedDatesToEvent(event)
 
     return (
-      <div className={'eventDetails month' + event.month}>
+      <article className={'eventDetails month' + event.month}>
         <div className='headerImageWrapper'>
           <img className='headerImage' src={event.img} />
         </div>
@@ -43,7 +43,7 @@ export class EventDetailView extends React.Component {
           })}
         </div>
         {event.speakers ? <SpeakerListView speakers={event.speakers} /> : ''}
-      </div>
+      </article>
     )
   }
 }
