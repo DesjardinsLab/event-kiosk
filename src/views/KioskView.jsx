@@ -174,8 +174,12 @@ export class KioskView extends React.Component {
         disableSwipeToOpen={true}
         onRequestChange={navOpen => this.setState({navOpen})}
         docked={false}>
-        <MenuItem value={HOME_PAGE} onTouchTap={() => this.setCurrentPage(HOME_PAGE, 0)} className='nav-home'>
-          <Home /><span>{"Accueil"}</span>
+        <MenuItem
+          value={HOME_PAGE}
+          onTouchTap={() => this.setCurrentPage(HOME_PAGE, 0)}
+          className='nav-home'
+          leftIcon={<Home />}>
+          <span>{"Accueil"}</span>
         </MenuItem>
         <Divider />
         {this.state.sections.map(function (section, sectionIndex) {
@@ -190,8 +194,9 @@ export class KioskView extends React.Component {
                       className="nav-page"
                       key={pageIndex}
                       value={sectionIndex + '-' + pageIndex}
+                      leftIcon={page.icon ? <Isvg src={page.icon} /> : ''}
                       onTouchTap={() => this.setCurrentPage(sectionIndex, pageIndex)}>
-                      {page.icon ? <Isvg src={page.icon} /> : ''}<span className="nav-page-label">{page.title}</span>
+                      <span className="nav-page-label">{page.title}</span>
                     </MenuItem>
                   )
                 }.bind(this))}
