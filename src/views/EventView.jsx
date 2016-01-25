@@ -1,6 +1,5 @@
 import React from 'react'
 
-import AppBar from 'material-ui/lib/app-bar'
 import IconButton from 'material-ui/lib/icon-button'
 import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back'
 
@@ -57,7 +56,7 @@ export class EventView extends React.Component {
 
   returnToListView () {
     this.props.setAppTitle(this.props.title)
-    this.props.setAppBarIconElementLeft(null)
+    this.props.setAppBarIconElementLeft()
 
     if (this.state.eventDetailTimer) {
       clearTimeout(this.state.eventDetailTimer)

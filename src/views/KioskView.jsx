@@ -6,6 +6,9 @@ import MenuItem from 'material-ui/lib/menus/menu-item'
 import Divider from 'material-ui/lib/divider'
 
 import Home from 'material-ui/lib/svg-icons/action/home'
+import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back'
+
+import IconButton from 'material-ui/lib/icon-button'
 
 import LinearProgress from 'material-ui/lib/linear-progress'
 
@@ -121,6 +124,9 @@ export class KioskView extends React.Component {
     if (section !== HOME_PAGE) {
       var currentPage = this.state.sections[section].pages[page]
       this.setState({ appTitle: currentPage.title })
+      this.setAppBarIconElementLeft(<IconButton onClick={() => this.setCurrentPage(HOME_PAGE, 0)}><NavigationBack/></IconButton>)
+    } else {
+      this.setAppBarIconElementLeft()
     }
   }
 
