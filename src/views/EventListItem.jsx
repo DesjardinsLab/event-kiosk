@@ -14,8 +14,8 @@ export class EventListItem extends React.Component {
       <div className="eventCard">
         <div className='dateInfo'>
           <div className='dateDisplay' style={{opacity: this.props.hideDate ? 0 : 1}}>
-            <div className='day'>{event.day}</div>
-            <div className='date'>{event.shortDate}</div>
+            <h3 className='day'>{event.day}</h3>
+            <h3 className='date'>{event.shortDate}</h3>
           </div>
         </div>
         <Paper

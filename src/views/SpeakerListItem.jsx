@@ -11,9 +11,9 @@ export class SpeakerListItem extends React.Component {
           <img src={speaker.image} />
         </div>
         <div className='details'>
-          <div className='name'>
+          <h3 className='name'>
             {speaker.name}
-          </div>
+          </h3>
           <div className='bio'>
             {speaker.bio}
           </div>
