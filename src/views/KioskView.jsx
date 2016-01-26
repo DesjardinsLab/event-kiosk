@@ -94,7 +94,8 @@ export class KioskView extends React.Component {
       navOpen: false,
       currentPage: 0,
       currentSection: HOME_PAGE,
-      transitionProgress: 0
+      transitionProgress: 0,
+      appBarIconElementLeft: null
     })
   }
 
@@ -121,9 +122,13 @@ export class KioskView extends React.Component {
       currentPage: page,
       navOpen: false
     })
+
     if (section !== HOME_PAGE) {
       var currentPage = this.state.sections[section].pages[page]
-      this.setState({ appTitle: currentPage.title })
+
+      this.setState({
+        appTitle: currentPage.title
+      })
       this.setAppBarIconElementLeft(<IconButton onClick={() => this.setCurrentPage(HOME_PAGE, 0)}><NavigationBack/></IconButton>)
     } else {
       this.setAppBarIconElementLeft()

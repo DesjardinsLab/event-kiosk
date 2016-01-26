@@ -98,6 +98,18 @@ export class PresentationView extends React.Component {
     }
   }
 
+  setSelectedEvent (event) {
+    this.setState({
+      selectedEvent: event,
+    })
+  }
+
+  clearSelectedEvent () {
+    this.setState({
+      selectedEvent: null
+    })
+  }
+
   goToNextSlide () {
     var nextSlideIndex = this.state.currentSlideIndex + 1
     if (nextSlideIndex > this.props.presentation.slides.length) { nextSlideIndex = 0 }
@@ -125,26 +137,30 @@ export class PresentationView extends React.Component {
           continuous={this.props.presentation.slides.length > 2}
           onTouchEnd={(event) => this.handleImageScroll(event)}
           slideToIndex={this.state.currentSlideIndex}
+          startSlide={this.state.currentSlideIndex}
           key='react-swipe'
           callback={(index, element) => this.onSlideChange(index, element)}>
           {this.props.presentation.slides.map(function (item, index) {
             if (item.type === EVENT_LIST_SLIDE_TYPE) {
               return (
-                <div key={'eventListWrapper' + index}>
+                <div key={index}>
                   <EventView
                     {...this.props}
                     {...item}
+                    selectedEvent={this.state.selectedEvent}
                     title={this.state.currentSlide ? this.state.currentSlide.title : ''}
+                    setSelectedEvent={(value) => this.setSelectedEvent(value)}
+                    clearSelectedEvent={() => this.clearSelectedEvent()}
                   />
                 </div>
               )
             } else if (item.type === IMAGE_SLIDE_TYPE) {
               return (
-                <div key={'imgWrapper' + index} style={{backgroundImage: 'url('+item.img+')', backgroundSize: 'cover', height: '100vh'}}/>
+                <div key={index} style={{backgroundImage: 'url('+item.img+')', backgroundSize: 'cover', height: '100vh'}}/>
               )
             } else if (item.type === EVENT_SLIDE_TYPE) {
               return (
-                <div key={'eventWrapper' + index}>
+                <div key={index}>
                   <EventView
                     {...this.props}
                     event={item.event}
@@ -176,7 +192,25 @@ export class PresentationView extends React.Component {
 
     return (
       <div className='kiosk-presentation'>
-        {reactSwipeComponent}
+        {this.state.selectedEvent ?
+          <div>
+            {this.props.presentation.slides.filter(function (item) {
+              return item.type === EVENT_LIST_SLIDE_TYPE
+            }).map(function (item, index) {
+                return (
+                  <div key={index}>
+                    <EventView
+                      {...this.props}
+                      {...item}
+                      selectedEvent={this.state.selectedEvent}
+                      title={this.state.currentSlide ? this.state.currentSlide.title : ''}
+                      setSelectedEvent={(value) => this.setSelectedEvent(value)}
+                      clearSelectedEvent={() => this.clearSelectedEvent()}
+                    />
+                  </div>
+                )}.bind(this))}
+          </div> :
+          reactSwipeComponent}
       </div>
     )
   }
