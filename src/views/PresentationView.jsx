@@ -98,6 +98,26 @@ export class PresentationView extends React.Component {
     }
   }
 
+  goToNextSlide () {
+    var nextSlideIndex = this.state.currentSlideIndex + 1
+    if (nextSlideIndex > this.props.presentation.slides.length) { nextSlideIndex = 0 }
+
+    this.setState({
+      currentSlideIndex: nextSlideIndex,
+      currentSlide: this.props.presentation.slides[nextSlideIndex]
+    })
+  }
+
+  goToPrevSlide () {
+    var prevSlideIndex = this.state.currentSlideIndex - 1
+    if (prevSlideIndex < 0) { prevSlideIndex = this.props.presentation.slides.length - 1 }
+
+    this.setState({
+      currentSlideIndex: prevSlideIndex,
+      currentSlide: this.props.presentation.slides[prevSlideIndex]
+    })
+  }
+
   buildSwipeComponent () {
     return (
       <div className='kiosk-swiper' onTouchStart={((event) => this.handleTouch(event))} onTouchEnd={(event) => this.props.onInteraction(event)}>
@@ -135,6 +155,13 @@ export class PresentationView extends React.Component {
             }
           }.bind(this))}
         </ReactSwipe>
+        <div className='navDots'>
+          {this.props.presentation.slides.map(function (item, index) {
+            return (
+              <div key={index} className={'navDot ' + (this.state.currentSlideIndex === index ? 'active' : 'inactive')} />
+            )
+          }.bind(this))}
+        </div>
       </div>
     )
   }

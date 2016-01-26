@@ -6,6 +6,9 @@ import SpeakerListView from './SpeakerListView'
 import QRCode from 'qrcode.react'
 
 export class EventDetailView extends React.Component {
+  componentDidMount () {
+
+  }
 
   render () {
     var event = this.props.event
@@ -15,6 +18,9 @@ export class EventDetailView extends React.Component {
       <article className={'eventDetails month' + event.month}>
         <div className='headerImageWrapper'>
           <img className='headerImage' src={event.img} />
+          <div className='eventUrlWrapper'>
+            <h3 className='eventUrl'>{'desjardinslab.eventbrite.com'}</h3>
+          </div>
         </div>
         <div className='details'>
           <div className='dateInfo'>
