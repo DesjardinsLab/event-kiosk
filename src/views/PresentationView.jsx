@@ -95,6 +95,7 @@ export class PresentationView extends React.Component {
     scroll(0,0)
   }
 
+  // it's a bit ugly to have the presentation handle event details...
   setSelectedEvent (event) {
     this.props.setAppTitle(event.shortTitle ? event.shortTitle : event.title)
     this.props.setAppBarIconElementLeft(<IconButton onClick={() => this.clearSelectedEvent()}><NavigationBack/></IconButton>)
@@ -114,9 +115,7 @@ export class PresentationView extends React.Component {
       clearTimeout(this.state.eventDetailTimer)
     }
 
-    this.setState({
-      selectedEvent: null
-    })
+    this.setState({ selectedEvent: null })
   }
 
   buildSwipeComponent () {

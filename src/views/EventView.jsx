@@ -20,6 +20,7 @@ export class EventView extends React.Component {
     }
   }
 
+  // since all events go through this view, we define the date formatting here
   addFormattedDatesToEvent (event) {
     var startDateTime = new Date(event.startTime)
     var endDateTime = new Date(event.endTime)
@@ -37,6 +38,7 @@ export class EventView extends React.Component {
     event.day = this.props.dayFormat.format(startDateTime)
   }
 
+  // logic for event selection is handled in Presentation view
   onEventSelect (event) {
     this.props.setSelectedEvent(event)
   }

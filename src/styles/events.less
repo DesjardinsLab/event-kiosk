@@ -1,0 +1,214 @@
+// list view
+div.eventListView {
+  padding-top: 64px;
+  width: 100%;
+
+  div.eventsByMonth {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+
+    h1.month {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 60px;
+      padding: 0.5em 1.2em;
+      color: #FFFFFF;
+    }
+
+    .eventsList {
+      margin: 1em 0em;
+    }
+  }
+}
+
+// list item cards
+div.eventCard {
+  padding: 0.5em 0px;
+  margin-right: 1em;
+  display: flex;
+
+  div.dateInfo {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    padding: 30px;
+  }
+
+  div.eventListItem {
+    width: 80%;
+    text-align: left;
+    text-overflow: ellipsis;
+    position: relative;
+    padding: 30px;
+    margin-right: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+
+    .details {
+      display: flex;
+      padding-top: 0.25em;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px black;
+      text-align: left;
+
+      h2.title {
+        display: block;
+        line-height: 1em;
+        max-height: 2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .time {
+        color: #808285;
+        padding-top: 0.5em;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      h3.subtitle {
+        color: #808285;
+        padding-top: 0.5em;
+        font-size: 24px;
+        min-height: 1em;
+      }
+    }
+
+    .chevronRight {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      svg {
+        padding: 1em;
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
+  }
+}
+
+// event details
+article.eventDetails {
+  padding-top: 64px;
+
+  .headerImageWrapper {
+    position: relative;
+    .headerImage {
+      width: 100%;
+      max-height: 500px;
+      vertical-align: middle;
+    }
+
+    .eventUrlWrapper {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .eventUrl {
+        padding: 1em;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .details {
+    margin: 10px 0px;
+    padding: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+
+    .timeLocationInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+      width: 50%;
+      font-size: 42px;
+
+      div {
+        padding: 5px
+      }
+    }
+
+    .dateInfo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .QRCodeWrapper {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .desc {
+    width: 85%;
+    margin: auto;
+    padding: 0px 50px;
+    text-align: justify;
+
+    p {
+      font-size: 30px;
+      margin-top: 1em;
+    }
+  }
+
+  .speakersList {
+    margin-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+
+    .speaker {
+      width: 85%;
+      margin: auto;
+      padding-bottom: 1em;
+      display: flex;
+      justify-content: space-between;
+
+      div.avatar {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 25%;
+          align-self: center;
+
+          border-radius: 50%;
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      .details {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        font-size: 30px;
+
+        div {
+          padding: 0.5em 0.25em;
+        }
+
+        .name {
+          font-weight: bold;
+        }
+
+        .bio {
+          font-weight: ligther;
+        }
+      }
+    }
+  }
+}

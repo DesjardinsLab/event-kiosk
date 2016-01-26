@@ -5,10 +5,6 @@ import ChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right'
 
 export class EventListItem extends React.Component {
 
-  handleEventClick (event) {
-    this.props.onEventClick(event)
-  }
-
   render () {
     var event = this.props.event
 
@@ -22,7 +18,7 @@ export class EventListItem extends React.Component {
         </div>
         <Paper
           className='eventListItem'
-          onClick={() => this.handleEventClick(event)}
+          onClick={() => this.props.onEventClick(event)}
           zDepth={1}>
           <article className='details'>
             <h2 className='title'>{event.shortTitle ? event.shortTitle : event.title}</h2>
