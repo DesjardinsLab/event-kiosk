@@ -92,12 +92,6 @@ export class PresentationView extends React.Component {
     scroll(0,0)
   }
 
-  handleImageScroll (event) {
-    if (this.state.currentSlide.type === IMAGE_SLIDE_TYPE) {
-      scroll(0,0)
-    }
-  }
-
   setSelectedEvent (event) {
     this.setState({
       selectedEvent: event,
@@ -110,32 +104,11 @@ export class PresentationView extends React.Component {
     })
   }
 
-  goToNextSlide () {
-    var nextSlideIndex = this.state.currentSlideIndex + 1
-    if (nextSlideIndex > this.props.presentation.slides.length) { nextSlideIndex = 0 }
-
-    this.setState({
-      currentSlideIndex: nextSlideIndex,
-      currentSlide: this.props.presentation.slides[nextSlideIndex]
-    })
-  }
-
-  goToPrevSlide () {
-    var prevSlideIndex = this.state.currentSlideIndex - 1
-    if (prevSlideIndex < 0) { prevSlideIndex = this.props.presentation.slides.length - 1 }
-
-    this.setState({
-      currentSlideIndex: prevSlideIndex,
-      currentSlide: this.props.presentation.slides[prevSlideIndex]
-    })
-  }
-
   buildSwipeComponent () {
     return (
       <div className='kiosk-swiper' onTouchStart={((event) => this.handleTouch(event))} onTouchEnd={(event) => this.props.onInteraction(event)}>
         <ReactSwipe
           continuous={this.props.presentation.slides.length > 2}
-          onTouchEnd={(event) => this.handleImageScroll(event)}
           slideToIndex={this.state.currentSlideIndex}
           startSlide={this.state.currentSlideIndex}
           key='react-swipe'
@@ -190,6 +163,10 @@ export class PresentationView extends React.Component {
       reactSwipeComponent = this.buildSwipeComponent()
     }
 
+    /*
+     * render single EventView if in detail mode (selectedEvent is set),
+     * else render slideshow.
+     */
     return (
       <div className='kiosk-presentation'>
         {this.state.selectedEvent ?

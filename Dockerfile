@@ -1,5 +1,7 @@
 FROM ubuntu:14.04
 
+ENV LANG C
+
 ENV PYTHONUNBUFFERED 1
 
 # keep upstart quiet
