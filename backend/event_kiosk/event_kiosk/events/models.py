@@ -3,6 +3,7 @@ from django.utils.translation import ugettext as _
 from datetime import datetime
 import pytz
 from django.conf import settings
+from ckeditor.fields import RichTextField
 
 class Speaker(models.Model):
     name = models.CharField(_('name'), max_length=255)
@@ -32,7 +33,7 @@ class Event(models.Model):
     date = models.DateField(_('date'), null=False)
     startTime = models.TimeField(_('start time'), null=False)
     endTime = models.TimeField(_('end time'), null=False)
-    description = models.TextField(_('description'))
+    description = RichTextField(_('description'))
     image = models.ImageField(_('image'), upload_to='events/%Y/%m/%d/', null=False)
     location = models.CharField(_('location'), max_length=100)
     speakers = models.ManyToManyField(Speaker, blank=True)

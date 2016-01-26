@@ -2,345 +2,237 @@
    "presentation":{
       "slides":[
          {
-            "title":"Events",
+            "title":"Cryptomonnaie 101",
+            "type":"event",
+            "event":{
+               "title":"Cryptomonnaie 101 - Rencontre avec la b\u00eate",
+               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/bitcoin.jpg",
+               "desc":"Bitcoin par ci, Blockchain par l\u00e0.\r\n\r\nDepuis un an, \u00e0 moins de vivre en ermite, on dirait qu\u2019un mois ne peut passer sans que nous entendions ces mots dans les nouvelles financi\u00e8res. Mais en r\u00e9alit\u00e9, qu\u2019est-ce que c\u2019est?  Est-ce l\u2019avenue d\u2019une r\u00e9volution ou simplement une bulle technologique? Quelle est la port\u00e9e de cette technologie? Comment cela fonctionne ? Beaucoup de questions que nous tenterons de r\u00e9pondre en 1h, sans devenir philosophique ou technique. Nul besoin d\u2019\u00eatre un ferr\u00e9 d\u2019informatique, nous utiliserons des exemples concrets tir\u00e9 du quotidien. Il suffit juste d\u2019une bonne dose d\u2019ouverture.\r\n\r\n\u00c9videmment, en une heure, nous allons qu\u2019effleurer le sujet. Ceci est donc le d\u00e9but de plusieurs conf\u00e9rences et ateliers.",
+               "endTime":"2016-02-18T18:00:00Z",
+               "shortTitle":"Cryptomonnaie 101",
+               "registrationUrl":"https://www.eventbrite.ca/e/billets-cryptomonnaie-101-rencontre-avec-la-bete-20765133072",
+               "speakers":[
+
+               ],
+               "startTime":"2016-02-18T17:00:00Z",
+               "location":"Espace Desjardins",
+               "subTitle":"Rencontre avec la b\u00eate"
+            }
+         },
+         {
+            "title":"L'insoup\u00e7onn\u00e9e valeur des marques",
+            "type":"event",
+            "event":{
+               "title":"L'insoup\u00e7onn\u00e9e valeur des marques",
+               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/valeur-marque.jpg",
+               "desc":"Le processus cr\u00e9atif derri\u00e8re la gestion de notre marque vous int\u00e9resse?\r\n\r\nNotamment \u00e0 l'origine de la populaire campagne int\u00e9gr\u00e9e Les Noms, lg2 est l'agence de communication officielle de Desjardins.\r\n\r\nProfessionnelle du domaine, Anne-Marie Leclair viendra nous parler du milieu strat\u00e9gique des marques en 2015, des opportunit\u00e9s mais \u00e9galement des d\u00e9fis autour de celles-ci.",
+               "endTime":"2016-02-25T18:00:00Z",
+               "shortTitle":"L'insoup\u00e7onn\u00e9e valeur des marques",
+               "registrationUrl":"https://www.eventbrite.ca/e/linsoupconnee-valeur-des-marques-tickets-20765497161",
+               "speakers":[
+                  {
+                     "name":"Anne-Marie Leclair",
+                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/anne-marie-leclair.jpg",
+                     "bio":"Partenaire senior, Vice-pr\u00e9sidente strat\u00e9gie chez lg2"
+                  }
+               ],
+               "startTime":"2016-02-25T17:00:00Z",
+               "location":"Espace Desjardins",
+               "subTitle":"lg2"
+            }
+         },
+         {
+            "title":"Innovation de rupture saine - T\u00e9o Taxi",
+            "type":"event",
+            "event":{
+               "title":"Innovation de rupture saine: L'histoire de T\u00e9o Taxi",
+               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/teo-taxi.jpg",
+               "desc":"L\u2019univers du taxi est en crise. Pris au d\u00e9pourvu par une offre de service ill\u00e9gale, UberX, qui attirent de nombreux consommateurs, les chauffeurs de taxi peinent \u00e0 se renouveler. \r\n\r\nLe seul rem\u00e8de pour sauver cette industrie semble \u00eatre une id\u00e9e r\u00e9volutionnaire... Heureusement, c\u2019est que propose T\u00e9o Taxi, le dernier projet du dragon Alexandre Taillefer. Conceptualis\u00e9 pour maximiser l\u2019exp\u00e9rience-client des consommateurs de taxi, les taxis de cette jeune entreprise roulent uniquement sur l\u2019\u00e9lectricit\u00e9. Une id\u00e9e qui change le monde, un trajet de taxi \u00e0 la fois.",
+               "endTime":"2016-02-11T18:00:00Z",
+               "shortTitle":"Innovation de rupture saine - T\u00e9o Taxi",
+               "registrationUrl":"https://www.eventbrite.ca/e/billets-innovation-de-rupture-saine-lhistoire-de-teo-taxi-20764494161",
+               "speakers":[
+                  {
+                     "name":"Patrick Gagn\u00e9",
+                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/patrick-gagne.jpg",
+                     "bio":"Partenaire et chef de produit chez T\u00e9o Taxi."
+                  }
+               ],
+               "startTime":"2016-02-11T17:00:00Z",
+               "location":"Espace Desjardins",
+               "subTitle":"L'histoire de T\u00e9o Taxi"
+            }
+         },
+         {
+            "title":"Entrevue avec G. Bran Lopez",
+            "type":"event",
+            "event":{
+               "title":"Entrevue avec Gabriel Bran Lopez, pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al",
+               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/gabriel-pic-event.jpg",
+               "desc":"Gabriel Lopez vient nous parler de son parcours et nous  pr\u00e9senter Fusion Jeunesse, l\u2019organisme qu\u2019il a cr\u00e9\u00e9 pour lutter contre le d\u00e9crochage scolaire. Sa mission consiste \u00e0 \u00e9tablir des partenariats novateurs entre des \u00e9coles cibl\u00e9es et des universit\u00e9s afin de diminuer le taux de d\u00e9crochage scolaire au moyen de projets susceptibles de motiver les jeunes \u00e0 s\u2019engager dans leur apprentissage.",
+               "endTime":"2016-02-04T18:00:00Z",
+               "shortTitle":"Entrevue avec G. Bran Lopez",
+               "registrationUrl":"https://www.eventbrite.ca/e/billets-entrevue-avec-gabriel-bran-lopez-president-de-la-jeune-chambre-de-commerce-de-montreal-20764213321",
+               "speakers":[
+                  {
+                     "name":"Gabriel Bran Lopez",
+                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/gabriellopez.jpg",
+                     "bio":"Pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al."
+                  }
+               ],
+               "startTime":"2016-02-04T17:00:00Z",
+               "location":"Espace Desjardins",
+               "subTitle":"Pr\u00e9sident de la JCCM"
+            }
+         },
+         {
+            "title":"Boule de cristal 2016",
+            "type":"event",
+            "event":{
+               "title":"Boule de cristal 2016",
+               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/boule.jpg",
+               "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.",
+               "endTime":"2016-01-28T18:00:00Z",
+               "shortTitle":"Boule de cristal 2016",
+               "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
+               "speakers":[
+                  {
+                     "name":"Boris Tia",
+                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/boris.jpg",
+                     "bio":"Analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement."
+                  },
+                  {
+                     "name":"Jonathan B\u00e9lisle",
+                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/jonathanb.jpg",
+                     "bio":"Cofondateur des entreprises iotheatre et SAGA. Shaman num\u00e9rique ou po\u00e8te entrepreneur il est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
+                  }
+               ],
+               "startTime":"2016-01-28T17:00:00Z",
+               "location":"Espace Desjardins",
+               "subTitle":"B. Tia & J. Belisle"
+            }
+         },
+         {
+            "title":"\u00c9v\u00e9nements \u00e0 venir",
             "type":"eventList",
             "events":[
                {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
                   "title":"Boule de cristal 2016",
+                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/boule.jpg",
+                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.",
+                  "endTime":"2016-01-28T18:00:00Z",
+                  "shortTitle":"Boule de cristal 2016",
+                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
                   "speakers":[
                      {
                         "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
+                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/boris.jpg",
+                        "bio":"Analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement."
                      },
                      {
                         "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
+                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/jonathanb.jpg",
+                        "bio":"Cofondateur des entreprises iotheatre et SAGA. Shaman num\u00e9rique ou po\u00e8te entrepreneur il est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
                      }
                   ],
-                  "startTime":"2016-01-28T12:00:00"
+                  "startTime":"2016-01-28T17:00:00Z",
+                  "location":"Espace Desjardins",
+                  "subTitle":"B. Tia & J. Belisle"
                },
                {
-                  "registrationUrl":"https://www.eventbrite.ca/e/billets-entrevue-avec-gabriel-bran-lopez-president-de-la-jeune-chambre-de-commerce-de-montreal-20764213321",
-                  "img":"/media/events/2016/01/20/gabriel-pic-event.jpg",
-                  "endTime":"2016-02-04T13:00:00",
-                  "desc":"\u00ab Je n'aime pas l'inertie. La soci\u00e9t\u00e9 prend son temps pour examiner un probl\u00e8me, mais l'enfant, lui, n'attend pas pour d\u00e9crocher \u00bb Gabriel Bran Lopez\r\n\r\nGabriel Lopez vient nous parler de son parcours et nous  pr\u00e9senter Fusion Jeunesse, l\u2019organisme qu\u2019il a cr\u00e9\u00e9 pour lutter contre le d\u00e9crochage scolaire. Sa mission consiste \u00e0 \u00e9tablir des partenariats novateurs entre des \u00e9coles cibl\u00e9es et des universit\u00e9s afin de diminuer le taux de d\u00e9crochage scolaire au moyen de projets susceptibles de motiver les jeunes \u00e0 s\u2019engager dans leur apprentissage.\r\n\r\nAujourd'hui, \u00abgr\u00e2ce \u00e0 une formidable \u00e9quipe et \u00e0 des partenaires hors pair\u00bb, Fusion Jeunesse chapeaute plus de 125 projets dans 65 \u00e9tablissements et mobilise plus de 8000 jeunes. \r\n\r\nVenez entendre cette histoire exemplaire d'innovation sociale.\r\n\r\nA PROPOS DU CONF\u00c9RENCIER\r\nNomm\u00e9 \u00ab Personnalit\u00e9 de la semaine \u00bb par La Presse/Radio-Canada en 2013, \u00ab Entrepreneur social de l\u2019ann\u00e9e \u00bb par Ernst & Young et \u00ab Fellow \u00bb d\u2019Ashoka en 2011, Gabriel Bran Lopez est le Pr\u00e9sident fondateur de Fusion Jeunesse, un organisme de bienfaisance prim\u00e9 qui mobilise les universit\u00e9s afin de contrer le d\u00e9crochage scolaire. Il est pr\u00e9sentement le pr\u00e9sident de la Jeune chambre de commerce (JCCM) de Montr\u00e9al.\r\n\r\nGabriel a \u00e9galement cofond\u00e9 le Festival de robotique qu\u00e9b\u00e9cois, et l\u2019organisme Robotique FIRST Qu\u00e9bec, qui travaille aupr\u00e8s de milliers de jeunes pour les impliquer dans des projets concrets li\u00e9s aux sciences et \u00e0 la technologie.\r\n\r\nEn novembre 2013, Gabriel re\u00e7ut le prestigieux prix \u00ab Michel-Perron \u00bb de R\u00e9unir R\u00e9ussir pour reconnaitre \u00ab l\u2019apport exceptionnel d\u2019un leader r\u00e9solument enracin\u00e9 sur le territoire et engag\u00e9 en faveur de la r\u00e9ussite scolaire des jeunes Qu\u00e9b\u00e9cois \u00e2g\u00e9s de moins de 20 ans \u00bb. Dans les derni\u00e8res ann\u00e9es, son travail fut \u00e9galement salu\u00e9 par le Forum des politiques publiques du Canada, le Globe and Mail, le Forum jeunesse de l\u2019\u00eele de Montr\u00e9al, l'Association pour le d\u00e9veloppement de la recherche et de l'innovation du Qu\u00e9bec (ADRIQ) et la Chambre de commerce latino-am\u00e9ricaine du Qu\u00e9bec.\r\n\r\nAncien membre du conseil d\u2019administration d\u2019Oxfam-Qu\u00e9bec, Gabriel est aujourd'hui gouverneur (membre du CA) de la Fondation J. Armand Bombardier, membre du Groupe d\u2019action sur la pers\u00e9v\u00e9rance et la r\u00e9ussite scolaires et porte-parole du Concours qu\u00e9b\u00e9cois en entrepreneuriat.",
-                  "location":"Espace Desjardins",
                   "title":"Entrevue avec Gabriel Bran Lopez, pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al",
+                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/gabriel-pic-event.jpg",
+                  "desc":"Gabriel Lopez vient nous parler de son parcours et nous  pr\u00e9senter Fusion Jeunesse, l\u2019organisme qu\u2019il a cr\u00e9\u00e9 pour lutter contre le d\u00e9crochage scolaire. Sa mission consiste \u00e0 \u00e9tablir des partenariats novateurs entre des \u00e9coles cibl\u00e9es et des universit\u00e9s afin de diminuer le taux de d\u00e9crochage scolaire au moyen de projets susceptibles de motiver les jeunes \u00e0 s\u2019engager dans leur apprentissage.",
+                  "endTime":"2016-02-04T18:00:00Z",
+                  "shortTitle":"Entrevue avec G. Bran Lopez",
+                  "registrationUrl":"https://www.eventbrite.ca/e/billets-entrevue-avec-gabriel-bran-lopez-president-de-la-jeune-chambre-de-commerce-de-montreal-20764213321",
                   "speakers":[
                      {
                         "name":"Gabriel Bran Lopez",
-                        "image":"/media/speakers/2016/01/20/gabriellopez.jpg",
+                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/gabriellopez.jpg",
                         "bio":"Pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al."
                      }
                   ],
-                  "startTime":"2016-02-04T12:00:00"
+                  "startTime":"2016-02-04T17:00:00Z",
+                  "location":"Espace Desjardins",
+                  "subTitle":"Pr\u00e9sident de la JCCM"
                },
                {
-                  "registrationUrl":"https://www.eventbrite.ca/e/billets-innovation-de-rupture-saine-lhistoire-de-teo-taxi-20764494161",
-                  "img":"/media/events/2016/01/20/teo-taxi.jpg",
-                  "endTime":"2016-02-11T13:00:00",
-                  "desc":"L\u2019univers du taxi est en crise. Pris au d\u00e9pourvu par une offre de service ill\u00e9gale, UberX, qui attirent de nombreux consommateurs, les chauffeurs de taxi peinent \u00e0 se renouveler. \r\n\r\nLe seul rem\u00e8de pour sauver cette industrie semble \u00eatre une id\u00e9e r\u00e9volutionnaire... Heureusement, c\u2019est que propose T\u00e9o Taxi, le dernier projet du dragon Alexandre Taillefer. Conceptualis\u00e9 pour maximiser l\u2019exp\u00e9rience-client des consommateurs de taxi, les taxis de cette jeune entreprise roulent uniquement sur l\u2019\u00e9lectricit\u00e9. Une id\u00e9e qui change le monde, un trajet de taxi \u00e0 la fois.\r\n\r\nLe conf\u00e9rencier Patrick Gagn\u00e9 est partenaire et chef de produit chez T\u00e9o Taxi.",
-                  "location":"Espace Desjardins",
                   "title":"Innovation de rupture saine: L'histoire de T\u00e9o Taxi",
+                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/teo-taxi.jpg",
+                  "desc":"L\u2019univers du taxi est en crise. Pris au d\u00e9pourvu par une offre de service ill\u00e9gale, UberX, qui attirent de nombreux consommateurs, les chauffeurs de taxi peinent \u00e0 se renouveler. \r\n\r\nLe seul rem\u00e8de pour sauver cette industrie semble \u00eatre une id\u00e9e r\u00e9volutionnaire... Heureusement, c\u2019est que propose T\u00e9o Taxi, le dernier projet du dragon Alexandre Taillefer. Conceptualis\u00e9 pour maximiser l\u2019exp\u00e9rience-client des consommateurs de taxi, les taxis de cette jeune entreprise roulent uniquement sur l\u2019\u00e9lectricit\u00e9. Une id\u00e9e qui change le monde, un trajet de taxi \u00e0 la fois.",
+                  "endTime":"2016-02-11T18:00:00Z",
+                  "shortTitle":"Innovation de rupture saine - T\u00e9o Taxi",
+                  "registrationUrl":"https://www.eventbrite.ca/e/billets-innovation-de-rupture-saine-lhistoire-de-teo-taxi-20764494161",
                   "speakers":[
                      {
                         "name":"Patrick Gagn\u00e9",
-                        "image":"/media/speakers/2016/01/20/patrick-gagne.jpg",
+                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/patrick-gagne.jpg",
                         "bio":"Partenaire et chef de produit chez T\u00e9o Taxi."
                      }
                   ],
-                  "startTime":"2016-02-11T12:00:00"
+                  "startTime":"2016-02-11T17:00:00Z",
+                  "location":"Espace Desjardins",
+                  "subTitle":"L'histoire de T\u00e9o Taxi"
                },
                {
-                  "registrationUrl":"https://www.eventbrite.ca/e/linsoupconnee-valeur-des-marques-tickets-20765497161",
-                  "img":"/media/events/2016/01/20/valeur-marque.jpg",
-                  "endTime":"2016-02-25T13:00:00",
-                  "desc":"Le processus cr\u00e9atif derri\u00e8re la gestion de notre marque vous int\u00e9resse?\r\n\r\nNotamment \u00e0 l'origine de la populaire campagne int\u00e9gr\u00e9e Les Noms, lg2 est l'agence de communication officielle de Desjardins.\r\n\r\nlg2 contribue \u00e0 l\u2019essor du Mouvement depuis 2003 en r\u00e9alisant l\u2019ensemble des campagnes visant \u00e0 promouvoir sa distinction coop\u00e9rative, son expertise d\u2019affaires, ses produits d\u2019\u00e9pargne et de financement, de gestion du patrimoine, d\u2019assurances, de valeurs mobili\u00e8res, et ce, tant aupr\u00e8s des particuliers que des entreprises, membres et clients, \u00e0 l\u2019\u00e9chelle nationale.\r\n\r\nProfessionnelle du domaine, Anne-Marie Leclair viendra nous parler du milieu strat\u00e9gique des marques en 2015, des opportunit\u00e9s mais \u00e9galement des d\u00e9fis autour de celles-ci.",
-                  "location":"Espace Desjardins",
-                  "title":"L'insoup\u00e7onn\u00e9e valeur des marques",
-                  "speakers":[
-                     {
-                        "name":"Anne-Marie Leclair",
-                        "image":"/media/speakers/2016/01/20/anne-marie-leclair.jpg",
-                        "bio":"Partenaire senior, Vice-pr\u00e9sidente strat\u00e9gie chez lg2"
-                     }
-                  ],
-                  "startTime":"2016-02-25T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/billets-cryptomonnaie-101-rencontre-avec-la-bete-20765133072",
-                  "img":"/media/events/2016/01/20/bitcoin.jpg",
-                  "endTime":"2016-02-18T13:00:00",
-                  "desc":"Bitcoin par ci, Blockchain par l\u00e0.\r\n\r\nDepuis un an, \u00e0 moins de vivre en ermite, on dirait qu\u2019un mois ne peut passer sans que nous entendions ces mots dans les nouvelles financi\u00e8res. Mais en r\u00e9alit\u00e9, qu\u2019est-ce que c\u2019est?  Est-ce l\u2019avenue d\u2019une r\u00e9volution ou simplement une bulle technologique? Quelle est la port\u00e9e de cette technologie? Comment cela fonctionne ? Beaucoup de questions que nous tenterons de r\u00e9pondre en 1h, sans devenir philosophique ou technique. Nul besoin d\u2019\u00eatre un ferr\u00e9 d\u2019informatique, nous utiliserons des exemples concrets tir\u00e9 du quotidien. Il suffit juste d\u2019une bonne dose d\u2019ouverture.\r\n\r\n\u00c9videmment, en une heure, nous allons qu\u2019effleurer le sujet. Ceci est donc le d\u00e9but de plusieurs conf\u00e9rences et ateliers.",
-                  "location":"Espace Desjardins",
                   "title":"Cryptomonnaie 101 - Rencontre avec la b\u00eate",
+                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/bitcoin.jpg",
+                  "desc":"Bitcoin par ci, Blockchain par l\u00e0.\r\n\r\nDepuis un an, \u00e0 moins de vivre en ermite, on dirait qu\u2019un mois ne peut passer sans que nous entendions ces mots dans les nouvelles financi\u00e8res. Mais en r\u00e9alit\u00e9, qu\u2019est-ce que c\u2019est?  Est-ce l\u2019avenue d\u2019une r\u00e9volution ou simplement une bulle technologique? Quelle est la port\u00e9e de cette technologie? Comment cela fonctionne ? Beaucoup de questions que nous tenterons de r\u00e9pondre en 1h, sans devenir philosophique ou technique. Nul besoin d\u2019\u00eatre un ferr\u00e9 d\u2019informatique, nous utiliserons des exemples concrets tir\u00e9 du quotidien. Il suffit juste d\u2019une bonne dose d\u2019ouverture.\r\n\r\n\u00c9videmment, en une heure, nous allons qu\u2019effleurer le sujet. Ceci est donc le d\u00e9but de plusieurs conf\u00e9rences et ateliers.",
+                  "endTime":"2016-02-18T18:00:00Z",
+                  "shortTitle":"Cryptomonnaie 101",
+                  "registrationUrl":"https://www.eventbrite.ca/e/billets-cryptomonnaie-101-rencontre-avec-la-bete-20765133072",
                   "speakers":[
 
                   ],
-                  "startTime":"2016-02-18T12:00:00"
+                  "startTime":"2016-02-18T17:00:00Z",
+                  "location":"Espace Desjardins",
+                  "subTitle":"Rencontre avec la b\u00eate"
                },
                {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
+                  "title":"L'insoup\u00e7onn\u00e9e valeur des marques",
+                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/valeur-marque.jpg",
+                  "desc":"Le processus cr\u00e9atif derri\u00e8re la gestion de notre marque vous int\u00e9resse?\r\n\r\nNotamment \u00e0 l'origine de la populaire campagne int\u00e9gr\u00e9e Les Noms, lg2 est l'agence de communication officielle de Desjardins.\r\n\r\nProfessionnelle du domaine, Anne-Marie Leclair viendra nous parler du milieu strat\u00e9gique des marques en 2015, des opportunit\u00e9s mais \u00e9galement des d\u00e9fis autour de celles-ci.",
+                  "endTime":"2016-02-25T18:00:00Z",
+                  "shortTitle":"L'insoup\u00e7onn\u00e9e valeur des marques",
+                  "registrationUrl":"https://www.eventbrite.ca/e/linsoupconnee-valeur-des-marques-tickets-20765497161",
                   "speakers":[
                      {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
+                        "name":"Anne-Marie Leclair",
+                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/anne-marie-leclair.jpg",
+                        "bio":"Partenaire senior, Vice-pr\u00e9sidente strat\u00e9gie chez lg2"
                      }
                   ],
-                  "startTime":"2016-03-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
+                  "startTime":"2016-02-25T17:00:00Z",
                   "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-04-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-05-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-06-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-07-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-08-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-09-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-10-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-11-28T12:00:00"
-               },
-               {
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "img":"/media/events/2016/01/20/boule.jpg",
-                  "endTime":"2016-01-28T13:00:00",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers Boris Tia et Jonathan B\u00e9lisle nous pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.\r\n\r\nBoris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration.\r\n\r\nJonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client.\r\n\r\nUn \u00e9v\u00e8nement riche d'inspiration vous attend donc!",
-                  "location":"Espace Desjardins",
-                  "title":"Boule de cristal 2016",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Boris Tia est analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement, PVP ex\u00e9cutive Direction du Mouvement Desjardins et direction g\u00e9n\u00e9rale de la F\u00e9d\u00e9ration."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Jonathan B\u00e9lisle est le cofondateur des entreprises iotheatre et SAGA. Celui-ci se d\u00e9signe comme shaman num\u00e9rique ou po\u00e8te entrepreneur et est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-12-28T12:00:00"
+                  "subTitle":"lg2"
                }
             ]
          },
          {
-            "title":"Image",
-            "type":"image",
-            "img":"/media/slides/2016/01/20/1.png"
+            "img":"http://kiosk.inno-apps.net/media/slides/2016/01/20/3.png",
+            "title":"",
+            "type":"image"
+         },
+         {
+            "img":"http://kiosk.inno-apps.net/media/slides/2016/01/20/1.png",
+            "title":"",
+            "type":"image"
          }
       ],
-      "pauseTimeOnTouch":15000,
-      "transitionTime":5000
+      "pauseTimeOnTouch":60000,
+      "transitionTime":15000
    },
-   "appVersion":"d5ebcf8d49e7",
+   "appVersion":"592cad07ef7a",
    "sections":[
       {
          "title":"Desjardins Lab",
          "pages":[
             {
-               "title":"\u00c9quipe",
-               "icon":false,
-               "html":"Page de l'\u00e9quipe du Desjardins Lab."
-            },
-            {
-               "title":"Partenaires",
-               "icon":false,
-               "html":"Partenaires du Desjardins Lab ici."
-            },
-            {
-               "title":"Mission",
-               "icon":false,
-               "html":"Test de contenu"
-            }
-         ]
-      },
-      {
-         "title":"Espace Desjardins",
-         "pages":[
-            {
-               "title":"\u00c9quipe",
-               "icon":false,
-               "html":"\u00c9quipe de l'Espace Desjardins."
-            },
-            {
-               "title":"Mission",
-               "icon":false,
-               "html":"Mission de l'espace."
+               "title":"Collaborateurs",
+               "html":"<style>\r\n.page-team  {\r\n  font-family: Calibri, Arial, Sans-serif;\r\n}\r\n\r\n.page-team  h1, .page-team  h2 {\r\n  font-weight: normal;\r\n  font-family: 'PT Sans Narrow', sans-serif;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.page-team ul {\r\n  margin: 0;\r\n  padding: 0;\r\n  margin-top: 20px;\r\n}\r\n\r\n.page-team li {\r\n  float: left;\r\n  width: 100%;\r\n  margin-bottom: 20px;\r\n  padding-left: 30px;\r\n  box-sizing: border-box;\r\n  visibility: hidden;\r\n}\r\n.page-team li.animated {\r\n  visibility: visible;\r\n}\r\n\r\n\r\n.page-team li .team-member-pic {\r\n  float: left;\r\n  width: 13%;\r\n}\r\n.page-team li .team-member-pic img {\r\n  width: 100%;\r\n  height: auto;\r\n  border-radius: 50%;\r\n}\r\n\r\n.page-team li .team-member-info {\r\n  float: left;\r\n  width: 87%;\r\n  box-sizing: border-box;\r\n  padding-left: 40px;\r\n}\r\n\r\n.page-team li .team-member-info h1 {\r\n  font-size: 32px;\r\n  margin: 0;\r\n  margin-top: 10px;\r\n  margin-bottom: 3px;\r\n}\r\n.page-team li .team-member-info h2 {\r\n  font-weight: normal;\r\n  font-size: 24px;\r\n  margin: 0;\r\n}\r\n</style>\r\n  <link href='http://kiosk.inno-apps.net/media/assets/2016/01/21/animate.min.css' rel='stylesheet' type='text/css'>\r\n  <div class=\"page-team\" style=\"display: none;\">\r\n    <ul>\r\n      <li class=\"\">\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/default_avatar.png\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Mathieu B&eacute;lisle</h1>\r\n          <h2>Conseiller principal Strat&eacute;gie et Innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/lavoiedn.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Nicolas Lavoie Drapeau</h1>\r\n          <h2>Analyste Programmeur</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/olivierl.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Olivier Lorrain</h1>\r\n          <h2>Conseiller en exp&eacute;rience utilisateur</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/jpmalo.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Jean-Pierre Malo</h1>\r\n          <h2>Sp&eacute;cialiste en exp&eacute;rience utilisateur</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/mireault.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Mathieu Mireault</h1>\r\n          <h2>Conseiller en innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/federico.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Federico Puebla</h1>\r\n          <h2>Conseiller principal</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/anner.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Anne Roquecave</h1>\r\n          <h2>Conseill&egrave;re en innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/justines.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Justine Santot</h1>\r\n          <h2>Conseill&egrave;re en innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/ptremblay.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Philippe Tremblay</h1>\r\n          <h2>Concepteur</h2>\r\n        </div>\r\n      </li>\r\n      <li class=\"\">\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/cedric.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>C&eacute;dric Veilleux</h1>\r\n          <h2>Conseiller</h2>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>",
+               "javascript":"setTimeout(function() {\r\n  $('.page-team').show();\r\n  $('.page-team li').each(function(index) {\r\n    var elem = $(this);\r\n    setTimeout(function() {\r\n      elem.addClass('animated slideInLeft');\r\n    }, index * 100);\r\n  });\r\n}, 200);",
+               "icon":"http://kiosk.inno-apps.net/media/icons/2016/01/22/ic_group_18px.svg"
             }
          ]
       }

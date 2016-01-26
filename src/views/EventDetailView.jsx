@@ -41,10 +41,7 @@ export class EventDetailView extends React.Component {
             {event.registrationUrl ? <QRCode className='QRCode' value={event.registrationUrl} /> : <div className='QRCode' />}
           </div>
         </div>
-        <div className='desc'>{event.desc.split(/\r?\n/).map(function (item, index) {
-            return <p key={index}>{item}</p>
-          })}
-        </div>
+        <div className='desc' dangerouslySetInnerHTML={{__html: event.desc}}/>
         {event.speakers ? <SpeakerListView speakers={event.speakers} /> : ''}
       </article>
     )

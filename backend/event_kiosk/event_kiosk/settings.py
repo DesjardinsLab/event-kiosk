@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'event_kiosk.kiosks',
     'event_kiosk.events',
     'event_kiosk.presentations',
-    'event_kiosk.content'
+    'event_kiosk.content',
+    'ckeditor'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -118,7 +119,6 @@ USE_L10N = True
 
 USE_TZ = False
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -132,3 +132,18 @@ if (DEBUG == False):
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#CKEditor related mumbo jumbo
+CKEDITOR_JQUERY_URL = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker"],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+                'NumberedList', 'BulletedList',],
+            ["Link", "Unlink", "Subscript", "Superscript"],
+            ['Undo', 'Redo'],
+            ["Source"],
+            ["Maximize"]],
+    }
+}
