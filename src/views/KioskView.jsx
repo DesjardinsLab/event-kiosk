@@ -44,7 +44,7 @@ export class KioskView extends React.Component {
 
   componentDidMount () {
     this.getKiosk()
-    this.setState({reloadInterval: setInterval(this.getKiosk.bind(this), RELOAD_INTERVAL)})
+    this.setState({ reloadInterval: setInterval(this.getKiosk.bind(this), RELOAD_INTERVAL )})
   }
 
   componentWillUnmount () {
@@ -89,11 +89,11 @@ export class KioskView extends React.Component {
   }
 
   handleInactivityTimer () {
-    this.setCurrentPage(HOME_PAGE, 0)
     this.setState({
       interactiveMode: false,
       transitionProgress: 0
     })
+    this.setCurrentPage(HOME_PAGE, 0)
   }
 
   // these functions should be passed to children to influence components from the kiosk.
@@ -229,7 +229,6 @@ export class KioskView extends React.Component {
             setAppBarIconElementLeft={iconElementLeft => this.setAppBarIconElementLeft(iconElementLeft)}
             onInteraction={event => this.onInteraction(event)}
             pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}/> : ''
-          : ''
         )
       default:
         var page = this.state.sections[this.state.currentSection].pages[this.state.currentPage];
