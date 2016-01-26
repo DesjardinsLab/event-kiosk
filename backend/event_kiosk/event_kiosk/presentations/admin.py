@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.utils.translation import ugettext as _
 from .models import *
+from adminsortable2.admin import SortableInlineAdminMixin
 
-class SlideInlineAdmin(admin.TabularInline):
+class SlideInlineAdmin(SortableInlineAdminMixin, admin.TabularInline):
     model = Slide
     fieldsets = (
-        ( None, { 'fields': ('type', 'image', 'event', ) } ),
+        ( None, { 'fields': ('type', 'image', 'event', 'position' ) } ),
     )
     extra = 0
 
