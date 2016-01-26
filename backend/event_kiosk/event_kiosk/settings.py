@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'adminsortable2',
     'event_kiosk.kiosks',
     'event_kiosk.events',
     'event_kiosk.presentations',
@@ -125,8 +126,9 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = 'http://' + os.environ.get('ALLOWED_HOST') + '/media/'
-if (DEBUG):
-    MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
+if (DEBUG == False):
+    MEDIA_URL = 'http://' + os.environ.get('ALLOWED_HOST') + '/media/'
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
