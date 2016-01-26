@@ -1,8 +1,5 @@
 import React from 'react'
 
-import IconButton from 'material-ui/lib/icon-button'
-import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back'
-
 import EventListView from './EventListView'
 import EventDetailView from './EventDetailView'
 
@@ -41,25 +38,11 @@ export class EventView extends React.Component {
   }
 
   onEventSelect (event) {
-    this.props.setAppTitle(event.shortTitle ? event.shortTitle : event.title)
-    this.props.setAppBarIconElementLeft(<IconButton onClick={() => this.returnToListView()}><NavigationBack/></IconButton>)
     this.props.setSelectedEvent(event)
-
-    this.setState({
-      eventDetailTimer: setTimeout(this.returnToListView.bind(this), this.props.presentation.pauseTimeOnTouch)
-    })
-
-    scroll(0,0)
   }
 
   returnToListView () {
-    this.props.setAppTitle(this.props.title)
-    this.props.setAppBarIconElementLeft()
     this.props.clearSelectedEvent()
-
-    if (this.state.eventDetailTimer) {
-      clearTimeout(this.state.eventDetailTimer)
-    }
   }
 
   getElementToRender () {

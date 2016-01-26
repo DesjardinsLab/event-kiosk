@@ -5,6 +5,9 @@ import LeftNav from 'material-ui/lib/left-nav'
 import MenuItem from 'material-ui/lib/menus/menu-item'
 import Divider from 'material-ui/lib/divider'
 
+import IconButton from 'material-ui/lib/icon-button'
+import NavigationBack from 'material-ui/lib/svg-icons/navigation/arrow-back'
+
 import LinearProgress from 'material-ui/lib/linear-progress'
 
 import ReactSwipe from 'react-swipe'
@@ -93,12 +96,24 @@ export class PresentationView extends React.Component {
   }
 
   setSelectedEvent (event) {
+    this.props.setAppTitle(event.shortTitle ? event.shortTitle : event.title)
+    this.props.setAppBarIconElementLeft(<IconButton onClick={() => this.clearSelectedEvent()}><NavigationBack/></IconButton>)
+
     this.setState({
       selectedEvent: event,
+      eventDetailTimer: setTimeout(this.clearSelectedEvent.bind(this), this.props.presentation.pauseTimeOnTouch)
     })
+    scroll(0,0)
   }
 
   clearSelectedEvent () {
+    this.props.setAppTitle(this.state.currentSlide.title)
+    this.props.setAppBarIconElementLeft()
+
+    if (this.state.eventDetailTimer) {
+      clearTimeout(this.state.eventDetailTimer)
+    }
+
     this.setState({
       selectedEvent: null
     })

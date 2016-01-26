@@ -89,13 +89,10 @@ export class KioskView extends React.Component {
   }
 
   handleInactivityTimer () {
+    this.setCurrentPage(HOME_PAGE, 0)
     this.setState({
       interactiveMode: false,
-      navOpen: false,
-      currentPage: 0,
-      currentSection: HOME_PAGE,
-      transitionProgress: 0,
-      appBarIconElementLeft: null
+      transitionProgress: 0
     })
   }
 
