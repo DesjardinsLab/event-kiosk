@@ -25,6 +25,7 @@ class Slide(models.Model):
     type = models.CharField(_('type'), max_length=32, choices=SLIDE_TYPE_CHOICES, default=None, blank=False, null=False)
     image = models.ImageField(_('image'), upload_to='slides/%Y/%m/%d/', null=True, blank=True)
     event = models.ForeignKey(to=Event, related_name="slides", null=True, blank=True)
+    position = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     def to_json(self):
         if (self.type == 'image'):
@@ -55,3 +56,6 @@ class Slide(models.Model):
 
     def __str__(self):
         return 'Slide'
+
+    class Meta(object):
+        ordering = ('position', )
