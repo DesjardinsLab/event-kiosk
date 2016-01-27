@@ -38,15 +38,6 @@ export class EventView extends React.Component {
     event.day = this.props.dayFormat.format(startDateTime)
   }
 
-  // logic for event selection is handled in Presentation view
-  onEventSelect (event) {
-    this.props.setSelectedEvent(event)
-  }
-
-  returnToListView () {
-    this.props.clearSelectedEvent()
-  }
-
   getElementToRender () {
     // returns the list component or the detail component
     var elementToRender = <div />
@@ -65,7 +56,7 @@ export class EventView extends React.Component {
       elementToRender = (
         <EventListView
           {...this.props}
-          onEventSelect={(event) => this.onEventSelect(event)}
+          onEventSelect={(event) => this.props.setSelectedEvent(event)}
           addFormattedDatesToEvent={(event) => this.addFormattedDatesToEvent(event)}
         />
       )

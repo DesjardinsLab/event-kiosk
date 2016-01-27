@@ -1,240 +1,111 @@
 {
-   "presentation":{
-      "slides":[
-         {
-            "title":"Cryptomonnaie 101",
-            "type":"event",
-            "event":{
-               "title":"Cryptomonnaie 101 - Rencontre avec la b\u00eate",
-               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/bitcoin.jpg",
-               "desc":"Bitcoin par ci, Blockchain par l\u00e0.\r\n\r\nDepuis un an, \u00e0 moins de vivre en ermite, on dirait qu\u2019un mois ne peut passer sans que nous entendions ces mots dans les nouvelles financi\u00e8res. Mais en r\u00e9alit\u00e9, qu\u2019est-ce que c\u2019est?  Est-ce l\u2019avenue d\u2019une r\u00e9volution ou simplement une bulle technologique? Quelle est la port\u00e9e de cette technologie? Comment cela fonctionne ? Beaucoup de questions que nous tenterons de r\u00e9pondre en 1h, sans devenir philosophique ou technique. Nul besoin d\u2019\u00eatre un ferr\u00e9 d\u2019informatique, nous utiliserons des exemples concrets tir\u00e9 du quotidien. Il suffit juste d\u2019une bonne dose d\u2019ouverture.\r\n\r\n\u00c9videmment, en une heure, nous allons qu\u2019effleurer le sujet. Ceci est donc le d\u00e9but de plusieurs conf\u00e9rences et ateliers.",
-               "endTime":"2016-02-18T18:00:00Z",
-               "shortTitle":"Cryptomonnaie 101",
-               "registrationUrl":"https://www.eventbrite.ca/e/billets-cryptomonnaie-101-rencontre-avec-la-bete-20765133072",
-               "speakers":[
-
-               ],
-               "startTime":"2016-02-18T17:00:00Z",
-               "location":"Espace Desjardins",
-               "subTitle":"Rencontre avec la b\u00eate"
-            }
-         },
-         {
-            "title":"L'insoup\u00e7onn\u00e9e valeur des marques",
-            "type":"event",
-            "event":{
-               "title":"L'insoup\u00e7onn\u00e9e valeur des marques",
-               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/valeur-marque.jpg",
-               "desc":"Le processus cr\u00e9atif derri\u00e8re la gestion de notre marque vous int\u00e9resse?\r\n\r\nNotamment \u00e0 l'origine de la populaire campagne int\u00e9gr\u00e9e Les Noms, lg2 est l'agence de communication officielle de Desjardins.\r\n\r\nProfessionnelle du domaine, Anne-Marie Leclair viendra nous parler du milieu strat\u00e9gique des marques en 2015, des opportunit\u00e9s mais \u00e9galement des d\u00e9fis autour de celles-ci.",
-               "endTime":"2016-02-25T18:00:00Z",
-               "shortTitle":"L'insoup\u00e7onn\u00e9e valeur des marques",
-               "registrationUrl":"https://www.eventbrite.ca/e/linsoupconnee-valeur-des-marques-tickets-20765497161",
-               "speakers":[
+  "appVersion": "10c852a33dde",
+  "presentation": {
+    "pauseTimeOnTouch": 60000,
+    "transitionTime": 15000,
+    "slides": [
+          {
+            "title": "",
+            "type": "image",
+            "img": "img/1.png"
+          },
+          {
+            "title": "Événements à venir",
+            "type": "eventList",
+            "events": [
+              {
+                  "subTitle": "D. Knuth & L. Torvalds",
+                  "desc": "<p>Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim. Swine tri-tip bresaola venison, meatloaf meatball shoulder turducken tongue. Chicken pork belly chuck, andouille beef corned beef ball tip bresaola shank. Rump chuck boudin jowl pancetta, capicola alcatra pork ham hock filet mignon bresaola t-bone short loin bacon. Beef rump pork chop, strip steak meatball venison turducken ball tip tail short loin cupim capicola frankfurter fatback drumstick.<\/p>",
+                  "endTime": "2016-01-28T18:00:00Z",
+                  "shortTitle": "Bacon Fest 2016",
+                  "img": "img/example-events/teo-taxi.jpg",
+                  "title": "Bacon Fest 2016",
+                  "speakers": [
+                    {
+                      "image": "img/default_avatar.png",
+                      "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
+                      "name": "Donald Knuth"
+                    },
+                    {
+                      "image": "img/default_avatar.png",
+                      "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
+                      "name": "Linus Torvalds"
+                    }
+                  ],
+                  "registrationUrl": "http://dogeweather.com/",
+                  "location": "The Internet",
+                  "startTime": "2016-01-28T17:00:00Z"
+              },
+              {
+                "subTitle": "Ribs for his pleasure",
+                "desc": "<p>Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim. Swine tri-tip bresaola venison, meatloaf meatball shoulder turducken tongue. Chicken pork belly chuck, andouille beef corned beef ball tip bresaola shank. Rump chuck boudin jowl pancetta, capicola alcatra pork ham hock filet mignon bresaola t-bone short loin bacon. Beef rump pork chop, strip steak meatball venison turducken ball tip tail short loin cupim capicola frankfurter fatback drumstick.<\/p>",
+                "endTime": "2016-02-04T18:00:00Z",
+                "shortTitle": "Ribs Fest 2016",
+                "img": "img/example-events/bitcoin.jpg",
+                "title": "Ribs Fest 2016",
+                "speakers": [
                   {
-                     "name":"Anne-Marie Leclair",
-                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/anne-marie-leclair.jpg",
-                     "bio":"Partenaire senior, Vice-pr\u00e9sidente strat\u00e9gie chez lg2"
+                    "image": "img/default_avatar.png",
+                    "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
+                    "name": "Steve Wozniak"
                   }
-               ],
-               "startTime":"2016-02-25T17:00:00Z",
-               "location":"Espace Desjardins",
-               "subTitle":"lg2"
-            }
-         },
-         {
-            "title":"Innovation de rupture saine - T\u00e9o Taxi",
-            "type":"event",
-            "event":{
-               "title":"Innovation de rupture saine: L'histoire de T\u00e9o Taxi",
-               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/teo-taxi.jpg",
-               "desc":"L\u2019univers du taxi est en crise. Pris au d\u00e9pourvu par une offre de service ill\u00e9gale, UberX, qui attirent de nombreux consommateurs, les chauffeurs de taxi peinent \u00e0 se renouveler. \r\n\r\nLe seul rem\u00e8de pour sauver cette industrie semble \u00eatre une id\u00e9e r\u00e9volutionnaire... Heureusement, c\u2019est que propose T\u00e9o Taxi, le dernier projet du dragon Alexandre Taillefer. Conceptualis\u00e9 pour maximiser l\u2019exp\u00e9rience-client des consommateurs de taxi, les taxis de cette jeune entreprise roulent uniquement sur l\u2019\u00e9lectricit\u00e9. Une id\u00e9e qui change le monde, un trajet de taxi \u00e0 la fois.",
-               "endTime":"2016-02-11T18:00:00Z",
-               "shortTitle":"Innovation de rupture saine - T\u00e9o Taxi",
-               "registrationUrl":"https://www.eventbrite.ca/e/billets-innovation-de-rupture-saine-lhistoire-de-teo-taxi-20764494161",
-               "speakers":[
+                ],
+                "registrationUrl": "http://dogeweather.com/",
+                "location": "The Internet",
+                "startTime": "2016-02-04T17:00:00Z"
+              },
+              {
+                "subTitle": "You got beef?",
+                "desc": "<p>Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim. Swine tri-tip bresaola venison, meatloaf meatball shoulder turducken tongue. Chicken pork belly chuck, andouille beef corned beef ball tip bresaola shank. Rump chuck boudin jowl pancetta, capicola alcatra pork ham hock filet mignon bresaola t-bone short loin bacon. Beef rump pork chop, strip steak meatball venison turducken ball tip tail short loin cupim capicola frankfurter fatback drumstick.<\/p>",
+                "endTime": "2016-02-11T18:00:00Z",
+                "shortTitle": "Beef Ball",
+                "img": "img/example-events/teo-taxi.jpg",
+                "title": "Beef Ball",
+                "speakers": [
                   {
-                     "name":"Patrick Gagn\u00e9",
-                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/patrick-gagne.jpg",
-                     "bio":"Partenaire et chef de produit chez T\u00e9o Taxi."
+                    "image": "img/default_avatar.png",
+                    "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
+                    "name": "Bjarne Stroustrup"
                   }
-               ],
-               "startTime":"2016-02-11T17:00:00Z",
-               "location":"Espace Desjardins",
-               "subTitle":"L'histoire de T\u00e9o Taxi"
-            }
-         },
-         {
-            "title":"Entrevue avec G. Bran Lopez",
-            "type":"event",
-            "event":{
-               "title":"Entrevue avec Gabriel Bran Lopez, pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al",
-               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/gabriel-pic-event.jpg",
-               "desc":"Gabriel Lopez vient nous parler de son parcours et nous  pr\u00e9senter Fusion Jeunesse, l\u2019organisme qu\u2019il a cr\u00e9\u00e9 pour lutter contre le d\u00e9crochage scolaire. Sa mission consiste \u00e0 \u00e9tablir des partenariats novateurs entre des \u00e9coles cibl\u00e9es et des universit\u00e9s afin de diminuer le taux de d\u00e9crochage scolaire au moyen de projets susceptibles de motiver les jeunes \u00e0 s\u2019engager dans leur apprentissage.",
-               "endTime":"2016-02-04T18:00:00Z",
-               "shortTitle":"Entrevue avec G. Bran Lopez",
-               "registrationUrl":"https://www.eventbrite.ca/e/billets-entrevue-avec-gabriel-bran-lopez-president-de-la-jeune-chambre-de-commerce-de-montreal-20764213321",
-               "speakers":[
-                  {
-                     "name":"Gabriel Bran Lopez",
-                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/gabriellopez.jpg",
-                     "bio":"Pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al."
-                  }
-               ],
-               "startTime":"2016-02-04T17:00:00Z",
-               "location":"Espace Desjardins",
-               "subTitle":"Pr\u00e9sident de la JCCM"
-            }
-         },
-         {
-            "title":"Boule de cristal 2016",
-            "type":"event",
-            "event":{
-               "title":"Boule de cristal 2016",
-               "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/boule.jpg",
-               "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.",
-               "endTime":"2016-01-28T18:00:00Z",
-               "shortTitle":"Boule de cristal 2016",
-               "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-               "speakers":[
-                  {
-                     "name":"Boris Tia",
-                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/boris.jpg",
-                     "bio":"Analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement."
-                  },
-                  {
-                     "name":"Jonathan B\u00e9lisle",
-                     "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/jonathanb.jpg",
-                     "bio":"Cofondateur des entreprises iotheatre et SAGA. Shaman num\u00e9rique ou po\u00e8te entrepreneur il est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                  }
-               ],
-               "startTime":"2016-01-28T17:00:00Z",
-               "location":"Espace Desjardins",
-               "subTitle":"B. Tia & J. Belisle"
-            }
-         },
-         {
-            "title":"\u00c9v\u00e9nements \u00e0 venir",
-            "type":"eventList",
-            "events":[
-               {
-                  "title":"Boule de cristal 2016",
-                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/boule.jpg",
-                  "desc":"Au cours de ce midi-conf\u00e9rence, nos deux  conf\u00e9renciers pr\u00e9senteront les tendances du march\u00e9 pour l\u2019ann\u00e9e 2016 ainsi que leurs pr\u00e9dictions pour les ann\u00e9es \u00e0 venir. Boris nous fera \u00e9galement un r\u00e9sum\u00e9 de ce que nous pouvons retenir du CES 2016.",
-                  "endTime":"2016-01-28T18:00:00Z",
-                  "shortTitle":"Boule de cristal 2016",
-                  "registrationUrl":"https://www.eventbrite.ca/e/inscription-boule-de-cristal-2016-20761411942",
-                  "speakers":[
-                     {
-                        "name":"Boris Tia",
-                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/boris.jpg",
-                        "bio":"Analyste conseil veille strat\u00e9gique \u00e0 la DP Strat\u00e9gie Mouvement."
-                     },
-                     {
-                        "name":"Jonathan B\u00e9lisle",
-                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/jonathanb.jpg",
-                        "bio":"Cofondateur des entreprises iotheatre et SAGA. Shaman num\u00e9rique ou po\u00e8te entrepreneur il est sp\u00e9cialiste des environnements intelligents et du design d\u2019exp\u00e9rience-client."
-                     }
-                  ],
-                  "startTime":"2016-01-28T17:00:00Z",
-                  "location":"Espace Desjardins",
-                  "subTitle":"B. Tia & J. Belisle"
-               },
-               {
-                  "title":"Entrevue avec Gabriel Bran Lopez, pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al",
-                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/gabriel-pic-event.jpg",
-                  "desc":"Gabriel Lopez vient nous parler de son parcours et nous  pr\u00e9senter Fusion Jeunesse, l\u2019organisme qu\u2019il a cr\u00e9\u00e9 pour lutter contre le d\u00e9crochage scolaire. Sa mission consiste \u00e0 \u00e9tablir des partenariats novateurs entre des \u00e9coles cibl\u00e9es et des universit\u00e9s afin de diminuer le taux de d\u00e9crochage scolaire au moyen de projets susceptibles de motiver les jeunes \u00e0 s\u2019engager dans leur apprentissage.",
-                  "endTime":"2016-02-04T18:00:00Z",
-                  "shortTitle":"Entrevue avec G. Bran Lopez",
-                  "registrationUrl":"https://www.eventbrite.ca/e/billets-entrevue-avec-gabriel-bran-lopez-president-de-la-jeune-chambre-de-commerce-de-montreal-20764213321",
-                  "speakers":[
-                     {
-                        "name":"Gabriel Bran Lopez",
-                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/gabriellopez.jpg",
-                        "bio":"Pr\u00e9sident de la Jeune Chambre de Commerce de Montr\u00e9al."
-                     }
-                  ],
-                  "startTime":"2016-02-04T17:00:00Z",
-                  "location":"Espace Desjardins",
-                  "subTitle":"Pr\u00e9sident de la JCCM"
-               },
-               {
-                  "title":"Innovation de rupture saine: L'histoire de T\u00e9o Taxi",
-                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/teo-taxi.jpg",
-                  "desc":"L\u2019univers du taxi est en crise. Pris au d\u00e9pourvu par une offre de service ill\u00e9gale, UberX, qui attirent de nombreux consommateurs, les chauffeurs de taxi peinent \u00e0 se renouveler. \r\n\r\nLe seul rem\u00e8de pour sauver cette industrie semble \u00eatre une id\u00e9e r\u00e9volutionnaire... Heureusement, c\u2019est que propose T\u00e9o Taxi, le dernier projet du dragon Alexandre Taillefer. Conceptualis\u00e9 pour maximiser l\u2019exp\u00e9rience-client des consommateurs de taxi, les taxis de cette jeune entreprise roulent uniquement sur l\u2019\u00e9lectricit\u00e9. Une id\u00e9e qui change le monde, un trajet de taxi \u00e0 la fois.",
-                  "endTime":"2016-02-11T18:00:00Z",
-                  "shortTitle":"Innovation de rupture saine - T\u00e9o Taxi",
-                  "registrationUrl":"https://www.eventbrite.ca/e/billets-innovation-de-rupture-saine-lhistoire-de-teo-taxi-20764494161",
-                  "speakers":[
-                     {
-                        "name":"Patrick Gagn\u00e9",
-                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/patrick-gagne.jpg",
-                        "bio":"Partenaire et chef de produit chez T\u00e9o Taxi."
-                     }
-                  ],
-                  "startTime":"2016-02-11T17:00:00Z",
-                  "location":"Espace Desjardins",
-                  "subTitle":"L'histoire de T\u00e9o Taxi"
-               },
-               {
-                  "title":"Cryptomonnaie 101 - Rencontre avec la b\u00eate",
-                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/bitcoin.jpg",
-                  "desc":"Bitcoin par ci, Blockchain par l\u00e0.\r\n\r\nDepuis un an, \u00e0 moins de vivre en ermite, on dirait qu\u2019un mois ne peut passer sans que nous entendions ces mots dans les nouvelles financi\u00e8res. Mais en r\u00e9alit\u00e9, qu\u2019est-ce que c\u2019est?  Est-ce l\u2019avenue d\u2019une r\u00e9volution ou simplement une bulle technologique? Quelle est la port\u00e9e de cette technologie? Comment cela fonctionne ? Beaucoup de questions que nous tenterons de r\u00e9pondre en 1h, sans devenir philosophique ou technique. Nul besoin d\u2019\u00eatre un ferr\u00e9 d\u2019informatique, nous utiliserons des exemples concrets tir\u00e9 du quotidien. Il suffit juste d\u2019une bonne dose d\u2019ouverture.\r\n\r\n\u00c9videmment, en une heure, nous allons qu\u2019effleurer le sujet. Ceci est donc le d\u00e9but de plusieurs conf\u00e9rences et ateliers.",
-                  "endTime":"2016-02-18T18:00:00Z",
-                  "shortTitle":"Cryptomonnaie 101",
-                  "registrationUrl":"https://www.eventbrite.ca/e/billets-cryptomonnaie-101-rencontre-avec-la-bete-20765133072",
-                  "speakers":[
-
-                  ],
-                  "startTime":"2016-02-18T17:00:00Z",
-                  "location":"Espace Desjardins",
-                  "subTitle":"Rencontre avec la b\u00eate"
-               },
-               {
-                  "title":"L'insoup\u00e7onn\u00e9e valeur des marques",
-                  "img":"http://kiosk.inno-apps.net/media/events/2016/01/20/valeur-marque.jpg",
-                  "desc":"Le processus cr\u00e9atif derri\u00e8re la gestion de notre marque vous int\u00e9resse?\r\n\r\nNotamment \u00e0 l'origine de la populaire campagne int\u00e9gr\u00e9e Les Noms, lg2 est l'agence de communication officielle de Desjardins.\r\n\r\nProfessionnelle du domaine, Anne-Marie Leclair viendra nous parler du milieu strat\u00e9gique des marques en 2015, des opportunit\u00e9s mais \u00e9galement des d\u00e9fis autour de celles-ci.",
-                  "endTime":"2016-02-25T18:00:00Z",
-                  "shortTitle":"L'insoup\u00e7onn\u00e9e valeur des marques",
-                  "registrationUrl":"https://www.eventbrite.ca/e/linsoupconnee-valeur-des-marques-tickets-20765497161",
-                  "speakers":[
-                     {
-                        "name":"Anne-Marie Leclair",
-                        "image":"http://kiosk.inno-apps.net/media/speakers/2016/01/20/anne-marie-leclair.jpg",
-                        "bio":"Partenaire senior, Vice-pr\u00e9sidente strat\u00e9gie chez lg2"
-                     }
-                  ],
-                  "startTime":"2016-02-25T17:00:00Z",
-                  "location":"Espace Desjardins",
-                  "subTitle":"lg2"
-               }
+                ],
+                "registrationUrl": "http://dogeweather.com/",
+                "location": "The Internet",
+                "startTime": "2016-02-11T17:00:00Z"
+              }
             ]
-         },
-         {
-            "img":"http://kiosk.inno-apps.net/media/slides/2016/01/20/3.png",
-            "title":"",
-            "type":"image"
-         },
-         {
-            "img":"http://kiosk.inno-apps.net/media/slides/2016/01/20/1.png",
-            "title":"",
-            "type":"image"
-         }
-      ],
-      "pauseTimeOnTouch":60000,
-      "transitionTime":15000
-   },
-   "appVersion":"592cad07ef7a",
-   "sections":[
-      {
-         "title":"Desjardins Lab",
-         "pages":[
-            {
-               "title":"Collaborateurs",
-               "html":"<style>\r\n.page-team  {\r\n  font-family: Calibri, Arial, Sans-serif;\r\n}\r\n\r\n.page-team  h1, .page-team  h2 {\r\n  font-weight: normal;\r\n  font-family: 'PT Sans Narrow', sans-serif;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.page-team ul {\r\n  margin: 0;\r\n  padding: 0;\r\n  margin-top: 20px;\r\n}\r\n\r\n.page-team li {\r\n  float: left;\r\n  width: 100%;\r\n  margin-bottom: 20px;\r\n  padding-left: 30px;\r\n  box-sizing: border-box;\r\n  visibility: hidden;\r\n}\r\n.page-team li.animated {\r\n  visibility: visible;\r\n}\r\n\r\n\r\n.page-team li .team-member-pic {\r\n  float: left;\r\n  width: 13%;\r\n}\r\n.page-team li .team-member-pic img {\r\n  width: 100%;\r\n  height: auto;\r\n  border-radius: 50%;\r\n}\r\n\r\n.page-team li .team-member-info {\r\n  float: left;\r\n  width: 87%;\r\n  box-sizing: border-box;\r\n  padding-left: 40px;\r\n}\r\n\r\n.page-team li .team-member-info h1 {\r\n  font-size: 32px;\r\n  margin: 0;\r\n  margin-top: 10px;\r\n  margin-bottom: 3px;\r\n}\r\n.page-team li .team-member-info h2 {\r\n  font-weight: normal;\r\n  font-size: 24px;\r\n  margin: 0;\r\n}\r\n</style>\r\n  <link href='http://kiosk.inno-apps.net/media/assets/2016/01/21/animate.min.css' rel='stylesheet' type='text/css'>\r\n  <div class=\"page-team\" style=\"display: none;\">\r\n    <ul>\r\n      <li class=\"\">\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/default_avatar.png\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Mathieu B&eacute;lisle</h1>\r\n          <h2>Conseiller principal Strat&eacute;gie et Innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/lavoiedn.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Nicolas Lavoie Drapeau</h1>\r\n          <h2>Analyste Programmeur</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/olivierl.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Olivier Lorrain</h1>\r\n          <h2>Conseiller en exp&eacute;rience utilisateur</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/jpmalo.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Jean-Pierre Malo</h1>\r\n          <h2>Sp&eacute;cialiste en exp&eacute;rience utilisateur</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/mireault.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Mathieu Mireault</h1>\r\n          <h2>Conseiller en innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/federico.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Federico Puebla</h1>\r\n          <h2>Conseiller principal</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/anner.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Anne Roquecave</h1>\r\n          <h2>Conseill&egrave;re en innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/justines.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Justine Santot</h1>\r\n          <h2>Conseill&egrave;re en innovation</h2>\r\n        </div>\r\n      </li>\r\n      <li>\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/ptremblay.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>Philippe Tremblay</h1>\r\n          <h2>Concepteur</h2>\r\n        </div>\r\n      </li>\r\n      <li class=\"\">\r\n        <div class=\"team-member-pic\">\r\n          <img src=\"http://kiosk.inno-apps.net/media/assets/2016/01/21/cedric.jpg\" alt=\"\" />\r\n        </div>\r\n        <div class=\"team-member-info\">\r\n          <h1>C&eacute;dric Veilleux</h1>\r\n          <h2>Conseiller</h2>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n  </div>",
-               "javascript":"setTimeout(function() {\r\n  $('.page-team').show();\r\n  $('.page-team li').each(function(index) {\r\n    var elem = $(this);\r\n    setTimeout(function() {\r\n      elem.addClass('animated slideInLeft');\r\n    }, index * 100);\r\n  });\r\n}, 200);",
-               "icon":"http://kiosk.inno-apps.net/media/icons/2016/01/22/ic_group_18px.svg"
+          },
+          {
+            "title": "Bacon Fest 2016",
+            "type": "event",
+            "event": {
+              "subTitle": "D. Knuth & L. Torvalds",
+              "desc": "<p>Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim. Swine tri-tip bresaola venison, meatloaf meatball shoulder turducken tongue. Chicken pork belly chuck, andouille beef corned beef ball tip bresaola shank. Rump chuck boudin jowl pancetta, capicola alcatra pork ham hock filet mignon bresaola t-bone short loin bacon. Beef rump pork chop, strip steak meatball venison turducken ball tip tail short loin cupim capicola frankfurter fatback drumstick.<\/p>",
+              "endTime": "2016-01-28T18:00:00Z",
+              "shortTitle": "Bacon Fest 2016",
+              "img": "img/example-events/teo-taxi.jpg",
+              "title": "Bacon Fest 2016",
+              "speakers": [
+                {
+                  "image": "img/default_avatar.png",
+                  "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
+                  "name": "Donald Knuth"
+                },
+                {
+                  "image": "img/default_avatar.png",
+                  "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
+                  "name": "Linus Torvalds"
+                }
+              ],
+              "registrationUrl": "http://dogeweather.com/",
+              "location": "The Internet",
+              "startTime": "2016-01-28T17:00:00Z"
             }
-         ]
-      }
-   ]
+          },
+          {
+            "title": "",
+            "type": "image",
+            "img": "img/3.png"
+          }
+      ]
+  }
 }

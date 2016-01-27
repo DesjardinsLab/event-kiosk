@@ -53,7 +53,7 @@ export class KioskView extends React.Component {
   }
 
   getKiosk () {
-    var url = typeof KIOSK_SOURCE !== 'undefined' ? KIOSK_SOURCE : ''
+    var url = typeof KIOSK_SOURCE !== 'undefined' ? KIOSK_SOURCE : 'example-data.json'
 
     fetch(url).then(function (response) {
       return response.json()
@@ -71,7 +71,7 @@ export class KioskView extends React.Component {
     }.bind(this)).catch(function (error) {
       // Attempt to restore content from localStorage
       this.setState(JSON.parse(localStorage.savedContent))
-      console.log(error)
+      console.log(error.stack)
       console.log('Error while fetching data. Will try again in a minute.')
     }.bind(this))
   }

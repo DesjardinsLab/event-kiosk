@@ -1,8 +1,9 @@
 Event Kiosk
 ========================
 
-The frondend is a npm app bundled with Webpack.
+The frontend is a npm app bundled with Webpack.
 
+To test front end only, run "npm start".
 
 Deploying with Docker
 =======================

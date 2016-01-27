@@ -64,6 +64,7 @@ export class PresentationView extends React.Component {
     // Reset progress bar to 0 and go to next slide
     // Figure out which slide is "next"
     if (!this.state.transitioning) {
+      // set lock
       this.setState({ transitioning: true })
       var nextSlideIndex = this.state.currentSlideIndex + 1
       if (nextSlideIndex > this.props.presentation.slides.length) { nextSlideIndex = 0 }
@@ -73,15 +74,12 @@ export class PresentationView extends React.Component {
         currentSlideIndex: nextSlideIndex,
         currentSlide: this.props.presentation.slides[nextSlideIndex]
       })
+      // free lock
       this.setState({ transitioning: false })
     }
   }
 
-  handleTouch (event) {
-    this.props.hideAppBar(false)
-  }
-
-  onSlideChange (index, element) {
+  onSlideChange (index) {
     var currentSlide = this.props.presentation.slides[index]
     this.setState({
       currentSlide: currentSlide,
@@ -120,7 +118,13 @@ export class PresentationView extends React.Component {
 
   buildSwipeComponent () {
     return (
-      <div className='kiosk-swiper' onTouchStart={((event) => this.handleTouch(event))} onTouchEnd={(event) => this.props.onInteraction(event)}>
+      <div className='kiosk-swiper' onTouchStart={() => this.props.hideAppBar(false)} onTouchEnd={(event) => this.props.onInteraction(event)}>
+        {/*
+          * There is a bug with two slides when the slide that gets duplicated
+          * is a react component. This is due to the fact that react-swipe
+          * is based on swipe.js, which does not correctly clone the children
+          * of each div in the slide show.
+          */}
         <ReactSwipe
           continuous={this.props.presentation.slides.length > 2}
           slideToIndex={this.state.currentSlideIndex}
