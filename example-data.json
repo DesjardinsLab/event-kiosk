@@ -14,7 +14,7 @@
             "type": "eventList",
             "events": [
               {
-                  "subTitle": "D. Knuth & L. Torvalds",
+                  "subTitle": "J. Doe & A. Smithee",
                   "desc": "<p>Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim. Swine tri-tip bresaola venison, meatloaf meatball shoulder turducken tongue. Chicken pork belly chuck, andouille beef corned beef ball tip bresaola shank. Rump chuck boudin jowl pancetta, capicola alcatra pork ham hock filet mignon bresaola t-bone short loin bacon. Beef rump pork chop, strip steak meatball venison turducken ball tip tail short loin cupim capicola frankfurter fatback drumstick.<\/p>",
                   "endTime": "2016-01-28T18:00:00Z",
                   "shortTitle": "Bacon Fest 2016",
@@ -24,12 +24,12 @@
                     {
                       "image": "img/default_avatar.png",
                       "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
-                      "name": "Donald Knuth"
+                      "name": "John Doe"
                     },
                     {
                       "image": "img/default_avatar.png",
                       "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
-                      "name": "Linus Torvalds"
+                      "name": "Allan Smithee"
                     }
                   ],
                   "registrationUrl": "http://dogeweather.com/",
@@ -47,7 +47,7 @@
                   {
                     "image": "img/default_avatar.png",
                     "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
-                    "name": "Steve Wozniak"
+                    "name": "John Doe"
                   }
                 ],
                 "registrationUrl": "http://dogeweather.com/",
@@ -65,7 +65,7 @@
                   {
                     "image": "img/default_avatar.png",
                     "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
-                    "name": "Bjarne Stroustrup"
+                    "name": "Jane Doe"
                   }
                 ],
                 "registrationUrl": "http://dogeweather.com/",
@@ -78,7 +78,7 @@
             "title": "Bacon Fest 2016",
             "type": "event",
             "event": {
-              "subTitle": "D. Knuth & L. Torvalds",
+              "subTitle": "J. Doe & A. Smithee",
               "desc": "<p>Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim. Swine tri-tip bresaola venison, meatloaf meatball shoulder turducken tongue. Chicken pork belly chuck, andouille beef corned beef ball tip bresaola shank. Rump chuck boudin jowl pancetta, capicola alcatra pork ham hock filet mignon bresaola t-bone short loin bacon. Beef rump pork chop, strip steak meatball venison turducken ball tip tail short loin cupim capicola frankfurter fatback drumstick.<\/p>",
               "endTime": "2016-01-28T18:00:00Z",
               "shortTitle": "Bacon Fest 2016",
@@ -88,12 +88,12 @@
                 {
                   "image": "img/default_avatar.png",
                   "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
-                  "name": "Donald Knuth"
+                  "name": "John Doe"
                 },
                 {
                   "image": "img/default_avatar.png",
                   "bio": "Bacon ipsum dolor amet cow biltong meatball sausage chuck strip steak beef shankle cupim.",
-                  "name": "Linus Torvalds"
+                  "name": "Allan Smithee"
                 }
               ],
               "registrationUrl": "http://dogeweather.com/",
