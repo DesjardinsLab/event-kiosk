@@ -128,7 +128,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 if (DEBUG == False):
-    MEDIA_URL = 'http://' + os.environ.get('ALLOWED_HOST') + '/media/'
+    MEDIA_URL = os.environ.get('EXTERNAL_URL') + 'media/'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
