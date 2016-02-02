@@ -18,9 +18,11 @@ export class EventDetailView extends React.Component {
       <article className={'eventDetails month' + event.month}>
         <div className='headerImageWrapper'>
           <img className='headerImage' src={event.img} />
-          <div className='eventUrlWrapper'>
-            <h3 className='eventUrl'>{'desjardinslab.eventbrite.com'}</h3>
-          </div>
+          {event.prettyUrl ?
+            <div className='eventUrlWrapper'>
+              <h3 className='eventUrl'>{event.prettyUrl}</h3>
+            </div> : ''
+          }
         </div>
         <div className='details'>
           <div className='dateInfo'>

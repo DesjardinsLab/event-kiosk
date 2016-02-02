@@ -4,16 +4,16 @@ from .models import *
 
 @admin.register(Speaker)
 class SpeakerAdmin(admin.ModelAdmin):
-    list_display = [ 'name'   ]
+    list_display = [ 'name' ]
     fieldsets = (
         (_('Information'), { 'fields' : [ 'name', 'image', 'bio' ] }),
     )
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = [ 'title', 'location', 'date', 'startTime', 'endTime',   ]
+    list_display = [ 'title', 'location', 'date', 'startTime', 'endTime', ]
     fieldsets = (
-        (_('Information'), { 'fields' : [ 'title', 'shortTitle', 'subTitle', 'location', 'description', 'image', 'registrationUrl' ] }),
+        (_('Information'), { 'fields' : [ 'title', 'shortTitle', 'subTitle', 'location', 'description', 'image', 'registrationUrl', 'prettyUrl' ] }),
         (_('Speakers'), { 'fields' : [ 'speakers' ] }),
         (_('Schedule'), { 'fields' : [ 'date', 'startTime', 'endTime' ] }),
     )

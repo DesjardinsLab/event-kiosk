@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Event and static content display for kiosk station using React and Django",
   "main": "src/index.jsx",
-  "bin": {
-    "event-kiosk": "compile.js"
-  },
   "dependencies": {
     "material-ui": "^0.14.2",
     "object-hash": "^1.1.0",
