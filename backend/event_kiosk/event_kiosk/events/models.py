@@ -38,7 +38,7 @@ class Event(models.Model):
     location = models.CharField(_('location'), max_length=100)
     speakers = models.ManyToManyField(Speaker, blank=True)
     registrationUrl = models.URLField(_('registration url'), help_text=_('URL for registrations to this event. Will be embedded in the QR code.'), null=True, blank=True)
-    prettyUrl = models.URLField(_('pretty url'), help_text=_('Human friendly url to overlay with event image.'), null=True, blank=True)
+    prettyUrl = models.CharField(_('pretty url'), help_text=_('Human friendly url to overlay with event image.'), null=True, blank=True, max_length=150)
 
     def to_json(self):
         speakers = []
