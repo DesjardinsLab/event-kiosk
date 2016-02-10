@@ -51,7 +51,11 @@ export class PresentationView extends React.Component {
   }
 
   handleTransitionTimer () {
-    if (!this.props.interactiveMode) {
+    // don't do transition timer if in interactive mode, if transition time is 0
+    // or if there is only one slide
+    if (!this.props.interactiveMode &&
+      this.props.presentation.transitionTime > 0 &&
+      this.props.presentation.slides.length > 1) {
       if (this.props.transitionProgress < this.props.presentation.transitionTime) {
         this.props.setProgressBarValue(this.props.transitionProgress + LINEAR_PROGRESS_REFRESH_RATE)
       } else {
@@ -162,13 +166,14 @@ export class PresentationView extends React.Component {
             }
           }.bind(this))}
         </ReactSwipe>
-        <div className='navDots'>
-          {this.props.presentation.slides.map(function (item, index) {
-            return (
-              <div key={index} className={'navDot ' + (this.state.currentSlideIndex === index ? 'active' : 'inactive')} />
-            )
-          }.bind(this))}
-        </div>
+        {this.props.presentation.slides.length > 1 ?
+          <div className='navDots'>
+            {this.props.presentation.slides.map(function (item, index) {
+              return (
+                <div key={index} className={'navDot ' + (this.state.currentSlideIndex === index ? 'active' : 'inactive')} />
+              )
+            }.bind(this))}
+          </div> : ''}
       </div>
     )
   }

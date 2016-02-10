@@ -147,11 +147,12 @@ export class KioskView extends React.Component {
 
     return (
       <div className='kiosk' onClick={(event) => this.onInteraction(event)}>
-        <LinearProgress
-          className={progressBarClasses}
-          mode='determinate'
-          max={this.state.presentation.transitionTime}
-          value={this.state.transitionProgress}/>
+        {this.state.presentation.transitionTime > 0 && this.state.presentation.slides.length > 1 ?
+          <LinearProgress
+            className={progressBarClasses}
+            mode='determinate'
+            max={this.state.presentation.transitionTime}
+            value={this.state.transitionProgress}/> : ''}
         <AppBar
           className='appBar'
           title={this.state.appTitle}
