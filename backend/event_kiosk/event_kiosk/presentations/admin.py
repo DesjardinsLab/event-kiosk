@@ -15,7 +15,7 @@ class SlideInlineAdmin(SortableInlineAdminMixin, admin.TabularInline):
 class PresentationAdmin(admin.ModelAdmin):
     list_display = [ 'name', ]
     fieldsets = (
-        (_('Information'), { 'fields' : [ 'name', 'transitionTime', 'pauseTimeOnTouch', ] }),
+        (_('Information'), { 'fields' : [ 'name', 'transitionTime', 'pauseTimeOnTouch', 'displayMenu', 'displayIndicators'] }),
     )
     inlines = [SlideInlineAdmin,]
 

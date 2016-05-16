@@ -166,7 +166,7 @@ export class PresentationView extends React.Component {
             }
           }.bind(this))}
         </ReactSwipe>
-        {this.props.presentation.slides.length > 1 ?
+        {this.props.presentation.displayIndicators && this.props.presentation.slides.length > 1 ?
           <div className='navDots'>
             {this.props.presentation.slides.map(function (item, index) {
               return (

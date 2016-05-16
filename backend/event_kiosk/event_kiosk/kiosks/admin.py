@@ -3,6 +3,7 @@ from django.utils.translation import ugettext as _
 from .models import *
 from django.core.urlresolvers import reverse
 from event_kiosk.content.models import Section
+from event_kiosk.presentations.models import Presentation
 
 class SectionInlineAdmin(admin.TabularInline):
     model = Section
@@ -11,6 +12,9 @@ class SectionInlineAdmin(admin.TabularInline):
     )
     extra = 0
 
+class KioskPresentationCalendarInlineAdmin(admin.TabularInline):
+    model = KioskPresentationCalendar
+    extra = 0
 
 @admin.register(Kiosk)
 class KioskAdmin(admin.ModelAdmin):
@@ -18,7 +22,7 @@ class KioskAdmin(admin.ModelAdmin):
     fieldsets = (
         (_('Information'), { 'fields' : [ 'name', 'presentation' ] }),
     )
-    inlines = [SectionInlineAdmin, ]
+    inlines = [SectionInlineAdmin, KioskPresentationCalendarInlineAdmin]
 
     def view_on_site(self, obj):
         return '/%s' % obj.name

@@ -7,6 +7,8 @@ class Presentation(models.Model):
     name = models.CharField(_('name'), max_length=255, help_text=_('Reference name for this presentation. Only visible in the admin.'))
     transitionTime = models.PositiveIntegerField(_('transition time'), help_text=_('Number of seconds to display each slide.'))
     pauseTimeOnTouch = models.PositiveIntegerField(_('pause time on touch'), help_text=_('If someone interacts with the kiosk, stop the slideshow for this number of seconds.'))
+    displayMenu = models.BooleanField(_('display menu'), default=True, help_text=_('Whether or not the menu should appear on this presentation.'))
+    displayIndicators = models.BooleanField(_('display indicators'), default=True, help_text=_('Whether or not to display the little dots at the bottom that show slideshow progress.'))
 
     def __str__(self):
         return self.name

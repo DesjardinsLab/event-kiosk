@@ -33,7 +33,9 @@ export class KioskView extends React.Component {
       presentation: {
         transitionTime: 0,
         pauseTimeOnTouch: 60000,
-        slides: []
+        slides: [],
+        displayMenu: true,
+        displayIndicators: true
       },
       sections: [],
       transitionProgress: 0,
@@ -153,6 +155,7 @@ export class KioskView extends React.Component {
             mode='determinate'
             max={this.state.presentation.transitionTime}
             value={this.state.transitionProgress}/> : ''}
+        {this.state.presentation.displayMenu ?
         <AppBar
           className='appBar'
           title={this.state.appTitle}
@@ -166,7 +169,7 @@ export class KioskView extends React.Component {
           } : {
             opacity: 1,
             pointerEvents: 'auto'
-          }}/>
+          }}/> : ''}
         {this.createLeftNav()}
         <div className='kiosk-content'>
           {this.renderCurrentPage()}
