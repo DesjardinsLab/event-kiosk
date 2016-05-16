@@ -41,8 +41,14 @@ def kiosk_data(request, **kwargs):
 
     slides = []
     for slide in currentPresentation.slides.all():
-        # Clean up past event slides (the event itself is not deleted)
-        if slide.type == Slide.EVENT and timezone.now().time() > slide.event.endTime:
+        if (slide.type == Slide.EVENT and
+            (timezone.now().date() > slide.event.date or
+                (
+                    timezone.now().date() == slide.event.date and
+                    timezone.now().time() > slide.event.endTime
+                )
+            )):
+            # Clean up past event slides (the event itself is not deleted)
             slide.delete()
         else:
             slides.append(slide.to_json())
