@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 from django.shortcuts import get_object_or_404, render
 from .models import Kiosk
+from event_kiosk.presentations.models import Slide
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import django.utils.timezone as timezone
@@ -30,6 +31,7 @@ def kiosk_data(request, **kwargs):
     for scheduledPresentation in kiosk.kioskpresentationcalendar_set.all():
         if scheduledPresentation.endTime > timezone.now() >= scheduledPresentation.startTime:
             currentPresentation = scheduledPresentation.scheduledPresentation
+        # Clean up past KioskPresentationCalendar (the presentation itself is not deleted)
         elif timezone.now() > scheduledPresentation.endTime:
             scheduledPresentation.delete()
 
@@ -39,7 +41,11 @@ def kiosk_data(request, **kwargs):
 
     slides = []
     for slide in currentPresentation.slides.all():
-        slides.append(slide.to_json())
+        # Clean up past event slides (the event itself is not deleted)
+        if slide.type == Slide.EVENT and timezone.now().time() > slide.event.endTime:
+            slide.delete()
+        else:
+            slides.append(slide.to_json())
 
     presentation = {
         'transitionTime': currentPresentation.transitionTime * 1000,

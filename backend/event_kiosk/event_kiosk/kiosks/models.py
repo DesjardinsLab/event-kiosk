@@ -12,6 +12,6 @@ class Kiosk(models.Model):
 
 class KioskPresentationCalendar(models.Model):
     kiosk = models.ForeignKey(Kiosk, on_delete=models.CASCADE)
-    scheduledPresentation = models.ForeignKey(Presentation, on_delete=models.CASCADE)
+    scheduledPresentation = models.ForeignKey(Presentation, on_delete=models.CASCADE, verbose_name=_('scheduled presentation'))
     startTime = models.DateTimeField(_('start time'))
     endTime = models.DateTimeField(_('end time'))

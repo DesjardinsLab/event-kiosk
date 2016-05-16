@@ -13,14 +13,16 @@ class Presentation(models.Model):
     def __str__(self):
         return self.name
 
-
 class Slide(models.Model):
+    IMAGE = 'image'
+    EVENT = 'event'
+    EVENT_LIST = 'eventList'
 
-    SLIDE_TYPE_CHOICES = (\
+    SLIDE_TYPE_CHOICES = (
         ('', ''),
-        ('image', _('Image')),
-        ('event', _('Event')),
-        ('eventList', _('Event list')),
+        (IMAGE, _('Image')),
+        (EVENT, _('Event')),
+        (EVENT_LIST, _('Event list')),
     )
 
     presentation = models.ForeignKey(to=Presentation, related_name="slides", null=False, blank=False)
