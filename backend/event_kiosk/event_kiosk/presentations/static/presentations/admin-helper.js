@@ -7,15 +7,19 @@
       var selectedType = $(this).find('.field-type select').val();
       var imgWidget = $('#slides-' + index + ' .field-image');
       var eventWidget = $('#slides-' + index + ' .field-event');
+      var weatherWidget = $('#slides-' + index + ' .field-location');
 
       imgWidget.css('opacity', '0');
       eventWidget.css('opacity', '0');
+      weatherWidget.css('opacity', '0');
 
       if (selectedType == 'image') {
         imgWidget.css('opacity', '1');
 
       } else if (selectedType == 'event') {
         eventWidget.css('opacity', '1');
+      } else if (selectedType == 'weather') {
+        weatherWidget.css('opacity', '1');
       }
 
     });
@@ -28,15 +32,19 @@
 
       var imgWidget = $('#slides-' + index + ' .field-image');
       var eventWidget = $('#slides-' + index + ' .field-event');
+      var weatherWidget = $('#slides-' + index + ' .field-location');
 
       imgWidget.css('opacity', '0');
       eventWidget.css('opacity', '0');
+      weatherWidget.css('opacity', '0');
 
       if (selectedType == 'image') {
         imgWidget.css('opacity', '1');
 
       } else if (selectedType == 'event') {
         eventWidget.css('opacity', '1');
+      } else if (selectedType == 'weather') {
+        weatherWidget.css('opacity', '1');
       }
 
     });

@@ -6,7 +6,7 @@ from adminsortable2.admin import SortableInlineAdminMixin
 class SlideInlineAdmin(SortableInlineAdminMixin, admin.TabularInline):
     model = Slide
     fieldsets = (
-        ( None, { 'fields': ('type', 'image', 'event', 'position' ) } ),
+        ( None, { 'fields': ('type', 'image', 'event', 'position', 'location' ) } ),
     )
     extra = 0
 
