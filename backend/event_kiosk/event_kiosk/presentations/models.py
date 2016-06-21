@@ -52,7 +52,8 @@ class Slide(models.Model):
         elif (self.type == 'weather'):
             return {
                 'type': 'weather',
-                'location': self.location
+                'location': self.location,
+                'title': ''
             }
 
         elif (self.type == 'eventList'):

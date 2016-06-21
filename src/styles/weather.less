@@ -1,0 +1,91 @@
+.weatherSlide {
+  background: linear-gradient(to bottom, #90dffe 0%, #38a3d1 100%);
+  height: 100vh;
+}
+
+.WeatherView {
+  font-family: "PT Sans Narrow";
+  display: flex;
+  justify-content: center;
+
+  .ForecastView {
+    width: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+
+    .weatherHeaderWrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 120px auto 30px auto;
+
+      .weatherTime {
+        display: flex;
+        justify-content: center;
+        font-size: 200px;
+        text-transform: capitalize;
+        color: #FFF;
+        margin-bottom: 200px;
+      }
+
+      .weatherHeader {
+        color: #FFF;
+        display: flex;
+        justify-content: space-around;
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.30);
+
+        .weatherImage img {
+          width: 300px;
+          display: flex;
+          align-self: center;
+        }
+
+        .weatherTemperature {
+          padding-left: 20px;
+          display: flex;
+          align-self: center;
+          font-size: 200px;
+          text-align: center;
+        }
+      }
+    }
+
+    .weatherDescription {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      font-size: 120px;
+      color: #FFF;
+      margin-bottom: 120px;
+    }
+
+    .weatherDetails {
+      width: 100%;
+      margin-top: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      div {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 35px;
+        border-radius: 5px;
+        font-size: 64px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .iconsCopyright p {
+      font-size: 14px;
+      color: #fff;
+      position: absolute;
+      bottom: 120px;
+    }
+  }
+}
