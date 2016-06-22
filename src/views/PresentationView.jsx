@@ -13,12 +13,14 @@ import LinearProgress from 'material-ui/lib/linear-progress'
 import ReactSwipe from 'react-swipe'
 import EventView from './EventView'
 import EventDetailView from './EventDetailView'
+import WeatherView from './WeatherView'
 
 import ObjectHash from 'object-hash'
 
 const EVENT_LIST_SLIDE_TYPE = 'eventList'
 const EVENT_SLIDE_TYPE = 'event'
 const IMAGE_SLIDE_TYPE = 'image'
+const WEATHER_SLIDE_TYPE = 'weather'
 
 const LINEAR_PROGRESS_REFRESH_RATE = 250;
 
@@ -33,6 +35,7 @@ export class PresentationView extends React.Component {
 
   componentDidMount () {
     var currentSlide = this.props.presentation.slides[0]
+
     this.setState({
       currentSlideIndex: 0,
       currentSlide: currentSlide
@@ -161,6 +164,16 @@ export class PresentationView extends React.Component {
                     event={item.event}
                     isStatic={true}
                   />
+                </div>
+              )
+            } else if (item.type === WEATHER_SLIDE_TYPE) {
+              return (
+                <div key={index} className="weatherSlide">
+                  <WeatherView
+                    {...this.props}
+                    lat={item.lat}
+                    lon={item.lon}
+                    location={item.location} />
                 </div>
               )
             }

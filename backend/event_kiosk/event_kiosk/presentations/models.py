@@ -17,12 +17,14 @@ class Slide(models.Model):
     IMAGE = 'image'
     EVENT = 'event'
     EVENT_LIST = 'eventList'
+    WEATHER = 'weather'
 
     SLIDE_TYPE_CHOICES = (
         ('', ''),
         (IMAGE, _('Image')),
         (EVENT, _('Event')),
         (EVENT_LIST, _('Event list')),
+        (WEATHER, _('Weather')),
     )
 
     presentation = models.ForeignKey(to=Presentation, related_name="slides", null=False, blank=False)
@@ -30,6 +32,9 @@ class Slide(models.Model):
     image = models.ImageField(_('image'), upload_to='slides/%Y/%m/%d/', null=True, blank=True)
     event = models.ForeignKey(to=Event, related_name="slides", null=True, blank=True)
     position = models.PositiveIntegerField(default=0, blank=False, null=False)
+    location = models.CharField(_('location'), help_text=_('A comma-delimited country name and country code (ISO 3166)'), max_length=255, null=True, blank=True)
+    lat = models.DecimalField(_('latitude'), null=True, blank=True, max_digits=10, decimal_places=7)
+    lon = models.DecimalField(_('longitude'), null=True, blank=True, max_digits=10, decimal_places=7)
 
     def to_json(self):
         if (self.type == 'image'):
@@ -44,6 +49,15 @@ class Slide(models.Model):
                 'type': 'event',
                 'title': self.event.shortTitle if self.event.shortTitle != '' else self.event.title,
                 'event': self.event.to_json()
+            }
+
+        elif (self.type == 'weather'):
+            return {
+                'type': 'weather',
+                'location': self.location,
+                'lat': self.lat,
+                'lon': self.lon,
+                'title': ''
             }
 
         elif (self.type == 'eventList'):
