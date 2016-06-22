@@ -50,6 +50,7 @@ Environment variables:
 * **DB_ENGINE** : Database engine (ex: django.db.backends.postgresql)
 * **DB_NAME** : Database name
 * **DB_USER** : Database user
+* **OPEN_WEATHER_MAP_APPID** : API key for openweathermap (Optional, required for weather Slides)
 
 Deploying with Dokku
 =======================
@@ -58,3 +59,9 @@ Using Dokku requires additional environment variables:
 * **DOKKU_POSTGRES_EVENT_KIOSK_ENV_POSTGRES_PASSWORD** : Database password
 * **DOKKU_POSTGRES_EVENT_KIOSK_PORT_5432_TCP_ADDR** : Database hostname
 * **DOKKU_POSTGRES_EVENT_KIOSK_PORT_5432_TCP_PORT** : Database port
+
+Credits and mentions
+=======================
+Weather icons come from [VClouds on DeviantArt](http://vclouds.deviantart.com/art/VClouds-Weather-Icons-179152045), they are reserved for non-commercial use.
+
+If you intend to use weather slides for commercial use, make sure to contact him for pricing and permission (or add new icons to /src/utils/WeatherProviders.js).
