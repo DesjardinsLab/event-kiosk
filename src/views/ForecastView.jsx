@@ -3,6 +3,7 @@ import React from 'react'
 export class ForecastView extends React.Component {
   render() {
     var formattedTime = this.props.clockTimeFormat.format(this.props.time)
+    var windDeg = this.props.forecast.wind.deg + "°" || ""
 
     return (
       <div className="ForecastView">
@@ -12,27 +13,27 @@ export class ForecastView extends React.Component {
           </div>
           <div className="weatherHeader">
             <div className="weatherImage">
-              <img src={this.props.icons[this.props.forecast.weather[0].icon]} />
+              <img src={this.props.getIcon(this.props.forecast.icon)} />
             </div>
             <div className="weatherTemperature">
-              {Math.round(this.props.forecast.main.temp)}°C
+              {this.props.forecast.temp}°C
             </div>
           </div>
         </div>
         <div className="weatherDescription">
-          {this.props.forecast.weather[0].description}
+          {this.props.forecast.description}
         </div>
         <div className="weatherDetails">
           <div className="weatherLocation">
-            {this.props.forecast.name}, <span className="countryCode">{this.props.forecast.sys.country}</span>
+            {this.props.location}
           </div>
           <div className="weatherWind">
-            {Math.round(this.props.forecast.wind.speed) + " km/h " + this.props.forecast.wind.deg + "°"}
+            {Math.round(this.props.forecast.wind.speed) + " km/h " + windDeg}
           </div>
         </div>
         <div className="iconsCopyright">
           <p>
-            {this.props.icons.copyright}
+            {this.props.getIcon("copyright")}
           </p>
         </div>
       </div>

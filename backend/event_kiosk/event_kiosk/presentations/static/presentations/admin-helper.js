@@ -8,10 +8,15 @@
       var imgWidget = $('#slides-' + index + ' .field-image');
       var eventWidget = $('#slides-' + index + ' .field-event');
       var weatherWidget = $('#slides-' + index + ' .field-location');
+      var latWidget = $('#slides-' + index + ' .field-lat');
+      var lonWidget = $('#slides-' + index + ' .field-lon');
 
       imgWidget.css('opacity', '0');
       eventWidget.css('opacity', '0');
+
       weatherWidget.css('opacity', '0');
+      latWidget.css('opacity', '0');
+      lonWidget.css('opacity', '0');
 
       if (selectedType == 'image') {
         imgWidget.css('opacity', '1');
@@ -20,6 +25,8 @@
         eventWidget.css('opacity', '1');
       } else if (selectedType == 'weather') {
         weatherWidget.css('opacity', '1');
+        latWidget.css('opacity', '1');
+        lonWidget.css('opacity', '1');
       }
 
     });
@@ -32,11 +39,17 @@
 
       var imgWidget = $('#slides-' + index + ' .field-image');
       var eventWidget = $('#slides-' + index + ' .field-event');
+
       var weatherWidget = $('#slides-' + index + ' .field-location');
+      var latWidget = $('#slides-' + index + ' .field-lat');
+      var lonWidget = $('#slides-' + index + ' .field-lon');
 
       imgWidget.css('opacity', '0');
       eventWidget.css('opacity', '0');
+
       weatherWidget.css('opacity', '0');
+      latWidget.css('opacity', '0');
+      lonWidget.css('opacity', '0');
 
       if (selectedType == 'image') {
         imgWidget.css('opacity', '1');
@@ -45,6 +58,8 @@
         eventWidget.css('opacity', '1');
       } else if (selectedType == 'weather') {
         weatherWidget.css('opacity', '1');
+        latWidget.css('opacity', '1');
+        lonWidget.css('opacity', '1');
       }
 
     });

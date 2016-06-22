@@ -19,6 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG') == 'True'
 OPEN_WEATHER_MAP_APPID = os.environ.get('OPEN_WEATHER_MAP_APPID')
+FORECAST_API_KEY = os.environ.get('FORECAST_API_KEY')
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), ]
 

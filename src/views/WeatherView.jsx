@@ -2,9 +2,9 @@ import React from 'react'
 
 import ForecastView from './ForecastView'
 
-import WeatherProviders from '../utils/WeatherProviders'
-import WeatherIcons from '../utils/WeatherIcons'
+import { providers, providersEndpoints, providersParsers, providersIcons, OPEN_WEATHER_MAP } from '../utils/WeatherProviders'
 
+const WEATHER_PROVIDER = process.env.WEATHER_PROVIDER || OPEN_WEATHER_MAP
 const WEATHER_UPDATE_INTERVAL = 1200000
 const WEATHER_ICONS_PROVIDER = 'vclouds'
 
@@ -17,62 +17,34 @@ export class WeatherView extends React.Component {
     this.state = {
       time: (new Date()).getTime(),
       forecast: {
-          coord: {
-            lon:0,
-            lat:-90
-          },
-          weather: [
-            {
-              id:0,
-              main:"N/A",
-              description:"N/A",
-              icon:"other"
-            }
-          ],
-          main: {
-            temp:0,
-            pressure:0,
-            humidity:0,
-            temp_min:0,
-            temp_max:0
-          },
-          wind: {
-            speed:0,
-            deg:0,
-            gust:0
-          },
-          rain: {
-
-          },
-          clouds: {
-            all:0
-          },
-          dt:0,
-          sys: {
-            type:0,
-            id:0,
-            message:0,
-            country:"CA",
-            sunrise:0,
-            sunset:0
-          },
-          id:0,
-          name:"Montreal",
-          cod:0
+        lat: props.lat || -90,
+        lon: props.lat || 0,
+        icon:"other",
+        temp:0,
+        wind: {
+          speed:0,
+          deg:0
+        },
+        location: props.location || "South Pole,AQ"
       }
     }
   }
 
   getWeather() {
-    var url = WeatherProviders.openWeatherMap(this.props.location, this.props.locale.substr(0,2))
+    var url = providersEndpoints[WEATHER_PROVIDER](this.props.lat, this.props.lon, this.props.locale.substr(0,2))
 
     fetch(url).then(function (response) {
       return response.json()
     }).then(function (content) {
       this.setState({
-        forecast: content
+        lat: this.props.lat,
+        lon: this.props.lon,
+        forecast: providersParsers[WEATHER_PROVIDER](content),
+        location: this.props.location
       })
-    }.bind(this))
+    }.bind(this)).catch(function (error) {
+      console.log(error)
+    })
   }
 
   componentDidMount() {
@@ -96,7 +68,7 @@ export class WeatherView extends React.Component {
             {...this.props}
             forecast={this.state.forecast}
             time={this.state.time}
-            icons={WeatherIcons[WEATHER_ICONS_PROVIDER]}
+            getIcon={providersIcons[WEATHER_PROVIDER][WEATHER_ICONS_PROVIDER]}
           />
         }
       </div>

@@ -71,9 +71,9 @@ export class KioskView extends React.Component {
       // save latest content to localStorage
       localStorage.setItem('savedContent', JSON.stringify(content))
     }.bind(this)).catch(function (error) {
+      console.log(error)
       // Attempt to restore content from localStorage
       this.setState(JSON.parse(localStorage.savedContent))
-      console.log(error.stack)
       console.log('Error while fetching data. Will try again in a minute.')
     }.bind(this))
   }

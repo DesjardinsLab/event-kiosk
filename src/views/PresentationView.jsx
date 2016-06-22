@@ -169,7 +169,11 @@ export class PresentationView extends React.Component {
             } else if (item.type === WEATHER_SLIDE_TYPE) {
               return (
                 <div key={index} className="weatherSlide">
-                  <WeatherView {...this.props} location={item.location} />
+                  <WeatherView
+                    {...this.props}
+                    lat={item.lat}
+                    lon={item.lon}
+                    location={item.location} />
                 </div>
               )
             }
