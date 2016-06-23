@@ -1,9 +1,10 @@
 import React from 'react'
+import ISvg from 'react-inlinesvg'
 
 export class ForecastView extends React.Component {
   render() {
     var formattedTime = this.props.clockTimeFormat.format(this.props.time)
-    var windDeg = this.props.forecast.wind.deg + "°" || ""
+    var windDeg = typeof this.props.forecast.wind.deg !== 'undefined' ? this.props.forecast.wind.deg + "°" : ""
 
     return (
       <div className="ForecastView">
@@ -25,10 +26,10 @@ export class ForecastView extends React.Component {
         </div>
         <div className="weatherDetails">
           <div className="weatherLocation">
-            {this.props.location}
+            <ISvg src="/static/weather-icons/place.svg" />{this.props.location}
           </div>
           <div className="weatherWind">
-            {Math.round(this.props.forecast.wind.speed) + " km/h " + windDeg}
+            <ISvg src="/static/weather-icons/wind.svg" />{Math.round(this.props.forecast.wind.speed) + " km/h " + windDeg}
           </div>
         </div>
         <div className="iconsCopyright">
