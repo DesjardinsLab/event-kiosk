@@ -13,6 +13,7 @@ endpoints[OPEN_WEATHER_MAP] = function (lat, lon, language) {
   return "//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + OPEN_WEATHER_MAP_APPID + "&lang=" + language + "&units=metric"
 }
 
+// Forecast endpoint will only work on a https server.
 endpoints[FORECAST] = function (lat, lon, language) {
   var cb = function (response) {
     return response
