@@ -21,6 +21,7 @@ import StaticHtmlPageView from './StaticHtmlPageView'
 
 const RELOAD_INTERVAL = 60000
 const HOME_PAGE = 'home'
+const APPBAR_BG = 'rgba(30, 82, 142, 0.8)'
 
 export class KioskView extends React.Component {
   constructor (props) {
@@ -168,7 +169,8 @@ export class KioskView extends React.Component {
            pointerEvents: 'none'
           } : {
             opacity: 1,
-            pointerEvents: 'auto'
+            pointerEvents: 'auto',
+            background: APPBAR_BG
           }}/> : ''}
         {this.createLeftNav()}
         <div className='kiosk-content'>
