@@ -1,7 +1,7 @@
 import React from 'react'
-import Paper from 'material-ui/lib/paper'
+import Paper from 'material-ui/Paper'
 
-import ChevronRight from 'material-ui/lib/svg-icons/navigation/chevron-right'
+import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right'
 
 export class EventListItem extends React.Component {
 

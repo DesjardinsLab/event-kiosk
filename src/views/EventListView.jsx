@@ -1,5 +1,6 @@
-import EventListItem from './EventListItem'
 import React from 'react'
+
+import EventListItem from './EventListItem'
 
 export class EventListView extends React.Component {
   constructor () {

@@ -1,12 +1,12 @@
-import Paper from 'material-ui/lib/paper'
 import React from 'react'
+import QRCode from 'qrcode.react'
+
+import Paper from 'material-ui/Paper';
 
 import SpeakerListView from './SpeakerListView'
 
-import QRCode from 'qrcode.react'
-
 export class EventDetailView extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
 
   }
 

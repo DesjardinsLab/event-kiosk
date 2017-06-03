@@ -1,24 +1,34 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export class StaticHtmlPageView extends React.Component {
+export default class StaticHtmlPageView extends React.Component {
 
   componentDidMount() {
-    this.evalJavascript()
+    this.evalJavascript();
   }
 
   componentDidUpdate() {
-    this.evalJavascript()
+    this.evalJavascript();
   }
 
   evalJavascript() {
     if (this.props.javascript) {
-      eval(this.props.javascript)
+      // eslint-disable-next-line no-eval
+      eval(this.props.javascript);
     }
   }
 
   render() {
-    return <div className='staticHtmlPage' dangerouslySetInnerHTML={{__html: this.props.html}} />
+    // eslint-disable-next-line react/no-danger
+    return <div className="staticHtmlPage" dangerouslySetInnerHTML={{ __html: this.props.html }} />;
   }
 }
 
-export default StaticHtmlPageView
+StaticHtmlPageView.propTypes = {
+  javascript: PropTypes.string,
+  html: PropTypes.string.isRequired,
+};
+
+StaticHtmlPageView.defaultProps = {
+  javascript: '',
+};
