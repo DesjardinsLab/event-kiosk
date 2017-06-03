@@ -23,11 +23,14 @@ FORECAST_API_KEY = os.environ.get('FORECAST_API_KEY')
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), ]
 
+if DEBUG:
+    ALLOWED_HOSTS.append('localhost')
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    #'djangocms_admin_style',
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +45,7 @@ INSTALLED_APPS = [
     'ckeditor'
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
