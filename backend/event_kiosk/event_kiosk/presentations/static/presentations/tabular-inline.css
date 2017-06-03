@@ -1,0 +1,3 @@
+tr[id^=slides-] td.original {
+    opacity: 0;
+}

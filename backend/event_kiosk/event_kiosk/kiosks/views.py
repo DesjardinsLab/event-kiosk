@@ -53,7 +53,10 @@ def kiosk_data(request, **kwargs):
         else:
             slides.append(slide.to_json())
 
+    # Get header image if exists
+
     presentation = {
+        'headerImage': currentPresentation.headerImage.url if currentPresentation.headerImage else None,
         'transitionTime': currentPresentation.transitionTime * 1000,
         'pauseTimeOnTouch': currentPresentation.pauseTimeOnTouch * 1000,
         'slides': slides,
