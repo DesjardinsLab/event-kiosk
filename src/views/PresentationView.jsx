@@ -25,8 +25,8 @@ export default class PresentationView extends React.Component {
       transitionProgress: 0,
     };
 
-    // If autoplayInterval exists, start timer
-    if (this.props.presentation.autoplayInterval > 0) {
+    // If transitionTime exists, start timer
+    if (props.presentation.transitionTime > 0) {
       this.state.progressRefreshInterval = setInterval(
         this.handleTransitionTimer.bind(this), LINEAR_PROGRESS_REFRESH_RATE,
       );
@@ -142,10 +142,10 @@ export default class PresentationView extends React.Component {
       decorators: [],
       swiping: this.props.presentation.slides.length > 1,
       autoplay: (
-        this.props.presentation.autoplayInterval && this.props.presentation.slides.length > 1
+        this.props.presentation.transitionTime && this.props.presentation.slides.length > 1
       ),
-      autoplayInterval: (this.props.presentation.autoplayInterval ?
-        this.props.presentation.autoplayInterval : 8000),
+      autoplayInterval: (this.props.presentation.transitionTime ?
+        this.props.presentation.transitionTime : 8000),
       afterSlide: currentSlide => this.onSlideChange(currentSlide),
     };
 
@@ -235,7 +235,7 @@ PresentationView.propTypes = {
   interactiveMode: PropTypes.bool,
   // Presentation data prop types
   presentation: PropTypes.shape({
-    autoplayInterval: PropTypes.number,
+    transitionTime: PropTypes.number,
     disableTouch: PropTypes.bool,
     pauseTimeOnTouch: PropTypes.number,
     displayIndicators: PropTypes.bool,
