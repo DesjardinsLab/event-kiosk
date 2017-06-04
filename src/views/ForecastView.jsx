@@ -43,11 +43,11 @@ const ForecastView = (props) => {
 };
 
 ForecastView.propTypes = {
-  time: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
   location: PropTypes.string.isRequired,
   forecast: PropTypes.shape({
     icon: PropTypes.string,
-    temp: PropTypes.string,
+    temp: PropTypes.number,
     description: PropTypes.string,
     wind: PropTypes.object,
   }).isRequired,
