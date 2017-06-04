@@ -5,25 +5,27 @@ import pytz
 from django.conf import settings
 from ckeditor.fields import RichTextField
 
+
 class Speaker(models.Model):
     name = models.CharField(_('name'), max_length=255)
-    image = models.ImageField(_('image'), upload_to='speakers/%Y/%m/%d/', null=True)
+    image = models.ImageField(_('image'), upload_to='speakers/%Y/%m/%d/', null=True, blank=True)
     bio = models.TextField(_('bio'))
 
     def to_json(self):
         return {
             'name': self.name,
-            'image': self.image.url,
+            'image': self.image.url if self.image else None,
             'bio': self.bio,
         }
 
     def __str__(self):
         return self.name
 
+
 def datetime_to_utc(date):
-    local = pytz.timezone ( settings.TIME_ZONE )
+    local = pytz.timezone(settings.TIME_ZONE)
     local_dt = local.localize(date, is_dst=None)
-    return local_dt.astimezone (pytz.utc)
+    return local_dt.astimezone(pytz.utc)
 
 
 class Event(models.Model):
@@ -34,7 +36,7 @@ class Event(models.Model):
     startTime = models.TimeField(_('start time'), null=False)
     endTime = models.TimeField(_('end time'), null=False)
     description = RichTextField(_('description'))
-    image = models.ImageField(_('image'), upload_to='events/%Y/%m/%d/', null=False)
+    image = models.ImageField(_('image'), upload_to='events/%Y/%m/%d/', null=True)
     location = models.CharField(_('location'), max_length=100)
     speakers = models.ManyToManyField(Speaker, blank=True)
     registrationUrl = models.URLField(_('registration url'), help_text=_('URL for registrations to this event. Will be embedded in the QR code.'), null=True, blank=True)

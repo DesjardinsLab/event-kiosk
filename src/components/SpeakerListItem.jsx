@@ -7,7 +7,15 @@ const SpeakerListItem = (props) => {
   return (
     <div className="speaker">
       <div className="avatar">
-        <img src={speaker.image} alt="" />
+        {speaker.image ?
+          <img src={speaker.image} alt="" /> :
+          <div className={`color${Math.floor(Math.random() + 11)}`}>
+            <span className="letter">
+              {speaker.name[0].toUpperCase()}
+            </span>
+          </div>
+        }
+
       </div>
       <div className="details">
         <h3 className="name">
