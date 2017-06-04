@@ -74,7 +74,13 @@ export default class EventListMonthlyView extends React.Component {
 
     return (
       <div className="eventListView">
-        {this.props.headerImage ? <img src={this.props.headerImage} alt="" /> : ''}
+        {this.props.headerImage ?
+          <div className="headerWrapper">
+            <div className="headerContentWrapper">
+              <img src={this.props.headerImage} alt="" />
+            </div>
+          </div> : ''
+        }
         {listContent}
         {this.props.footerImage ? <img src={this.props.footerImage} alt="" /> : ''}
       </div>

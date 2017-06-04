@@ -72,7 +72,7 @@ export default class EventListDailyView extends React.Component {
     }
 
     return (
-      <div className="eventListView">at
+      <div className="eventListView">
         {this.props.headerImage ?
           <div className="headerWrapper">
             <div className="headerContentWrapper">
