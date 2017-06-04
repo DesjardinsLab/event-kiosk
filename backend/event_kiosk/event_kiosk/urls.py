@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from ajax_select import urls as ajax_select_urls
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
+
 from event_kiosk.kiosks.views import KioskView
 from event_kiosk.kiosks.views import kiosk_data, appcache_manifest
 
@@ -31,4 +33,5 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', static.serve, {
         'document_root': settings.MEDIA_ROOT,
     }),
+    url(r'^ajax_select/', include(ajax_select_urls)),
 ]
