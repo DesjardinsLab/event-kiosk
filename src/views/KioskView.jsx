@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -10,8 +9,6 @@ import Home from 'material-ui/svg-icons/action/home';
 import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back';
 
 import IconButton from 'material-ui/IconButton';
-
-import LinearProgress from 'material-ui/LinearProgress';
 
 import ObjectHash from 'object-hash';
 
@@ -129,17 +126,6 @@ export default class KioskView extends React.Component {
     this.setState({ appBarIconElementLeft: element });
   }
 
-  incrementProgressBarValue(value) {
-    let transitionProgress = this.state.transitionProgress + value;
-    if (transitionProgress > this.state.presentation.transitionTime) {
-      transitionProgress = 0;
-    }
-
-    this.setState({
-      transitionProgress: this.props.interactiveMode ? 0 : transitionProgress,
-    });
-  }
-
   hideAppBar(hide) {
     this.setState({ hideAppBar: hide });
   }
@@ -209,7 +195,6 @@ export default class KioskView extends React.Component {
             {...this.props}
             interactiveMode={this.state.interactiveMode}
             presentation={this.state.presentation}
-            incrementProgressBarValue={value => this.incrementProgressBarValue(value)}
             setAppTitle={title => this.setAppTitle(title)}
             hideAppBar={hide => this.hideAppBar(hide)}
             setAppBarIconElementLeft={
@@ -227,13 +212,6 @@ export default class KioskView extends React.Component {
   }
 
   render() {
-    let progressBarClasses = 'progressBar';
-
-    if (this.state.transitionProgress === 0) {
-      // Allows the removal of the transition from full to empty
-      progressBarClasses += ' empty';
-    }
-
     let kioskClasses = 'kiosk';
     if (!this.state.presentation.displayMenu) {
       kioskClasses += ' appBar-hidden';
@@ -245,13 +223,6 @@ export default class KioskView extends React.Component {
         onClick={event => this.onInteraction(event)}
         role="presentation"
       >
-        {this.state.presentation.transitionTime > 0 && this.state.presentation.slides.length > 1 ?
-          <LinearProgress
-            className={progressBarClasses}
-            mode="determinate"
-            max={this.state.presentation.transitionTime}
-            value={this.state.transitionProgress}
-          /> : ''}
         {this.state.presentation.displayMenu ?
           <AppBar
             className="appBar"
@@ -277,11 +248,3 @@ export default class KioskView extends React.Component {
     );
   }
 }
-
-KioskView.propTypes = {
-  interactiveMode: PropTypes.bool,
-};
-
-KioskView.defaultProps = {
-  interactiveMode: false,
-};

@@ -13,8 +13,6 @@ const EVENT_SLIDE_TYPE = 'event';
 const IMAGE_SLIDE_TYPE = 'image';
 const WEATHER_SLIDE_TYPE = 'weather';
 
-const LINEAR_PROGRESS_REFRESH_RATE = 250;
-
 export default class PresentationView extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -22,15 +20,7 @@ export default class PresentationView extends React.PureComponent {
     this.state = {
       currentSlideIndex: 0,
       currentSlide: props.presentation.slides[0],
-      transitionProgress: 0,
     };
-
-    // If transitionTime exists, start timer
-    if (props.presentation.transitionTime > 0) {
-      this.state.progressRefreshInterval = setInterval(
-        this.handleTransitionTimer.bind(this), LINEAR_PROGRESS_REFRESH_RATE,
-      );
-    }
   }
 
   componentDidMount() {
@@ -73,18 +63,6 @@ export default class PresentationView extends React.PureComponent {
     });
 
     scroll(0, 0);
-  }
-
-  handleTransitionTimer() {
-    // don't do transition timer if in interactive mode, if transition time is 0
-    // or if there is only one slide
-    if (!this.props.interactiveMode &&
-      this.props.presentation.transitionTime > 0 &&
-      this.props.presentation.slides.length > 1) {
-      if (this.props.presentation.transitionTime) {
-        this.props.incrementProgressBarValue(LINEAR_PROGRESS_REFRESH_RATE);
-      }
-    }
   }
 
   clearSelectedEvent() {
@@ -245,8 +223,6 @@ PresentationView.propTypes = {
   onInteraction: PropTypes.func.isRequired,
   // Kiosk attributes
   interactiveMode: PropTypes.bool,
-  // Progress bar handling
-  incrementProgressBarValue: PropTypes.func.isRequired,
   // Presentation data prop types
   presentation: PropTypes.shape({
     transitionTime: PropTypes.number,
