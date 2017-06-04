@@ -1,6 +1,6 @@
 {
   "name": "event-kiosk",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Event and static content display for kiosk station using React and Django",
   "main": "src/index.jsx",
   "engines": {
@@ -49,9 +49,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/DesjardinsLab/event-kiosk"
   },
-  "author": "Desjardins Lab <desjardinslab@gmail.com>",
+  "author": "Desjardins Lab <desjardinslab@desjardins.com>",
   "license": "MIT",
-  "homepage": ""
+  "homepage": "https://github.com/DesjardinsLab"
 }
