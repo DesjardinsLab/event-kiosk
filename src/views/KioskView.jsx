@@ -98,11 +98,6 @@ export default class KioskView extends React.Component {
     });
   }
 
-  // these functions should be passed to children to influence components from the kiosk.
-  setProgressBarValue(value) {
-    this.setState({ transitionProgress: this.props.interactiveMode ? 0 : value });
-  }
-
   setAppTitle(title) {
     this.setState({ appTitle: title });
   }
@@ -132,6 +127,17 @@ export default class KioskView extends React.Component {
 
   setAppBarIconElementLeft(element) {
     this.setState({ appBarIconElementLeft: element });
+  }
+
+  incrementProgressBarValue(value) {
+    let transitionProgress = this.state.transitionProgress + value;
+    if (transitionProgress > this.state.presentation.transitionTime) {
+      transitionProgress = 0;
+    }
+
+    this.setState({
+      transitionProgress: this.props.interactiveMode ? 0 : transitionProgress,
+    });
   }
 
   hideAppBar(hide) {
@@ -203,8 +209,7 @@ export default class KioskView extends React.Component {
             {...this.props}
             interactiveMode={this.state.interactiveMode}
             presentation={this.state.presentation}
-            transitionProgress={this.state.transitionProgress}
-            setProgressBarValue={value => this.setProgressBarValue(value)}
+            incrementProgressBarValue={value => this.incrementProgressBarValue(value)}
             setAppTitle={title => this.setAppTitle(title)}
             hideAppBar={hide => this.hideAppBar(hide)}
             setAppBarIconElementLeft={
@@ -230,7 +235,7 @@ export default class KioskView extends React.Component {
     }
 
     let kioskClasses = 'kiosk';
-    if (this.state.presentation.displayMenu) {
+    if (!this.state.presentation.displayMenu) {
       kioskClasses += ' appBar-hidden';
     }
 

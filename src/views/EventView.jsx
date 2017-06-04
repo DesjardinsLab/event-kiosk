@@ -1,16 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import provideEvents from '../providers/provideEvents';
 import EventListView from './EventListView/';
 import EventDetailView from './EventDetailView';
 
-export default provideEvents(class EventView extends React.Component {
+class EventView extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       isStatic: false,
-      selectedEvent: props.selectedEvent,
     };
   }
 
@@ -28,7 +28,7 @@ export default provideEvents(class EventView extends React.Component {
       elementToRender = (
         <EventDetailView
           {...this.props}
-          event={this.props.isStatic ? this.props.event : this.state.selectedEvent}
+          event={this.props.isStatic ? this.props.event : this.props.selectedEvent}
         />
       );
     } else {
@@ -42,4 +42,20 @@ export default provideEvents(class EventView extends React.Component {
 
     return elementToRender;
   }
-});
+}
+
+EventView.propTypes = {
+  selectedEvent: PropTypes.shape({}),
+  event: PropTypes.shape({}),
+  isStatic: PropTypes.bool,
+  setSelectedEvent: PropTypes.func,
+};
+
+EventView.defaultProps = {
+  selectedEvent: null,
+  event: null,
+  isStatic: false,
+  setSelectedEvent: () => {},
+};
+
+export default provideEvents(EventView);

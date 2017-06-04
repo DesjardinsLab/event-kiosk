@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import QRCode from 'qrcode.react';
 
+import provideEvents from '../providers/provideEvents';
+
 import SpeakerListView from './SpeakerListView';
 
 const EventDetailView = (props) => {
   const event = props.event;
 
   return (
-    <article className={`eventDetails month ${event.month}`}>
+    <article className={'eventDetails day'}>
       <div className="headerImageWrapper">
         <img className="headerImage" src={event.img} alt="" />
         {event.prettyUrl ?
@@ -51,4 +53,4 @@ EventDetailView.propTypes = {
   event: PropTypes.shape({}).isRequired,
 };
 
-export default EventDetailView;
+export default provideEvents(EventDetailView);
