@@ -40,6 +40,7 @@ export default class KioskView extends React.Component {
       transitionProgress: 0,
       currentSection: HOME_PAGE,
       currentPage: 0,
+      onLeftIconButtonTouchTap: event => this.toggleNav(event),
     };
   }
 
@@ -113,17 +114,23 @@ export default class KioskView extends React.Component {
         appTitle: currentPage.title,
       });
       this.setAppBarIconElementLeft(
-        <IconButton onClick={() => this.setCurrentPage(HOME_PAGE, 0)}>
+        <IconButton>
           <NavigationBack />
         </IconButton>,
+        () => this.setCurrentPage(HOME_PAGE, 0),
       );
     } else {
       this.setAppBarIconElementLeft();
     }
   }
 
-  setAppBarIconElementLeft(element) {
-    this.setState({ appBarIconElementLeft: element });
+  setAppBarIconElementLeft(
+    appBarIconElementLeft, onLeftIconButtonTouchTap = event => this.toggleNav(event),
+  ) {
+    this.setState({
+      appBarIconElementLeft,
+      onLeftIconButtonTouchTap,
+    });
   }
 
   hideAppBar(hide) {
@@ -198,7 +205,7 @@ export default class KioskView extends React.Component {
             setAppTitle={title => this.setAppTitle(title)}
             hideAppBar={hide => this.hideAppBar(hide)}
             setAppBarIconElementLeft={
-              iconElementLeft => this.setAppBarIconElementLeft(iconElementLeft)
+              (iconElementLeft, onTouch) => this.setAppBarIconElementLeft(iconElementLeft, onTouch)
             }
             onInteraction={event => this.onInteraction(event)}
             pauseTimeOnTouch={this.state.presentation.pauseTimeOnTouch}
@@ -228,8 +235,8 @@ export default class KioskView extends React.Component {
             className="appBar"
             title={this.state.appTitle}
             iconElementLeft={this.state.appBarIconElementLeft}
-            onLeftIconButtonTouchTap={event => this.toggleNav(event)}
             zDepth={0}
+            onLeftIconButtonTouchTap={this.state.onLeftIconButtonTouchTap}
             style={this.state.hideAppBar ? {
               opacity: 0,
               position: 'absolute',

@@ -52,13 +52,16 @@ export default class PresentationView extends React.PureComponent {
   setSelectedEvent(event) {
     this.props.setAppTitle(event.shortTitle ? event.shortTitle : event.title);
     this.props.setAppBarIconElementLeft(
-      <IconButton onClick={() => this.clearSelectedEvent()}><NavigationBack /></IconButton>,
+      <IconButton>
+        <NavigationBack />
+      </IconButton>,
+      () => this.clearSelectedEvent(),
     );
 
     this.setState({
       selectedEvent: event,
       eventDetailTimer: setTimeout(
-        this.clearSelectedEvent.bind(this), this.props.presentation.pauseTimeOnTouch,
+        () => this.clearSelectedEvent(), this.props.presentation.pauseTimeOnTouch,
       ),
     });
 
