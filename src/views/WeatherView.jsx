@@ -10,7 +10,7 @@ const WEATHER_ICONS_PROVIDER = 'vclouds'
 
 const TIME_UPDATE_INTERVAL = 5000;
 
-export class WeatherView extends React.Component {
+export default class WeatherView extends React.Component {
   constructor (props) {
     super()
 
@@ -75,5 +75,3 @@ export class WeatherView extends React.Component {
     )
   }
 }
-
-export default WeatherView

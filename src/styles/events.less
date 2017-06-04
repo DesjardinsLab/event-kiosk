@@ -3,12 +3,12 @@ div.eventListView {
   padding-top: 64px;
   width: 100%;
 
-  div.eventsByMonth {
+  div[class^=eventsBy] {
     display: flex;
     flex-direction: column;
     margin-bottom: 3em;
 
-    h1.month {
+    h1.month, h1.day {
       display: flex;
       justify-content: flex-start;
       font-size: 60px;
@@ -30,9 +30,16 @@ div.eventCard {
 
   div.dateInfo {
     display: flex;
-    justify-content: center;
     width: 15%;
     padding: 30px;
+
+    // Allow independent alignment for daily/monthly list views
+    &.monthly {
+      justify-content: center;
+    }
+    &.daily {
+      justify-content: center;
+    }
   }
 
   div.eventListItem {

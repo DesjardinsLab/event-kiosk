@@ -6,7 +6,6 @@ import NavigationBack from 'material-ui/svg-icons/navigation/arrow-back';
 
 import Carousel from 'nuka-carousel';
 import EventView from './EventView';
-import EventDetailView from './EventDetailView';
 import WeatherView from './WeatherView';
 
 const EVENT_LIST_SLIDE_TYPE = 'eventList';
@@ -95,6 +94,7 @@ export default class PresentationView extends React.Component {
             <EventView
               {...this.props}
               {...item}
+              headerImage={this.props.presentation.headerImage}
               selectedEvent={this.state.selectedEvent}
               title={this.state.currentSlide ? this.state.currentSlide.title : ''}
               setSelectedEvent={value => this.setSelectedEvent(value)}
@@ -140,8 +140,10 @@ export default class PresentationView extends React.Component {
     const carouselSettings = {
       wrapAround: true,
       decorators: [],
-      swiping: this.props.interactiveMode,
-      autoplay: true,
+      swiping: this.props.presentation.slides.length > 1,
+      autoplay: (
+        this.props.presentation.autoplayInterval && this.props.presentation.slides.length > 1
+      ),
       autoplayInterval: (this.props.presentation.autoplayInterval ?
         this.props.presentation.autoplayInterval : 8000),
       afterSlide: currentSlide => this.onSlideChange(currentSlide),
@@ -159,13 +161,6 @@ export default class PresentationView extends React.Component {
         onTouchStart={() => this.props.hideAppBar(false)}
         onTouchEnd={event => this.props.onInteraction(event)}
       >
-        {this.props.presentation.header && this.props.presentation.header.logoPath ?
-          <div className="headerWrapper">
-            <div className="headerContentWrapper">
-              <img src={this.props.presentation.header.logoPath} alt="" />
-            </div>
-          </div> : ''
-        }
         <Carousel {...carouselSettings}>
           {slides}
         </Carousel>
@@ -245,7 +240,7 @@ PresentationView.propTypes = {
     pauseTimeOnTouch: PropTypes.number,
     displayIndicators: PropTypes.bool,
     slides: PropTypes.arrayOf(PropTypes.shape({})),
-    header: PropTypes.object,
+    headerImage: PropTypes.string,
     footer: PropTypes.object,
   }).isRequired,
 };

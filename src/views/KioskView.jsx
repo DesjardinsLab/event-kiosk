@@ -24,8 +24,6 @@ const RELOAD_INTERVAL = 60000;
 const HOME_PAGE = 'home';
 const APPBAR_BG = 'rgba(30, 82, 142, 0.8)';
 
-const KIOSK_SOURCE = process.env.DATA_URL || 'example-data.json';
-
 export default class KioskView extends React.Component {
   constructor(props) {
     super(props);
@@ -77,6 +75,7 @@ export default class KioskView extends React.Component {
         reloadInterval: setInterval(this.getKiosk.bind(this), RELOAD_INTERVAL),
       });
     }
+    // eslint-disable-next-line no-undef
     const url = typeof KIOSK_SOURCE !== 'undefined' ? KIOSK_SOURCE : 'example-data.json';
 
     fetch(url)
