@@ -229,9 +229,14 @@ export default class KioskView extends React.Component {
       progressBarClasses += ' empty';
     }
 
+    let kioskClasses = 'kiosk';
+    if (this.state.presentation.displayMenu) {
+      kioskClasses += ' appBar-hidden';
+    }
+
     return (
       <div
-        className="kiosk"
+        className={kioskClasses}
         onClick={event => this.onInteraction(event)}
         role="presentation"
       >
