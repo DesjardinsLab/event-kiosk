@@ -16,7 +16,7 @@ const LOCALE = 'fr-CA';
 const KIOSK = (
   <MuiThemeProvider
     muiTheme={getMuiTheme({
-      fontFamily: 'Open Sans',
+      fontFamily: 'Oswald',
     })}
   >
     <KioskView
