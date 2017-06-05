@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import KioskView from './views/KioskView';
 
@@ -13,7 +14,11 @@ injectTapEventPlugin();
 const LOCALE = 'fr-CA';
 
 const KIOSK = (
-  <MuiThemeProvider>
+  <MuiThemeProvider
+    muiTheme={getMuiTheme({
+      fontFamily: 'Open Sans',
+    })}
+  >
     <KioskView
       locale={LOCALE}
       shortMonthFormat={new Intl.DateTimeFormat(LOCALE, { month: 'short' })}
