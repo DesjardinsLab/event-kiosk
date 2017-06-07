@@ -137,8 +137,8 @@ export default class PresentationView extends React.PureComponent {
       wrapAround: true,
       decorators: [],
       swiping: this.props.presentation.slides.length > 1,
-      autoplay: (
-        this.props.presentation.transitionTime && this.props.presentation.slides.length > 1
+      autoplay: Boolean(
+        this.props.presentation.transitionTime && this.props.presentation.slides.length > 1,
       ),
       autoplayInterval: (this.props.presentation.transitionTime ?
         this.props.presentation.transitionTime : 8000),
