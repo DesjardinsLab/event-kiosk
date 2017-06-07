@@ -1,9 +1,24 @@
 body {
   height: 100%;
-  font-family: "Oswald";
   font-size: 20px;
   padding-bottom: 50px;
+  // Use cabin bold for most of the site
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
   user-select: none;
+
+  h2, h3 {
+    &.subTitle {
+      // Use Source Sans Pro for subtitles
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 400;
+    }
+  }
+
+  h4, h5, h6, p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+  }
 }
 
 .kiosk-content {
