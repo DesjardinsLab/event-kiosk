@@ -36,6 +36,9 @@ export default class PresentationView extends React.PureComponent {
 
   onSlideChange(index) {
     const currentSlide = this.props.presentation.slides[index];
+
+    if (index === this.state.currentSlideIndex) return;
+
     this.setState({
       currentSlide,
       currentSlideIndex: index,
