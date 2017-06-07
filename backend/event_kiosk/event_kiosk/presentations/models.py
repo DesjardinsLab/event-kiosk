@@ -86,7 +86,9 @@ class Slide(models.Model):
             }
 
         elif (self.type == 'eventList'):
-            events = Event.objects.filter(date__gte=datetime.today())
+            events = Event.objects.filter(
+                date__gte=datetime.today()
+            ).order_by('date', 'startTime', 'shortTitle', 'title')
             events_json = []
             for event in events:
                 events_json.append(event.to_json())
