@@ -5,10 +5,10 @@ import DailyEventListItem from '../../components/DailyEventListItem';
 
 const formatEventByDays = (props) => {
   const eventsByDay = {};
-  const dayFormat = props.dayFormat;
+  const longDayFormat = props.longDayFormat;
 
   props.events.forEach((event) => {
-    const day = dayFormat.format(new Date(event.startTime));
+    const day = longDayFormat.format(new Date(event.startTime));
 
     if (eventsByDay[day]) {
       eventsByDay[day].push(event);

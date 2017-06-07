@@ -25,6 +25,7 @@ const KIOSK = (
       monthFormat={new Intl.DateTimeFormat(LOCALE, { month: 'long', year: 'numeric' })}
       dateFormat={new Intl.DateTimeFormat(LOCALE, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
       dayFormat={new Intl.DateTimeFormat(LOCALE, { weekday: 'long' })}
+      longDayFormat={new Intl.DateTimeFormat(LOCALE, { weekday: 'long', month: 'long', day: 'numeric' })}
       timeIntervalFormat={new Intl.DateTimeFormat(LOCALE, { hour: 'numeric', minute: 'numeric' })}
       clockTimeFormat={new Intl.DateTimeFormat(LOCALE, { weekday: 'short', hour: 'numeric', minute: 'numeric' })}
     />
