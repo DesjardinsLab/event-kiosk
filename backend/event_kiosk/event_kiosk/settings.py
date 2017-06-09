@@ -23,17 +23,21 @@ FORECAST_API_KEY = os.environ.get('FORECAST_API_KEY')
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'), ]
 
+if DEBUG:
+    ALLOWED_HOSTS.append('localhost')
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    #'djangocms_admin_style',
+    'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ajax_select',
     'adminsortable2',
     'event_kiosk.kiosks',
     'event_kiosk.events',
@@ -42,7 +46,7 @@ INSTALLED_APPS = [
     'ckeditor'
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,7 +130,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'

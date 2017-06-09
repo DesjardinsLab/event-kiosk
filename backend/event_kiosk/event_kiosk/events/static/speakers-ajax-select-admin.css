@@ -1,0 +1,9 @@
+input#id_speakers_text {
+    width: calc(100% - 42px) !important;
+}
+
+a#add_id_speakers {
+    color: transparent;
+    font-size: 0 !important;
+    outline: none !important;
+}

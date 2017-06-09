@@ -1,73 +1,61 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import EventListView from './EventListView'
-import EventDetailView from './EventDetailView'
+import provideEvents from '../providers/provideEvents';
+import EventListView from './EventListView/';
+import EventDetailView from './EventDetailView';
 
-export class EventView extends React.Component {
-
-  constructor (props) {
-    super()
+class EventView extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       isStatic: false,
-      selectedEvent: props.selectedEvent
-    }
+    };
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.state.eventDetailTimer) {
-      clearTimeout(this.state.eventDetailTimer)
+      clearTimeout(this.state.eventDetailTimer);
     }
   }
 
-  // since all events go through this view, we define the date formatting here
-  addFormattedDatesToEvent (event) {
-    var startDateTime = new Date(event.startTime)
-    var endDateTime = new Date(event.endTime)
-
-    event.date = this.props.dateFormat.format(startDateTime)
-
-    var startTime = this.props.timeIntervalFormat.format(startDateTime)
-    var endTime = this.props.timeIntervalFormat.format(endDateTime)
-
-    event.timeInterval = startTime + ' - ' + endTime
-    event.month = startDateTime.getMonth()
-
-    event.shortMonth = this.props.shortMonthFormat.format(startDateTime)
-    event.shortDate = startDateTime.getDate()
-    event.day = this.props.dayFormat.format(startDateTime)
-  }
-
-  getElementToRender () {
+  render() {
     // returns the list component or the detail component
-    var elementToRender = <div />
+    let elementToRender = <div />;
 
     if (this.props.selectedEvent || this.props.isStatic) {
       elementToRender = (
-        <div>
-          <EventDetailView
-            {...this.props}
-            event={this.props.isStatic ? this.props.event : this.state.selectedEvent}
-            addFormattedDatesToEvent={(event) => this.addFormattedDatesToEvent(event)}
-          />
-        </div>
-      )
+        <EventDetailView
+          {...this.props}
+          event={this.props.isStatic ? this.props.event : this.props.selectedEvent}
+        />
+      );
     } else {
       elementToRender = (
         <EventListView
           {...this.props}
-          onEventSelect={(event) => this.props.setSelectedEvent(event)}
-          addFormattedDatesToEvent={(event) => this.addFormattedDatesToEvent(event)}
+          onEventSelect={event => this.props.setSelectedEvent(event)}
         />
-      )
+      );
     }
 
-    return elementToRender
-  }
-
-  render () {
-    return this.getElementToRender()
+    return elementToRender;
   }
 }
 
-export default EventView
+EventView.propTypes = {
+  selectedEvent: PropTypes.shape({}),
+  event: PropTypes.shape({}),
+  isStatic: PropTypes.bool,
+  setSelectedEvent: PropTypes.func,
+};
+
+EventView.defaultProps = {
+  selectedEvent: null,
+  event: null,
+  isStatic: false,
+  setSelectedEvent: () => {},
+};
+
+export default provideEvents(EventView);

@@ -1,9 +1,24 @@
 body {
   height: 100%;
-  font-family: Calibri, Arial;
   font-size: 20px;
   padding-bottom: 50px;
+  // Use cabin bold for most of the site
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
   user-select: none;
+
+  h2, h3 {
+    &.subTitle {
+      // Use Source Sans Pro for subtitles
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 400;
+    }
+  }
+
+  h4, h5, h6, p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+  }
 }
 
 .kiosk-content {
@@ -17,7 +32,6 @@ body {
 
   h1, h2, h3 {
     font-weight: bold;
-    font-family: "PT Sans Narrow";
     text-transform: uppercase;
   }
 }
@@ -57,6 +71,28 @@ body {
   }
 }
 
+// Set heights in VH to make sure the content fills the page vertically
+.headerWrapper {
+  // Restrict dimensions
+  width: 100%;
+  height: 15vh;
+  // Center horizontally
+  display: flex;
+  justify-content: center;
+
+  .headerContentWrapper {
+    // Center vertically
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      // Limit the image height to make sure there is some padding
+      max-height: 11vh;
+    }
+  }
+}
+
 .progressBar {
   position: fixed !important;
   top: 0;
@@ -73,7 +109,7 @@ body {
   }
 }
 
-.leftNav {
+.drawer {
   svg {
     position: relative; top: 4px;
     width: 18px;
@@ -115,4 +151,12 @@ body {
 
 .staticHtmlPage {
   padding-top: 79px;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
 }

@@ -1,53 +1,56 @@
-import Paper from 'material-ui/lib/paper'
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import QRCode from 'qrcode.react';
 
-import SpeakerListView from './SpeakerListView'
+import provideEvents from '../providers/provideEvents';
 
-import QRCode from 'qrcode.react'
+import SpeakerListView from './SpeakerListView';
 
-export class EventDetailView extends React.Component {
-  componentDidMount () {
+const EventDetailView = (props) => {
+  const event = props.event;
 
-  }
-
-  render () {
-    var event = this.props.event
-    this.props.addFormattedDatesToEvent(event)
-
-    return (
-      <article className={'eventDetails month' + event.month}>
-        <div className='headerImageWrapper'>
-          <img className='headerImage' src={event.img} />
-          {event.prettyUrl ?
-            <div className='eventUrlWrapper'>
-              <h3 className='eventUrl'>{event.prettyUrl}</h3>
-            </div> : ''
+  return (
+    <article className={'eventDetails day'}>
+      <div className="headerImageWrapper">
+        <img className="headerImage" src={event.img} alt="" />
+        {event.prettyUrl ?
+          <div className="eventUrlWrapper">
+            <h3 className="eventUrl">{event.prettyUrl}</h3>
+          </div> : ''
+        }
+      </div>
+      <div className="details">
+        <div className="dateInfo">
+          <div className="dateDisplay">
+            <div className="month">{event.shortMonth}</div>
+            <div className="date">{event.shortDate}</div>
+          </div>
+        </div>
+        <div className="timeLocationInfo">
+          <div className="time">{event.timeInterval}</div>
+          <div className="location">{event.location}</div>
+          {event.speaker ?
+            <div className="speaker">{event.speaker}</div> :
+            ''
           }
         </div>
-        <div className='details'>
-          <div className='dateInfo'>
-            <div className='dateDisplay'>
-              <div className='month'>{event.shortMonth}</div>
-              <div className='date'>{event.shortDate}</div>
-            </div>
-          </div>
-          <div className='timeLocationInfo'>
-            <div className='time'>{event.timeInterval}</div>
-            <div className='location'>{event.location}</div>
-            {event.speaker ?
-              <div className='speaker'>{event.speaker}</div> :
-              ''
-            }
-          </div>
-          <div className='QRCodeWrapper'>
-            {event.registrationUrl ? <QRCode className='QRCode' value={event.registrationUrl} /> : <div className='QRCode' />}
-          </div>
+        <div className="QRCodeWrapper">
+          {event.registrationUrl ?
+            <QRCode className="QRCode" value={event.registrationUrl} /> :
+            <div className="QRCode" />
+          }
         </div>
-        <div className='desc' dangerouslySetInnerHTML={{__html: event.desc}}/>
-        {event.speakers ? <SpeakerListView speakers={event.speakers} /> : ''}
-      </article>
-    )
-  }
-}
+      </div>
+      {/* eslint-disable react/no-danger */}
+      <div className="desc" dangerouslySetInnerHTML={{ __html: event.desc }} />
+      {/* eslint-enable react/no-danger */}
+      {event.speakers ? <SpeakerListView speakers={event.speakers} /> : ''}
+    </article>
+  );
+};
 
-export default EventDetailView
+EventDetailView.propTypes = {
+  event: PropTypes.shape({}).isRequired,
+};
+
+export default provideEvents(EventDetailView);

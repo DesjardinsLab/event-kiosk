@@ -3,12 +3,12 @@ div.eventListView {
   padding-top: 64px;
   width: 100%;
 
-  div.eventsByMonth {
+  div[class^=eventsBy] {
     display: flex;
     flex-direction: column;
     margin-bottom: 3em;
 
-    h1.month {
+    h1.month, h1.day {
       display: flex;
       justify-content: flex-start;
       font-size: 60px;
@@ -22,6 +22,10 @@ div.eventListView {
   }
 }
 
+div.kiosk.appBar-hidden div.eventListView {
+  padding-top: 0px;
+}
+
 // list item cards
 div.eventCard {
   padding: 0.5em 0px;
@@ -30,9 +34,16 @@ div.eventCard {
 
   div.dateInfo {
     display: flex;
-    justify-content: center;
     width: 15%;
     padding: 30px;
+
+    // Allow independent alignment for daily/monthly list views
+    &.monthly {
+      justify-content: center;
+    }
+    &.daily {
+      justify-content: center;
+    }
   }
 
   div.eventListItem {
@@ -129,6 +140,7 @@ article.eventDetails {
     .timeLocationInfo {
       display: flex;
       flex-direction: column;
+      text-align: center;
       align-items: center;
       align-self: center;
       width: 50%;
@@ -158,6 +170,13 @@ article.eventDetails {
     padding: 0px 50px;
     text-align: justify;
 
+    h1, h2, h3, h4, h5, h6 {
+      padding: 0.67em 0em;
+    }
+    h4 {
+      font-size: 36px;
+    }
+
     p {
       font-size: 30px;
       margin-top: 1em;
@@ -179,6 +198,8 @@ article.eventDetails {
       div.avatar {
         display: flex;
         justify-content: center;
+        min-width: 200px;
+        min-height: 200px;
 
         img {
           width: 25%;
@@ -187,6 +208,26 @@ article.eventDetails {
           border-radius: 50%;
           width: 200px;
           height: 200px;
+        }
+
+        div {
+          width: 25%;
+          align-self: center;
+
+          display: flex;
+          justify-content: center;
+
+          border-radius: 50%;
+          width: 200px;
+          height: 200px;
+
+          span {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #FFF;
+            font-size: 140px;
+          }
         }
       }
 
@@ -211,4 +252,8 @@ article.eventDetails {
       }
     }
   }
+}
+
+div.kiosk.appBar-hidden article.eventDetails {
+  padding-top: 0px;
 }

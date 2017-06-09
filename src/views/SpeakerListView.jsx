@@ -1,19 +1,19 @@
-import React from 'react'
-import SpeakerListItem from './SpeakerListItem'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export class SpeakerListView extends React.Component {
+import SpeakerListItem from '../components/SpeakerListItem';
 
-  render () {
-    return (
-      <div className='speakersList'>
-          {this.props.speakers.map(function (speaker, index) {
-            return (
-              <SpeakerListItem key={index} speaker={speaker} />
-            )
-          })}
-      </div>
-    )
-  }
-}
+const SpeakerListView = props => (
+  <div className="speakersList">
+    {props.speakers.map((speaker, index) => (
+      <SpeakerListItem key={speaker.id || index} speaker={speaker} />
+    ),
+    )}
+  </div>
+);
 
-export default SpeakerListView
+SpeakerListView.propTypes = {
+  speakers: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default SpeakerListView;

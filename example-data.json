@@ -12,6 +12,7 @@
           {
             "title": "Événements à venir",
             "type": "eventList",
+            "displayType": "MONTHLY",
             "events": [
               {
                   "subTitle": "J. Doe & A. Smithee",
