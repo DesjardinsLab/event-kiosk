@@ -11,11 +11,9 @@ const endpoints = {};
 
 endpoints[OPEN_WEATHER_MAP] = (lat, lon, language) => {
   if (typeof OPEN_WEATHER_MAP_APPID === 'undefined') {
-    return `//api.openweathermap.org/data/2.5/weather
-    ?lat=${lat}&lon=${lon}&lang=${language}&units=metric`;
+    return `//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=${language}&units=metric`;
   }
-  return `//api.openweathermap.org/data/2.5/weather
-  ?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_MAP_APPID}&lang=${language}&units=metric`; // eslint-disable-line no-undef
+  return `//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_MAP_APPID}&lang=${language}&units=metric`; // eslint-disable-line no-undef
 };
 
 // Forecast endpoint will only work on a https server.
@@ -23,14 +21,12 @@ endpoints[FORECAST] = (lat, lon, language) => {
   const cb = response => response;
 
   if (typeof OPEN_WEATHER_MAP_APPID === 'undefined') {
-    return `https://api.forecast.io/forecast/${lat},${lon}
-    ?units=ca&lang=${language}&callback=${cb}`;
+    return `https://api.forecast.io/forecast/${lat},${lon}?units=ca&lang=${language}&callback=${cb}`;
   }
 
   return (
     // eslint-disable-next-line no-undef
-    `https://api.forecast.io/forecast/${FORECAST_API_KEY}/${lat},${lon}
-    ?units=ca&lang=${language}&callback=${cb}`
+    `https://api.forecast.io/forecast/${FORECAST_API_KEY}/${lat},${lon}?units=ca&lang=${language}&callback=${cb}`
   );
 };
 
